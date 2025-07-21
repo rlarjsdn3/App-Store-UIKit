@@ -10,7 +10,7 @@ import Foundation
 extension NSObject {
     
     /// <#Description#>
-    var id: String {
+    static var id: String {
         NSStringFromClass(Self.self)
             .components(separatedBy: ".")
             .last!

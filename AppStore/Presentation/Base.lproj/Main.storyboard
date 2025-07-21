@@ -5,29 +5,58 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Today View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppStore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TodayViewController" customModule="AppStore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q7g-Kd-YLR">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="864"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y6Y-JT-LQS">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="l2h-Ib-OR8">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nCK-xe-5n0">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="q7g-Kd-YLR" secondAttribute="bottom" id="4gS-YH-jgx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q7g-Kd-YLR" secondAttribute="trailing" id="5hU-tu-lbW"/>
+                            <constraint firstItem="q7g-Kd-YLR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CGs-t3-kxz"/>
+                            <constraint firstItem="q7g-Kd-YLR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="IXf-Vp-d9U"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Ne-NV-gP6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1457" y="1496"/>
+            <point key="canvasLocation" x="-1457.2519083969464" y="1495.7746478873239"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="QZt-Kk-jSR">
             <objects>
-                <viewController id="Jvz-ub-kUv" sceneMemberID="viewController">
+                <viewController id="Jvz-ub-kUv" customClass="GameViewController" customModule="AppStore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JBY-jU-Qww">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,6 +123,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="X91-yL-0Oj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DoB-oc-rJm">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -109,14 +139,13 @@
             </objects>
             <point key="canvasLocation" x="119.84732824427481" y="-2.1126760563380285"/>
         </scene>
-        <!--Item-->
+        <!--투데이-->
         <scene sceneID="iV7-FR-BoK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M6b-TK-jkD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="aQm-IN-z5G"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="M6b-TK-jkD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="투데이" image="text.rectangle.page" catalog="system" id="aQm-IN-z5G"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vNC-L6-60p">
-                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -128,11 +157,11 @@
             </objects>
             <point key="canvasLocation" x="-1457.2519083969464" y="803.52112676056345"/>
         </scene>
-        <!--Item-->
+        <!--게임-->
         <scene sceneID="4wz-yv-CRh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5bi-vX-qkD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="DDC-6F-IEh"/>
+                    <tabBarItem key="tabBarItem" title="게임" image="rocket" id="DDC-6F-IEh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Zn-SV-8Tk">
                         <rect key="frame" x="0.0" y="118" width="393" height="44"/>
@@ -147,11 +176,11 @@
             </objects>
             <point key="canvasLocation" x="-669" y="804"/>
         </scene>
-        <!--Item-->
+        <!--앱-->
         <scene sceneID="Mog-Km-4KE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LhK-VD-eOB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RFP-j0-4l2"/>
+                    <tabBarItem key="tabBarItem" title="앱" image="square.stack.3d.up.fill" catalog="system" id="RFP-j0-4l2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oXZ-vN-UET">
                         <rect key="frame" x="0.0" y="118" width="393" height="44"/>
@@ -166,11 +195,11 @@
             </objects>
             <point key="canvasLocation" x="121" y="801"/>
         </scene>
-        <!--Item-->
+        <!--Arcade-->
         <scene sceneID="yK9-h2-XJr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xV4-Cm-OSu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="jM3-fw-DkY"/>
+                    <tabBarItem key="tabBarItem" title="Arcade" image="arcade.stick" catalog="system" id="jM3-fw-DkY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dv9-yW-Cht">
                         <rect key="frame" x="0.0" y="118" width="393" height="44"/>
@@ -185,11 +214,11 @@
             </objects>
             <point key="canvasLocation" x="921" y="801"/>
         </scene>
-        <!--Item-->
+        <!--검색-->
         <scene sceneID="Oxt-wJ-3vm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mmo-yA-h1G" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="6su-zc-wpD"/>
+                    <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="6su-zc-wpD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ys8-dO-J74">
                         <rect key="frame" x="0.0" y="118" width="393" height="44"/>
@@ -206,6 +235,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arcade.stick" catalog="system" width="88" height="128"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="rocket" width="25" height="25"/>
+        <image name="square.stack.3d.up.fill" catalog="system" width="120" height="128"/>
+        <image name="text.rectangle.page" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
