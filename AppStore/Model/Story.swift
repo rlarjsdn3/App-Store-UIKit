@@ -11,12 +11,12 @@ struct Story {
     ///
     let sectionDescriptor: SectionDescriptor?
     ///
-    let result: Result
+    let content: Content
 }
 
 extension Story {
 
-    struct Result {
+    struct Content {
         ///
         let title: String
         ///
@@ -30,7 +30,7 @@ extension Story {
 
 extension Story: Hashable {
 }
-extension Story.Result: Hashable {
+extension Story.Content: Hashable {
 }
 
 extension Story {

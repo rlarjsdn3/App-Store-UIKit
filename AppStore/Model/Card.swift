@@ -11,22 +11,20 @@ struct Card {
     ///
     let sectionDescriptor: SectionDescriptor?
     ///
-    let result: Result
+    let result: Content
 }
 
 extension Card {
 
-    struct Result {
+    struct Content {
         ///
         let title: String
-        ///
-        let backgroundColor: UIColor
     }
 }
 
 extension Card: Hashable {
 }
-extension Card.Result: Hashable {
+extension Card.Content: Hashable {
 }
 
 extension Card {

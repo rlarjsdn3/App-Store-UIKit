@@ -12,19 +12,29 @@ enum TodayContent {
     enum Section: Hashable {
         ///
         case main(SectionDescriptor)
+        ///
+        case card(SectionDescriptor)
+        
+        /// <#Description#>
+        var hasHeader: Bool {
+            switch self {
+            case .main(let descriptor): return descriptor.title != nil
+            case .card(let descriptor): return descriptor.title != nil
+            }
+        }
     }
 
     enum Item: Hashable {
         ///
-        case advertisement(Advertisement.Result)
+        case advertisement(Advertisement.Content)
         ///
-        case story(Story.Result)
+        case story(Story.Content)
         ///
-        case applist(AppList.Result)
+        case applist(AppList.Content)
         ///
-        case card([Card.Result])
+        case card([Card.Content])
         ///
-        case bigCard(Card.Result )
+        case bigCard(Card.Content)
     }
 }
 
@@ -32,11 +42,11 @@ extension TodayContent.Item {
 
     func dequeueReusableCollectionViewCell(
         collectionView: UICollectionView,
-        advertisementCellRegistration: UICollectionView.CellRegistration<AdvertisementCollectionViewCell, Advertisement.Result>,
-        stroyCellRegistration: UICollectionView.CellRegistration<StoryCollectionViewCell, Story.Result>,
-        appListCellRegistration: UICollectionView.CellRegistration<AppListCollectionViewCell, AppList.Result>,
-        cardCellRegistration: UICollectionView.CellRegistration<CardCollectionViewCell, [Card.Result]>,
-        bigCardCellRegistration: UICollectionView.CellRegistration<BigCardCollectionViewCell, Card.Result>,
+        advertisementCellRegistration: UICollectionView.CellRegistration<AdvertisementCollectionViewCell, Advertisement.Content>,
+        stroyCellRegistration: UICollectionView.CellRegistration<StoryCollectionViewCell, Story.Content>,
+        appListCellRegistration: UICollectionView.CellRegistration<AppListCollectionViewCell, AppList.Content>,
+        cardCellRegistration: UICollectionView.CellRegistration<CardCollectionViewCell, [Card.Content]>,
+        bigCardCellRegistration: UICollectionView.CellRegistration<BigCardCollectionViewCell, Card.Content>,
         indexPath: IndexPath
     ) -> UICollectionViewCell {
         switch self {
@@ -72,19 +82,34 @@ extension TodayContent.Item {
             )
         }
     }
+}
 
+extension TodayContent.Section {
+    
+    /// <#description#>
+    ///
+    /// - Important: 기본적으로 모든 섹션에 헤더를 표시하지만,
+    /// SectionDescriptor에 유효한 내용(title)이 없을 경우 헤더는 표시되지 않음
+    ///
+    /// - Note: 이 함수는 `UICollectionReusableView`가 아닌 `UICollectionViewListCell` 타입을 반환함에 주의
     func dequeueCollectionReusableView(
         collectionView: UICollectionView,
         kind: String,
         indexPath: IndexPath
-    ) -> UICollectionReusableView {
-        // 기본적으로 모든 섹션에 헤더를 표시하지만,
-        // SectionDescriptor에 유효한 내용(title)이 없을 경우 헤더는 표시되지 않음
-        return collectionView.dequeueReusableSupplementaryView(
-            ofKind: kind,
-            withReuseIdentifier: MainReusableCollectionView.id,
-            for: indexPath
-        )
+    ) -> UICollectionReusableView? {
+        switch self {
+        case .main(let descriptor), .card(let descriptor):
+            // SectionDescriptor에 유효한 내용(title)이 없을 경우 헤더는 표시되지 않음
+            if hasHeader {
+                return collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: UICollectionView.elementKindSectionHeader,
+                    for: indexPath
+                )
+            } else {
+                return nil
+            }
+        }
     }
 }
 
@@ -93,6 +118,7 @@ extension TodayContent.Section {
     func buildLayout(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         switch self {
         case .main: return buildMainLayout(environment)
+        case .card: return buildCardLayout(environment)
         }
     }
 
@@ -108,8 +134,46 @@ extension TodayContent.Section {
             heightDimension: .fractionalWidth(1)
         )
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-
+        
         let section = NSCollectionLayoutSection(group: group)
+        injectSupplementaryViewIfNeeded(to: section)
         return section
+    }
+    
+    private func buildCardLayout(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.5),
+            heightDimension: .fractionalWidth(0.5)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalWidth(1)
+        )
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        injectSupplementaryViewIfNeeded(to: section)
+        return section
+    }
+    
+    private func injectSupplementaryViewIfNeeded(to section: NSCollectionLayoutSection) {
+        switch self {
+        case .main(let descriptor), .card(let descriptor):
+            // SectionDescriptor에 유효한 내용(title)이 없을 경우 헤더는 표시되지 않음
+            if hasHeader {
+                let headerSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .estimated(44)
+                )
+                let header = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: headerSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top
+                )
+                section.boundarySupplementaryItems = [header]
+            }
+        }
     }
 }

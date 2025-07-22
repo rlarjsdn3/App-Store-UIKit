@@ -11,22 +11,22 @@ struct Advertisement {
     ///
     let sectionDescriptor: SectionDescriptor?
     ///
-    let result: Result
+    let content: Content
 }
 
 extension Advertisement {
 
-    struct Result {
+    struct Content {
         ///
         let appInfo: AppInfo
         ///
-        let backgroundColor: UIColor
+        let description: String
     }
 }
 
 extension Advertisement: Hashable {
 }
-extension Advertisement.Result: Hashable {
+extension Advertisement.Content: Hashable {
 }
 
 extension Advertisement {

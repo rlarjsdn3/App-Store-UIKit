@@ -13,6 +13,6 @@ final class AdvertisementCollectionViewCell: CoreCollectionViewCell {
 
 extension AdvertisementCollectionViewCell {
 
-    func configure(with model: Advertisement.Result) {
+    func configure(with model: Advertisement.Content) {
     }
 }

@@ -11,12 +11,12 @@ struct AppList {
     ///
     let sectionDescriptor: SectionDescriptor?
     ///
-    let result: Result
+    let content: Content
 }
 
 extension AppList {
 
-    struct Result {
+    struct Content {
         ///
         let appInfos: [AppInfo]
         ///
@@ -30,7 +30,7 @@ extension AppList {
 
 extension AppList: Hashable {
 }
-extension AppList.Result: Hashable {
+extension AppList.Content: Hashable {
 }
 
 extension AppList {

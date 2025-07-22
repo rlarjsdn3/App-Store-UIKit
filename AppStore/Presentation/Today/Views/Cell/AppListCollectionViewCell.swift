@@ -13,6 +13,6 @@ final class AppListCollectionViewCell: CoreCollectionViewCell {
 
 extension AppListCollectionViewCell {
 
-    func configure(with model: AppList.Result) {
+    func configure(with model: AppList.Content) {
     }
 }
