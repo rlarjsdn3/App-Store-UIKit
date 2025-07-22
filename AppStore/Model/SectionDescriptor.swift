@@ -7,6 +7,7 @@
 
 import Foundation
 
+///
 struct SectionDescriptor: Identifiable {
     ///
     let id: Int

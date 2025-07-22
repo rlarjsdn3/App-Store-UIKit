@@ -1,5 +1,5 @@
 //
-//  AppList.swift
+//  TopList.swift
 //  AppStore
 //
 //  Created by 김건우 on 7/21/25.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct AppList {
+struct TopList {
     ///
     let sectionDescriptor: SectionDescriptor?
     ///
     let content: Content
 }
 
-extension AppList {
+extension TopList {
 
     struct Content {
         ///
@@ -28,12 +28,12 @@ extension AppList {
     }
 }
 
-extension AppList: Hashable {
+extension TopList: Hashable {
 }
-extension AppList.Content: Hashable {
+extension TopList.Content: Hashable {
 }
 
-extension AppList {
+extension TopList {
 
     // mock..
 }

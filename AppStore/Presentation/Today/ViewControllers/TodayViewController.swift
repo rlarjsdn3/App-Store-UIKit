@@ -9,20 +9,129 @@ import UIKit
 
 final class TodayViewController: CoreViewController {
     
+    typealias TodayDataSource = UICollectionViewDiffableDataSource<TodayContent.Section, TodayContent.Item>
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    private var dataSource: TodayDataSource!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupDataSource()
+        applySnapshot()
     }
-
-    override func setupHierachy() {
-
-    }
-
+    
     override func setupAttribues() {
-
+        collectionView.delegate = self
+        collectionView.collectionViewLayout = createCollectionViewLayout()
     }
+    
+    private func createCollectionViewLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout { [weak self] sectionIndex, environment in
+            guard let section = self?.dataSource.sectionIdentifier(for: sectionIndex)
+            else { return nil }
+            
+            return section.buildLayout(environment)
+        }
+        
+        layout.configuration.interSectionSpacing = 16
+        return layout
+    }
+    
+    private func setupDataSource() {
+        let advertisementCellRegistration = createAdvertisementCellRegistration()
+        let storyCellRegistration = createStoryCellRegistration()
+        let topListCellRegistration = createAppListCellRegistration()
+        let promotionCellRegistration = createPromotionCellRegistration()
+        let cardCellRegistration = createCardCellRegistration()
+        let bigCardCellRegistration = createBigCardCellRegistration()
+        let headerViewRegistration = createDefaultHeaderViewRegistration()
+        
+        dataSource = TodayDataSource(collectionView: collectionView) {
+            collectionView, indexPath, item in
+            item.dequeueReusableCollectionViewCell(
+                collectionView: collectionView,
+                advertisementCellRegistration: advertisementCellRegistration,
+                storyCellRegistration: storyCellRegistration,
+                topListCellRegistration: topListCellRegistration,
+                promotionCellRegistration: promotionCellRegistration,
+                cardCellRegistration: cardCellRegistration,
+                bigCardCellRegistration: bigCardCellRegistration,
+                indexPath: indexPath
+            )
+        }
+        
+        dataSource.supplementaryViewProvider = { [weak self] collectionView, kind, indexPath in
+            guard let section = self?.dataSource.sectionIdentifier(for: indexPath.section)
+            else { return nil }
+            
+            return section.dequeueCollectionReusableView(
+                collectionView: collectionView,
+                defaultHeaderRegistration: headerViewRegistration,
+                indexPath: indexPath
+            )
+        }
+    }
+    
+    private func createAdvertisementCellRegistration() -> UICollectionView.CellRegistration<AdvertisementCollectionViewCell, Advertisement.Content> {
+        UICollectionView.CellRegistration<AdvertisementCollectionViewCell, Advertisement.Content> { cell, indexPath, content in
+            cell.configure(with: content)
+        }
+    }
+    
+    private func createStoryCellRegistration() -> UICollectionView.CellRegistration<StoryCollectionViewCell, Story.Content> {
+        UICollectionView.CellRegistration<StoryCollectionViewCell, Story.Content> { cell, indexPath, content in
+            cell.configure(with: content)
+        }
+    }
+    
+    private func createAppListCellRegistration() -> UICollectionView.CellRegistration<TopListCollectionViewCell, TopList.Content> {
+        UICollectionView.CellRegistration<TopListCollectionViewCell, TopList.Content> { cell, indexPath, content in
+            cell.configure(with: content)
+        }
+    }
+    
+    private func createPromotionCellRegistration() -> UICollectionView.CellRegistration<PromotionCollectionViewCell, TopList.Content> {
+        UICollectionView.CellRegistration<PromotionCollectionViewCell, TopList.Content> { cell, indexPath, content in
+            cell.configure(with: content)
+        }
+    }
+    
+    private func createCardCellRegistration() -> UICollectionView.CellRegistration<CardCollectionViewCell, [Card.Content]> {
+        UICollectionView.CellRegistration<CardCollectionViewCell, [Card.Content]> { cell, indexPath, content in
+            cell.configure(with: content)
+        }
+    }
+    
+    private func createBigCardCellRegistration() -> UICollectionView.CellRegistration<BigCardCollectionViewCell, Card.Content> {
+        UICollectionView.CellRegistration<BigCardCollectionViewCell, Card.Content> { cell, indexPath, content in
+            cell.configure(with: content)
+        }
+    }
+    
+    private func createDefaultHeaderViewRegistration() -> UICollectionView.SupplementaryRegistration<UICollectionViewListCell> {
+        UICollectionView.SupplementaryRegistration(
+            elementKind: UICollectionView.elementKindSectionHeader
+        ) { [weak self] supplementaryView, elementKind, indexPath in
+            guard let section = self?.dataSource.sectionIdentifier(for: indexPath.section)
+            else { return }
+        
+            // TODO: - configure supplementaryView depending on sectionDescriptor..
+        }
+    }
+    
+    private func applySnapshot() {
+        var snapshot = NSDiffableDataSourceSnapshot<TodayContent.Section, TodayContent.Item>()
+        dataSource.apply(snapshot, animatingDifferences: false)
+    }
+}
 
-    override func setupAutoLayout() {
-
+extension TodayViewController: UICollectionViewDelegate {
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
     }
 }
 
@@ -41,3 +150,10 @@ final class TodayViewController: CoreViewController {
 
 // 아이패드 환경 기준으로 셀 구현 전략
 // - 아이폰과 섹션을 최대한 비슷하게 가져가고 / 레이아웃은 완전히 다르게 짜야할듯
+
+
+// 집에 가서 할일
+// - 모델이 올바른지 검증 + 이름 바꾸기(~Response) + 목 데이터 만들기 (부분 데이터만)
+// - HeaderView에 들어갈 extension 코드 구현
+// - 각 셀이 임시 데이터 넣기 + 레이아웃이 의도대로 잘 반영되는지 검사 (섹션이 있고 없고 등에서)
+// - TopBarCell, AppInfoCell UI 구현 + CardCell UI 구현
