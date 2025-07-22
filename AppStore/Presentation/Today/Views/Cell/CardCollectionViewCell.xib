@@ -16,26 +16,15 @@
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Aip-um-fQk">
                 <rect key="frame" x="0.0" y="0.0" width="410" height="81"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRq-k8-Vs4">
-                        <rect key="frame" x="0.0" y="0.0" width="410" height="81"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </subviews>
-                <constraints>
-                    <constraint firstAttribute="trailing" secondItem="kRq-k8-Vs4" secondAttribute="trailing" id="5lc-ql-ujS"/>
-                    <constraint firstAttribute="bottom" secondItem="kRq-k8-Vs4" secondAttribute="bottom" id="Gel-BY-Ocf"/>
-                    <constraint firstItem="kRq-k8-Vs4" firstAttribute="leading" secondItem="Aip-um-fQk" secondAttribute="leading" id="Xl1-da-Bc2"/>
-                    <constraint firstItem="kRq-k8-Vs4" firstAttribute="top" secondItem="Aip-um-fQk" secondAttribute="top" id="ZP8-KT-HDw"/>
-                </constraints>
             </collectionViewCellContentView>
+            <color key="backgroundColor" systemColor="systemPinkColor"/>
             <size key="customSize" width="410" height="81"/>
             <point key="canvasLocation" x="18.320610687022899" y="-296.12676056338029"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

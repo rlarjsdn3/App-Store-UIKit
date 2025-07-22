@@ -9,15 +9,15 @@ import Foundation
 
 struct ApplicationData {
 
-    let today: [Today]
-
     struct Today {
         let section: TodayContent.Section
         let items: [TodayContent.Item]
     }
 
+    let todays: [Today]
+    
     init() {
-        today = [
+        todays = [
             Today(
                 section: .main(.emptySection()),
                 items: [
@@ -35,15 +35,11 @@ struct ApplicationData {
             ),
             Today(
                 section: .main(.funForTheWholeFamily),
-                items: [
-                    .story(.robloxStory)
-                ]
+                items: [.story(.robloxStory)]
             ),
             Today(
                 section: .main(.letTheAdventureBegin),
-                items: [
-                    .topList(.mustPlayAdventureGames)
-                ]
+                items: [.topList(.mustPlayAdventureGames)]
             ),
             Today(
                 section: .main(.appStoreClassic),
@@ -54,11 +50,16 @@ struct ApplicationData {
             ),
             Today(
                 section: .card(.findBestApp),
-                items: [.card([.requiredProductiviyApp10, .requiredHealthApp10, .requiredMoneyApp10, .requiredExcerciseApp10])]
+                items: [
+                    .card(.requiredProductiviyApp10),
+                    .card(.requiredHealthApp10),
+                    .card(.requiredMoneyApp10),
+                    .card(.requiredExcerciseApp10)
+                ]
             ),
             Today(
                 section: .main(.enhanceProductivity),
-                items: [.topList(.collegeLifeCheatCode)]
+                items: [.promotion(.collegeLifeCheatCode)]
             ),
             Today(
                 section: .main(.rechargeYourProductivity),
@@ -90,7 +91,10 @@ struct ApplicationData {
             ),
             Today(
                 section: .main(.aMoreFulfillingDay),
-                items: [.story(.noteCircleStory), .topList(.appsFitnessEnthusiastsUse)]
+                items: [
+                    .story(.noteCircleStory),
+                    .promotion(.appsFitnessEnthusiastsUse)
+                ]
             ),
             Today(
                 section: .main(.healthyAndWellbeing),
@@ -110,7 +114,10 @@ struct ApplicationData {
             ),
             Today(
                 section: .main(.emptySection()),
-                items: [.card([.yazio, .timeOfMeditation])]
+                items: [
+                    .card(.yazio),
+                    .card(.timeOfMeditation)
+                ]
             ),
             Today(
                 section: .main(.doTogether),

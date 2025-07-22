@@ -13,6 +13,6 @@ final class CardCollectionViewCell: CoreCollectionViewCell {
 
 extension CardCollectionViewCell {
 
-    func configure(with model: [CategoryCard]) {
+    func configure(with model: CategoryCard) {
     }
 }
