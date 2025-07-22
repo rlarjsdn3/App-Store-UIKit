@@ -73,38 +73,38 @@ final class TodayViewController: CoreViewController {
         }
     }
     
-    private func createAdvertisementCellRegistration() -> UICollectionView.CellRegistration<AdvertisementCollectionViewCell, Advertisement.Content> {
-        UICollectionView.CellRegistration<AdvertisementCollectionViewCell, Advertisement.Content> { cell, indexPath, content in
+    private func createAdvertisementCellRegistration() -> UICollectionView.CellRegistration<AdvertisementCollectionViewCell, Advertisement> {
+        UICollectionView.CellRegistration<AdvertisementCollectionViewCell, Advertisement>(cellNib: AdvertisementCollectionViewCell.nib) { cell, indexPath, content in
             cell.configure(with: content)
         }
     }
     
-    private func createStoryCellRegistration() -> UICollectionView.CellRegistration<StoryCollectionViewCell, Story.Content> {
-        UICollectionView.CellRegistration<StoryCollectionViewCell, Story.Content> { cell, indexPath, content in
+    private func createStoryCellRegistration() -> UICollectionView.CellRegistration<StoryCollectionViewCell, AppStory> {
+        UICollectionView.CellRegistration<StoryCollectionViewCell, AppStory>(cellNib: StoryCollectionViewCell.nib) { cell, indexPath, content in
             cell.configure(with: content)
         }
     }
     
-    private func createAppListCellRegistration() -> UICollectionView.CellRegistration<TopListCollectionViewCell, TopList.Content> {
-        UICollectionView.CellRegistration<TopListCollectionViewCell, TopList.Content> { cell, indexPath, content in
+    private func createAppListCellRegistration() -> UICollectionView.CellRegistration<TopListCollectionViewCell, PopularTopList> {
+        UICollectionView.CellRegistration<TopListCollectionViewCell, PopularTopList>(cellNib: TopListCollectionViewCell.nib) { cell, indexPath, content in
             cell.configure(with: content)
         }
     }
     
-    private func createPromotionCellRegistration() -> UICollectionView.CellRegistration<PromotionCollectionViewCell, TopList.Content> {
-        UICollectionView.CellRegistration<PromotionCollectionViewCell, TopList.Content> { cell, indexPath, content in
+    private func createPromotionCellRegistration() -> UICollectionView.CellRegistration<PromotionCollectionViewCell, PopularTopList> {
+        UICollectionView.CellRegistration<PromotionCollectionViewCell, PopularTopList>(cellNib: PromotionCollectionViewCell.nib) { cell, indexPath, content in
             cell.configure(with: content)
         }
     }
     
-    private func createCardCellRegistration() -> UICollectionView.CellRegistration<CardCollectionViewCell, [Card.Content]> {
-        UICollectionView.CellRegistration<CardCollectionViewCell, [Card.Content]> { cell, indexPath, content in
+    private func createCardCellRegistration() -> UICollectionView.CellRegistration<CardCollectionViewCell, [CategoryCard]> {
+        UICollectionView.CellRegistration<CardCollectionViewCell, [CategoryCard]>(cellNib: CardCollectionViewCell.nib) { cell, indexPath, content in
             cell.configure(with: content)
         }
     }
     
-    private func createBigCardCellRegistration() -> UICollectionView.CellRegistration<BigCardCollectionViewCell, Card.Content> {
-        UICollectionView.CellRegistration<BigCardCollectionViewCell, Card.Content> { cell, indexPath, content in
+    private func createBigCardCellRegistration() -> UICollectionView.CellRegistration<BigCardCollectionViewCell, CategoryCard> {
+        UICollectionView.CellRegistration<BigCardCollectionViewCell, CategoryCard>(cellNib: BigCardCollectionViewCell.nib) { cell, indexPath, content in
             cell.configure(with: content)
         }
     }
@@ -115,13 +115,21 @@ final class TodayViewController: CoreViewController {
         ) { [weak self] supplementaryView, elementKind, indexPath in
             guard let section = self?.dataSource.sectionIdentifier(for: indexPath.section)
             else { return }
-        
+
+            if case .main(let descriptor) = section {
+                supplementaryView.configure(with: descriptor)
+            }
+
             // TODO: - configure supplementaryView depending on sectionDescriptor..
         }
     }
-    
+
     private func applySnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<TodayContent.Section, TodayContent.Item>()
+//        snapshot.appendSections([.main(.aHealthierMe)])
+//        snapshot.appendItems([.story(.angryBirdsBounceStory), .advertisement(.temuAdvertisement)], toSection: .main(.aHealthierMe))
+
+        
         dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
@@ -153,7 +161,7 @@ extension TodayViewController: UICollectionViewDelegate {
 
 
 // 집에 가서 할일
-// - 모델이 올바른지 검증 + 이름 바꾸기(~Response) + 목 데이터 만들기 (부분 데이터만)
-// - HeaderView에 들어갈 extension 코드 구현
+// - 모델이 올바른지 검증 + 이름 바꾸기(~Response) + 목 데이터 만들기 (부분 데이터만) ✅
+// - HeaderView에 들어갈 extension 코드 구현 ✅
 // - 각 셀이 임시 데이터 넣기 + 레이아웃이 의도대로 잘 반영되는지 검사 (섹션이 있고 없고 등에서)
 // - TopBarCell, AppInfoCell UI 구현 + CardCell UI 구현

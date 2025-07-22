@@ -14,7 +14,7 @@ final class PromotionCollectionViewCell: CoreCollectionViewCell {
 
 extension PromotionCollectionViewCell {
     
-    func configure(with model: TopList.Content) {
+    func configure(with model: PopularTopList) {
         
     }
 }

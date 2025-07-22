@@ -31,17 +31,17 @@ enum TodayContent {
 
     enum Item: Hashable {
         ///
-        case advertisement(Advertisement.Content)
+        case advertisement(Advertisement)
         ///
-        case story(Story.Content)
+        case story(AppStory)
         ///
-        case toplist(TopList.Content)
+        case topList(PopularTopList)
         ///
-        case promotion(TopList.Content)
+        case promotion(PopularTopList)
         ///
-        case card([Card.Content])
+        case card([CategoryCard])
         ///
-        case bigCard(Card.Content)
+        case bigCard(CategoryCard)
     }
 }
 
@@ -49,12 +49,12 @@ extension TodayContent.Item {
 
     func dequeueReusableCollectionViewCell(
         collectionView: UICollectionView,
-        advertisementCellRegistration: UICollectionView.CellRegistration<AdvertisementCollectionViewCell, Advertisement.Content>,
-        storyCellRegistration: UICollectionView.CellRegistration<StoryCollectionViewCell, Story.Content>,
-        topListCellRegistration: UICollectionView.CellRegistration<TopListCollectionViewCell, TopList.Content>,
-        promotionCellRegistration: UICollectionView.CellRegistration<PromotionCollectionViewCell, TopList.Content>,
-        cardCellRegistration: UICollectionView.CellRegistration<CardCollectionViewCell, [Card.Content]>,
-        bigCardCellRegistration: UICollectionView.CellRegistration<BigCardCollectionViewCell, Card.Content>,
+        advertisementCellRegistration: UICollectionView.CellRegistration<AdvertisementCollectionViewCell, Advertisement>,
+        storyCellRegistration: UICollectionView.CellRegistration<StoryCollectionViewCell, AppStory>,
+        topListCellRegistration: UICollectionView.CellRegistration<TopListCollectionViewCell, PopularTopList>,
+        promotionCellRegistration: UICollectionView.CellRegistration<PromotionCollectionViewCell, PopularTopList>,
+        cardCellRegistration: UICollectionView.CellRegistration<CardCollectionViewCell, [CategoryCard]>,
+        bigCardCellRegistration: UICollectionView.CellRegistration<BigCardCollectionViewCell, CategoryCard>,
         indexPath: IndexPath
     ) -> UICollectionViewCell {
         switch self {
@@ -70,7 +70,7 @@ extension TodayContent.Item {
                 for: indexPath,
                 item: content
             )
-        case .toplist(let content):
+        case .topList(let content):
             return collectionView.dequeueConfiguredReusableCell(
                 using: topListCellRegistration,
                 for: indexPath,
@@ -114,14 +114,14 @@ extension TodayContent.Section {
         switch self {
         case .main(let descriptor), .card(let descriptor):
             // SectionDescriptor에 유효한 내용(title)이 없을 경우 헤더는 표시되지 않음
-            if hasHeader {
+//            if hasHeader {
                 return collectionView.dequeueConfiguredReusableSupplementary(
                     using: defaultHeaderRegistration,
                     for: indexPath
                 )
-            } else {
-                return nil
-            }
+//            } else {
+//                return nil
+//            }
         default:
             return nil
         }

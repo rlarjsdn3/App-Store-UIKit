@@ -13,6 +13,6 @@ final class StoryCollectionViewCell: CoreCollectionViewCell {
 
 extension StoryCollectionViewCell {
 
-    func configure(with model: Story.Content) {
+    func configure(with model: AppStory) {
     }
 }

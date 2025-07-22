@@ -13,6 +13,6 @@ final class TopListCollectionViewCell: CoreCollectionViewCell {
 
 extension TopListCollectionViewCell {
 
-    func configure(with model: TopList.Content) {
+    func configure(with model: PopularTopList) {
     }
 }
