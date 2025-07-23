@@ -23,6 +23,7 @@ final class TodayViewController: CoreViewController {
     
     override func setupAttribues() {
         collectionView.delegate = self
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
         collectionView.collectionViewLayout = createCollectionViewLayout()
     }
     

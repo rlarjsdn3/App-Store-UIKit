@@ -16,6 +16,22 @@ struct CategoryCard {
     let title: String
     ///
     let subTitle2: String?
+    ///
+    let titleColor: UIColor // 일부 카드 색상 서로 다름
+
+    init(
+        cardTintColor: UIColor,
+        subTitle1: String?,
+        title: String,
+        subTitle2: String?,
+        titleColor: UIColor = .white
+    ) {
+        self.cardTintColor = cardTintColor
+        self.subTitle1 = subTitle1
+        self.title = title
+        self.subTitle2 = subTitle2
+        self.titleColor = titleColor
+    }
 }
 
 extension CategoryCard: Hashable {
@@ -41,7 +57,8 @@ extension CategoryCard {
         cardTintColor: .systemYellow,
         subTitle1: nil,
         title: "필수 금융 앱 10",
-        subTitle2: nil
+        subTitle2: nil,
+        titleColor: .black
     )
 
     static let requiredExcerciseApp10: Self = .init(

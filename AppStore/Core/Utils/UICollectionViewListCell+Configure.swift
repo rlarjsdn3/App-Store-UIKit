@@ -18,7 +18,7 @@ extension UICollectionViewListCell {
         content.secondaryTextProperties.font = .body
         content.secondaryTextProperties.color = .secondaryLabel
         content.textToSecondaryTextVerticalPadding = 0
-        content.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 16, trailing: 0)
+        content.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 12, leading: 0, bottom: 16, trailing: 0)
 
         switch model.type {
         case .singleHeadline:

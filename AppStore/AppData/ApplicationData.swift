@@ -117,7 +117,7 @@ struct ApplicationData {
                 items: [.story(.planfitStory)]
             ),
             Today(
-                section: .main(.emptySection()),
+                section: .card(.emptySection()),
                 items: [
                     .card(.yazio),
                     .card(.timeOfMeditation)

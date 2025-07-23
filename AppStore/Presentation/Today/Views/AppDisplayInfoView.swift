@@ -17,12 +17,17 @@ final class AppDisplayInfoView: CoreView {
     private let downloadButton = UIButton(type: .system)
     
     /// <#Description#>
+    var appTypeLabelColor: UIColor = .whiteWithAlph50 {
+        didSet { appTypeLabel.textColor = appTypeLabelColor }
+    }
+
+    /// <#Description#>
     var titleLabelColor: UIColor = .white {
         didSet { titleLabel.textColor = titleLabelColor }
     }
     
     /// <#Description#>
-    var subtitleLabelColor: UIColor = .systemGray3.withAlphaComponent(0.9) {
+    var subtitleLabelColor: UIColor = .whiteWithAlph50 {
         didSet { subtitleLabel.textColor = subtitleLabelColor }
     }
 
@@ -46,6 +51,7 @@ final class AppDisplayInfoView: CoreView {
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             labelStackView.leadingAnchor.constraint(equalTo: appIconImageView.trailingAnchor, constant: 12),
+            labelStackView.heightAnchor.constraint(lessThanOrEqualTo: appIconImageView.heightAnchor, multiplier: 1.1),
             labelStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             labelStackView.trailingAnchor.constraint(equalTo: downloadButton.leadingAnchor, constant: -12)
         ])
@@ -61,12 +67,14 @@ final class AppDisplayInfoView: CoreView {
 
         appTypeLabel.setContentHuggingPriority(.required, for: .vertical)
         titleLabel.setContentHuggingPriority(.required, for: .vertical)
+        titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
     }
 
     override func setupAttribute() {
         backgroundColor = .clear
 
         appIconImageView.layer.cornerRadius = 14
+        appIconImageView.layer.cornerCurve = .continuous
         appIconImageView.backgroundColor = .systemGray5
 
         labelStackView.axis = .vertical
@@ -79,12 +87,14 @@ final class AppDisplayInfoView: CoreView {
         appTypeLabel.textColor = .systemGray3.withAlphaComponent(0.9)
 
         titleLabel.text = "Angry Birds Bounce"
-        titleLabel.font = .systemFont(ofSize: 18, weight: .medium)
+        titleLabel.font = .systemFont(ofSize: 17, weight: .medium)
         titleLabel.textColor = .white
+        titleLabel.numberOfLines = 2
 
         subtitleLabel.text = "소모임, 챌린지, 스터디, 취미 모임"
         subtitleLabel.font = .systemFont(ofSize: 16, weight: .regular)
         subtitleLabel.textColor = .systemGray3.withAlphaComponent(0.9)
+        subtitleLabel.numberOfLines = 0
     }
 }
 
@@ -98,6 +108,11 @@ extension AppDisplayInfoView {
 
         titleLabel.text = model.appName
         subtitleLabel.text = model.appSubtitle
+    }
+
+    func prepareForResue() {
+        appTypeLabel.text = nil
+        labelStackView.removeArrangedSubview(appTypeLabel)
     }
 }
 

@@ -25,7 +25,7 @@ final class TopListCollectionViewCell: CoreCollectionViewCell {
         contentView.layer.masksToBounds = true
 
         appDispayInfoView.forEach {
-            $0.titleLabelColor = .black
+            $0.titleLabelColor = .label
             $0.subtitleLabelColor = .secondaryLabel
         }
     }

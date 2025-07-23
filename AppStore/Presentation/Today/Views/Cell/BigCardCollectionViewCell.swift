@@ -12,6 +12,16 @@ final class BigCardCollectionViewCell: CoreCollectionViewCell {
     @IBOutlet weak var subTitle1Label: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitle2Label: UILabel!
+
+    override func setupAttribute() {
+        contentView.layer.cornerRadius = 18
+        contentView.layer.cornerCurve = .continuous
+        contentView.layer.masksToBounds = true
+
+        subTitle1Label.textColor = .whiteWithAlph50
+        titleLabel.textColor = .white
+        subTitle2Label.textColor = .whiteWithAlph50
+    }
 }
 
 extension BigCardCollectionViewCell {

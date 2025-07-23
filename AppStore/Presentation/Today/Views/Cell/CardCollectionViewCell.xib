@@ -22,8 +22,8 @@
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="명상의 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbK-r9-w8h">
-                        <rect key="frame" x="19.999999999999993" y="224" width="91.333333333333314" height="24"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                        <rect key="frame" x="14" y="226.33333333333334" width="82.333333333333329" height="21.666666666666657"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -31,7 +31,7 @@
                 <constraints>
                     <constraint firstItem="Z8H-wH-idQ" firstAttribute="leading" secondItem="Aip-um-fQk" secondAttribute="leading" id="2Ci-Un-tlh"/>
                     <constraint firstAttribute="bottom" secondItem="WbK-r9-w8h" secondAttribute="bottom" constant="20" id="Ma5-xU-goH"/>
-                    <constraint firstItem="WbK-r9-w8h" firstAttribute="leading" secondItem="Aip-um-fQk" secondAttribute="leading" constant="20" id="ORj-vo-exh"/>
+                    <constraint firstItem="WbK-r9-w8h" firstAttribute="leading" secondItem="Aip-um-fQk" secondAttribute="leading" constant="14" id="ORj-vo-exh"/>
                     <constraint firstAttribute="trailing" secondItem="Z8H-wH-idQ" secondAttribute="trailing" id="WZR-ch-ENV"/>
                     <constraint firstItem="Z8H-wH-idQ" firstAttribute="top" secondItem="Aip-um-fQk" secondAttribute="top" id="ZKz-ZN-jdG"/>
                     <constraint firstAttribute="bottom" secondItem="Z8H-wH-idQ" secondAttribute="bottom" id="ciT-D1-Gax"/>

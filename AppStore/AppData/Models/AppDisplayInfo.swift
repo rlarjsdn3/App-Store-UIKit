@@ -21,9 +21,16 @@ struct AppDisplayInfo {
     ///
     let appName: String
     ///
+    // let appNameColor: UIColor
+    ///
     let appSubtitle: String
+    // let appSubtitleColor: UIColor
     ///
     let inAppPurchase: Bool
+    ///
+    // let downloadButtonTitleColor: UIColor
+    ///
+    // let downloadButtonTintColor: UIColor
 }
 
 extension AppDisplayInfo: Hashable {

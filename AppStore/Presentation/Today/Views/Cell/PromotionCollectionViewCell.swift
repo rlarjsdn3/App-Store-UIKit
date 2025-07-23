@@ -25,6 +25,19 @@ final class PromotionCollectionViewCell: CoreCollectionViewCell {
             imageView.image = images[index]
         }
     }
+
+    override func setupAttribute() {
+        contentView.layer.cornerRadius = 18
+        contentView.layer.cornerCurve = .continuous
+        contentView.layer.masksToBounds = true
+
+        imageView.forEach {
+            $0.layer.cornerRadius = 14
+            $0.layer.cornerCurve = .continuous
+        }
+
+        subTitleLabel.textColor = .whiteWithAlpha90
+    }
 }
 
 extension PromotionCollectionViewCell {
@@ -35,10 +48,10 @@ extension PromotionCollectionViewCell {
 //        coverImageView.image = model.coverImage
         subTitleLabel.text = model.subTitle ?? ""
         titleLabel.text = model.title
-        iconImages = [model.appInfos[safe: 0]?.appIconImage,
-                      model.appInfos[safe: 1]?.appIconImage,
-                      model.appInfos[safe: 2]?.appIconImage,
-                      model.appInfos[safe: 3]?.appIconImage,
-                      model.appInfos[safe: 4]?.appIconImage]
+//        iconImages = [model.appInfos[safe: 0]?.appIconImage,
+//                      model.appInfos[safe: 1]?.appIconImage,
+//                      model.appInfos[safe: 2]?.appIconImage,
+//                      model.appInfos[safe: 3]?.appIconImage,
+//                      model.appInfos[safe: 4]?.appIconImage]
     }
 }

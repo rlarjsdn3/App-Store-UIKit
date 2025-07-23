@@ -5,17 +5,45 @@
 //  Created by 김건우 on 7/21/25.
 //
 
-import Foundation
+import UIKit
 
 struct AppStory {
     ///
     let subTitle1: String?
     ///
+     let subTitle1Color: UIColor // 에디터의 선택: 색상 검정색
+    ///
     let title: String
+    ///
+     let titleSize: CGFloat // 오늘의 게임 폰트 크기 달리
+    ///
+     let titleColor: UIColor
     ///
     let subTitle2: String?
     ///
+     let subTitle2Color: UIColor // 오늘의 앱은 색상 검정색
+    ///
     let appDisplayInfo: AppDisplayInfo
+
+    init(
+        subTitle1: String?,
+        subTitle1Color: UIColor = .whiteWithAlph50,
+        title: String,
+        titleSize: CGFloat = 30,
+        titleColor: UIColor = .white,
+        subTitle2: String?,
+        subTitle2Color: UIColor = .whiteWithAlph50,
+        appDisplayInfo: AppDisplayInfo
+    ) {
+        self.subTitle1 = subTitle1
+        self.subTitle1Color = subTitle1Color
+        self.title = title
+        self.titleSize = titleSize
+        self.titleColor = titleColor
+        self.subTitle2 = subTitle2
+        self.subTitle2Color = subTitle2Color
+        self.appDisplayInfo = appDisplayInfo
+    }
 }
 
 extension AppStory: Hashable {
@@ -68,6 +96,7 @@ extension AppStory {
     static let supsupStory: Self = .init(
         subTitle1: nil,
         title: "오늘의\n게임",
+        titleSize: 46,
         subTitle2: "동화책처럼 아름다운 숨은 그림 찾기",
         appDisplayInfo: .supsup
     )
@@ -75,7 +104,10 @@ extension AppStory {
     static let pairsStory: Self = .init(
         subTitle1: nil,
         title: "오늘의\n앱",
+        titleSize: 46,
+        titleColor: .black,
         subTitle2: "나와 꼭 맞는 인연을 찾아보세요.",
+        subTitle2Color: .blackWithAlpha50,
         appDisplayInfo: .pairs
     )
 
@@ -95,8 +127,11 @@ extension AppStory {
 
     static let noteCircleStory: Self = .init(
         subTitle1: "모두에게 사랑받는 앱",
+        subTitle1Color: .blackWithAlpha50,
         title: "NoteCircle",
+        titleColor: .black,
         subTitle2: "할 일 관리부터 체크 목록까지 한 번에!",
+        subTitle2Color: .blackWithAlpha50,
         appDisplayInfo: .noteCircle
     )
 
@@ -116,8 +151,11 @@ extension AppStory {
 
     static let feverStory: Self = .init(
         subTitle1: "모두에게 사랑받는 앱",
+        subTitle1Color: .blackWithAlpha50,
         title: "Fever",
+        titleColor: .black,
         subTitle2: "이 도시의 다양한 이벤트를 발견하고 예약하세요.",
+        subTitle2Color: .blackWithAlpha50,
         appDisplayInfo: .fever
     )
 

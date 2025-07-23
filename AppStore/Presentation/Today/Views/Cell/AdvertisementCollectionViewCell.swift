@@ -41,7 +41,7 @@ final class AdvertisementCollectionViewCell: CoreCollectionViewCell {
             endPoint: CGPoint(x: 0, y: 0)
         )
 
-        subTitleLabel.textColor = .systemGray4.withAlphaComponent(0.9)
+        subTitleLabel.textColor = .whiteWithAlph50
     }
 }
 
