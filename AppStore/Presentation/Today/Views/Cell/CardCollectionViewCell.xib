@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,20 +11,42 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cgk-qq-lgQ" customClass="CardCollectionViewCell" customModule="AppStore" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="410" height="81"/>
+            <rect key="frame" x="0.0" y="0.0" width="190" height="268"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Aip-um-fQk">
-                <rect key="frame" x="0.0" y="0.0" width="410" height="81"/>
+                <rect key="frame" x="0.0" y="0.0" width="190" height="268"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z8H-wH-idQ">
+                        <rect key="frame" x="0.0" y="0.0" width="190" height="268"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="명상의 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbK-r9-w8h">
+                        <rect key="frame" x="19.999999999999993" y="224" width="91.333333333333314" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <constraints>
+                    <constraint firstItem="Z8H-wH-idQ" firstAttribute="leading" secondItem="Aip-um-fQk" secondAttribute="leading" id="2Ci-Un-tlh"/>
+                    <constraint firstAttribute="bottom" secondItem="WbK-r9-w8h" secondAttribute="bottom" constant="20" id="Ma5-xU-goH"/>
+                    <constraint firstItem="WbK-r9-w8h" firstAttribute="leading" secondItem="Aip-um-fQk" secondAttribute="leading" constant="20" id="ORj-vo-exh"/>
+                    <constraint firstAttribute="trailing" secondItem="Z8H-wH-idQ" secondAttribute="trailing" id="WZR-ch-ENV"/>
+                    <constraint firstItem="Z8H-wH-idQ" firstAttribute="top" secondItem="Aip-um-fQk" secondAttribute="top" id="ZKz-ZN-jdG"/>
+                    <constraint firstAttribute="bottom" secondItem="Z8H-wH-idQ" secondAttribute="bottom" id="ciT-D1-Gax"/>
+                </constraints>
             </collectionViewCellContentView>
-            <color key="backgroundColor" systemColor="systemPinkColor"/>
-            <size key="customSize" width="410" height="81"/>
-            <point key="canvasLocation" x="18.320610687022899" y="-296.12676056338029"/>
+            <size key="customSize" width="190" height="268"/>
+            <connections>
+                <outlet property="imageView" destination="Z8H-wH-idQ" id="EZr-sK-dYn"/>
+                <outlet property="titleLabel" destination="WbK-r9-w8h" id="dwv-k5-GXy"/>
+            </connections>
+            <point key="canvasLocation" x="-149.61832061068702" y="-230.28169014084509"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

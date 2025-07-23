@@ -30,6 +30,7 @@ enum TodayContent {
     }
 
     enum Item: Hashable {
+        case topBar
         ///
         case advertisement(Advertisement)
         ///
@@ -50,6 +51,7 @@ extension TodayContent.Item {
 
     func dequeueReusableCollectionViewCell(
         collectionView: UICollectionView,
+        topBarCellRegistration: UICollectionView.CellRegistration<TopBarCell, Void>,
         advertisementCellRegistration: UICollectionView.CellRegistration<AdvertisementCollectionViewCell, Advertisement>,
         storyCellRegistration: UICollectionView.CellRegistration<StoryCollectionViewCell, AppStory>,
         topListCellRegistration: UICollectionView.CellRegistration<TopListCollectionViewCell, PopularTopList>,
@@ -59,6 +61,12 @@ extension TodayContent.Item {
         indexPath: IndexPath
     ) -> UICollectionViewCell {
         switch self {
+        case .topBar:
+            return collectionView.dequeueConfiguredReusableCell(
+                using: topBarCellRegistration,
+                for: indexPath,
+                item: ()
+            )
         case .advertisement(let content):
             return collectionView.dequeueConfiguredReusableCell(
                 using: advertisementCellRegistration,

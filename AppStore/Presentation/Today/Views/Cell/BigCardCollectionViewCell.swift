@@ -8,11 +8,21 @@
 import UIKit
 
 final class BigCardCollectionViewCell: CoreCollectionViewCell {
-
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var subTitle1Label: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitle2Label: UILabel!
 }
 
 extension BigCardCollectionViewCell {
-
+    
+    /// <#Description#>
+    /// - Parameter model: <#model description#>
     func configure(with model: CategoryCard) {
+//        imageView.image = model.coverImage
+        imageView.backgroundColor = .systemGray5
+        subTitle1Label.text = model.subTitle1 ?? ""
+        titleLabel.text = model.title
+        subTitle2Label.text = model.subTitle2 ?? ""
     }
 }

@@ -39,6 +39,7 @@ final class TodayViewController: CoreViewController {
     }
     
     private func setupDataSource() {
+        let topBarCellRegistration = createTopBarCellRegistration()
         let advertisementCellRegistration = createAdvertisementCellRegistration()
         let storyCellRegistration = createStoryCellRegistration()
         let topListCellRegistration = createAppListCellRegistration()
@@ -51,6 +52,7 @@ final class TodayViewController: CoreViewController {
             collectionView, indexPath, item in
             item.dequeueReusableCollectionViewCell(
                 collectionView: collectionView,
+                topBarCellRegistration: topBarCellRegistration,
                 advertisementCellRegistration: advertisementCellRegistration,
                 storyCellRegistration: storyCellRegistration,
                 topListCellRegistration: topListCellRegistration,
@@ -70,6 +72,11 @@ final class TodayViewController: CoreViewController {
                 defaultHeaderRegistration: headerViewRegistration,
                 indexPath: indexPath
             )
+        }
+    }
+    
+    private func createTopBarCellRegistration() -> UICollectionView.CellRegistration<TopBarCell, Void> {
+        UICollectionView.CellRegistration(cellNib: TopBarCell.nib) { cell, indexPath, _ in
         }
     }
     
@@ -127,10 +134,13 @@ final class TodayViewController: CoreViewController {
 
     private func applySnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<TodayContent.Section, TodayContent.Item>()
+        snapshot.appendSections([.mostTop])
+        snapshot.appendItems([.topBar], toSection: .mostTop)
         appData.todays.forEach { today in
             snapshot.appendSections([today.section])
             snapshot.appendItems(today.items, toSection: today.section)
         }
+        // TODO: - add 'exchange redeem code' button cell at most below..
         dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
@@ -144,6 +154,9 @@ extension TodayViewController: UICollectionViewDelegate {
     }
 }
 
-//     - [ ] TopBarCell, AppDisplayInfo UI 코드 구현
-//     - [ ] AdvertisementCell, BigCardCell, CardCell UI 코드 구현
-//     - [ ] PromotionCollectionViewCell UI 코드 구현
+//     - [ ] TopBarCell✅, AppDisplayInfo UI 코드 구현
+//     - [ ] AdvertisementCell, BigCardCell✅, CardCell✅ UI 코드 구현
+//     - [ ] PromotionCollectionViewCell✅ UI 코드 구현
+//     - [ ] TopBarCell을 상단에 올리기 (넣기)✅
+//     - [ ] 전체적인 레이아웃 조정하기 (수치값 등)
+//     - [ ] (시간이 되면) 하단 버튼 셀 UI도 구현
