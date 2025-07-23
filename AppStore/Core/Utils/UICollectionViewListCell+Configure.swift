@@ -13,10 +13,12 @@ extension UICollectionViewListCell {
     /// - Parameter model: <#model description#>
     func configure(with model: SectionDescriptor) {
         var content = self.defaultContentConfiguration()
-        content.textProperties.font = .title1Bold
+        content.textProperties.font = .point26Bold
         content.textProperties.color = .label
-        content.secondaryTextProperties.font = .title3
+        content.secondaryTextProperties.font = .body
         content.secondaryTextProperties.color = .secondaryLabel
+        content.textToSecondaryTextVerticalPadding = 0
+        content.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 16, trailing: 0)
 
         switch model.type {
         case .singleHeadline:
@@ -26,10 +28,10 @@ extension UICollectionViewListCell {
             content.secondaryText = model.subTitle
         case .dualHeadlineReversed:
             content.text = model.subTitle
-            content.textProperties.font = .title3
+            content.textProperties.font = UIFont.preferredFont(forTextStyle: .callout)
             content.textProperties.color = .secondaryLabel
             content.secondaryText = model.title
-            content.secondaryTextProperties.font = .title1Bold
+            content.secondaryTextProperties.font = .point26Bold
             content.secondaryTextProperties.color = .label
         }
 
@@ -40,16 +42,12 @@ extension UICollectionViewListCell {
 fileprivate extension UIFont {
     
     /// <#Description#>
-    static let title1Bold: UIFont = {
-        guard let descriptor = UIFontDescriptor
-            .preferredFontDescriptor(withTextStyle: .title1)
-            .withSymbolicTraits(.traitBold)
-        else { return UIFont.preferredFont(forTextStyle: .title1) }
-        return UIFont(descriptor: descriptor, size: 0)
+    static let point26Bold: UIFont = {
+        return UIFont.systemFont(ofSize: 26, weight: .bold)
     }()
     
     /// <#Description#>
-    static let title3: UIFont = {
-        return UIFont.preferredFont(forTextStyle: .title3)
+    static let body: UIFont = {
+        return UIFont.preferredFont(forTextStyle: .body)
     }()
 }

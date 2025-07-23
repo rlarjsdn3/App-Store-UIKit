@@ -20,7 +20,8 @@ final class AppDisplayInfoView: CoreView {
     var titleLabelColor: UIColor = .white {
         didSet { titleLabel.textColor = titleLabelColor }
     }
-
+    
+    /// <#Description#>
     var subtitleLabelColor: UIColor = .systemGray3.withAlphaComponent(0.9) {
         didSet { subtitleLabel.textColor = subtitleLabelColor }
     }
@@ -36,8 +37,8 @@ final class AppDisplayInfoView: CoreView {
     override func setupAutoLayout() {
         appIconImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            appIconImageView.widthAnchor.constraint(equalToConstant: 60),
-            appIconImageView.heightAnchor.constraint(equalToConstant: 60),
+            appIconImageView.widthAnchor.constraint(equalToConstant: 58),
+            appIconImageView.heightAnchor.constraint(equalToConstant: 58),
             appIconImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             appIconImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0)
         ])

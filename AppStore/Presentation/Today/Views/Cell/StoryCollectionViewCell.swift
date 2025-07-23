@@ -17,6 +17,15 @@ final class StoryCollectionViewCell: CoreCollectionViewCell {
     @IBOutlet weak var bottomContainerView: UIView!
     @IBOutlet weak var appDisplayInfoView: AppDisplayInfoView!
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        subtitle1Label.text = nil
+        titleLabel.text = nil
+        subtitle2Label.text = nil
+        labelStackView.removeArrangedSubview(subtitle1Label)
+        labelStackView.removeArrangedSubview(subtitle2Label)
+    }
+
     override func setupAttribute() {
         contentView.layer.cornerRadius = 18
         contentView.layer.cornerCurve = .continuous

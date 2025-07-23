@@ -17,6 +17,8 @@ enum TodayContent {
         ///
         case card(SectionDescriptor)
         ///
+        case advertisement
+        ///
         case mostBottom
 
         /// <#Description#>
@@ -25,6 +27,7 @@ enum TodayContent {
             case .mostTop, .mostBottom: return false
             case .main(let descriptor): return descriptor.title != nil
             case .card(let descriptor): return descriptor.title != nil
+            case .advertisement: return false
             }
         }
     }
@@ -87,7 +90,7 @@ extension TodayContent.Item {
             )
         case .promotion(let content):
             return collectionView.dequeueConfiguredReusableCell(
-                using: topListCellRegistration,
+                using: promotionCellRegistration,
                 for: indexPath,
                 item: content
             )
@@ -145,6 +148,7 @@ extension TodayContent.Section {
         case .mostTop, .mostBottom: return buildTopBottomLayout(environment)
         case .main: return buildMainLayout(environment)
         case .card: return buildCardLayout(environment)
+        case .advertisement: return buildAdvertisementLayout(environment)
         }
     }
     
@@ -157,7 +161,7 @@ extension TodayContent.Section {
 
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(75)
+            heightDimension: .estimated(50)
         )
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
 
@@ -180,7 +184,7 @@ extension TodayContent.Section {
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
 
         let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 18
+        section.interGroupSpacing = 20
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 18, bottom: 0, trailing: 18)
         injectSupplementaryViewIfNeeded(to: section)
         return section
@@ -203,7 +207,27 @@ extension TodayContent.Section {
         injectSupplementaryViewIfNeeded(to: section)
         return section
     }
-    
+
+
+    private func buildAdvertisementLayout(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(175)
+        )
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 20
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 18, bottom: 0, trailing: 18)
+        return section
+    }
+
     private func injectSupplementaryViewIfNeeded(to section: NSCollectionLayoutSection) {
         switch self {
         case .main(_), .card(_):

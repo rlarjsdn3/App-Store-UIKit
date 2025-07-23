@@ -27,15 +27,16 @@ final class TodayViewController: CoreViewController {
     }
     
     private func createCollectionViewLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { [weak self] sectionIndex, environment in
+        let sectionProvider: UICollectionViewCompositionalLayoutSectionProvider = { [weak self] sectionIndex, environment in
             guard let section = self?.dataSource.sectionIdentifier(for: sectionIndex)
             else { return nil }
             
             return section.buildLayout(environment)
         }
-        
-        layout.configuration.interSectionSpacing = 16
-        return layout
+
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 20
+        return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider, configuration: config)
     }
     
     private func setupDataSource() {
