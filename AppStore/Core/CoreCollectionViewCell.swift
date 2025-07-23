@@ -9,17 +9,16 @@ import UIKit
 
 class CoreCollectionViewCell: UICollectionViewCell {
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupHierarchy()
-        setupAttribute()
-        setupAutoLayout()
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        MainActor.assumeIsolated {
+            setupHierarchy()
+            setupAttribute()
+            setupAutoLayout()
+        }
     }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
+
     /// <#Description#>
     func setupHierarchy() {
     }

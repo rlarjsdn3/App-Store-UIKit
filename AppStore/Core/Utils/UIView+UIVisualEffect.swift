@@ -11,10 +11,11 @@ extension UIView {
     
     /// <#Description#>
     /// - Parameter style: <#style description#>
-    func applyVisualEffect(style: UIBlurEffect.Style = .systemMaterialDark) {
+    func applyVisualEffect(style: UIBlurEffect.Style = .systemChromeMaterialDark) {
         let blurEffect = UIBlurEffect(style: style)
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
         visualEffectView.frame = self.bounds
+        visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(visualEffectView)
     }
 }

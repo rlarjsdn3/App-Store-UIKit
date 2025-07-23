@@ -9,6 +9,7 @@ import UIKit
 
 final class AdvertisementCollectionViewCell: CoreCollectionViewCell {
     
+    @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!

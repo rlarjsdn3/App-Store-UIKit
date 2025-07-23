@@ -20,7 +20,6 @@ extension BigCardCollectionViewCell {
     /// - Parameter model: <#model description#>
     func configure(with model: CategoryCard) {
 //        imageView.image = model.coverImage
-        imageView.backgroundColor = .systemGray5
         subTitle1Label.text = model.subTitle1 ?? ""
         titleLabel.text = model.title
         subTitle2Label.text = model.subTitle2 ?? ""
