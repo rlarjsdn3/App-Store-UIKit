@@ -9,8 +9,12 @@ import UIKit
 
 extension UICollectionViewListCell {
     
-    /// <#Description#>
-    /// - Parameter model: <#model description#>
+    /// 섹션 정보를 기반으로 셀의 콘텐츠를 구성합니다.
+    ///
+    /// `SectionDescriptor`의 타입에 따라 텍스트 및 서브텍스트의 내용, 스타일이 다르게 적용됩니다.
+    /// `singleHeadline`, `dualHeadline`, `dualHeadlineReversed` 유형을 각각 구분하여 폰트와 색상을 적절히 설정합니다.
+    ///
+    /// - Parameter model: 셀에 표시할 섹션 정보를 담고 있는 모델입니다.
     func configure(with model: SectionDescriptor) {
         var content = self.defaultContentConfiguration()
         content.textProperties.font = .point26Bold
@@ -40,13 +44,11 @@ extension UICollectionViewListCell {
 }
 
 fileprivate extension UIFont {
-    
-    /// <#Description#>
+
     static let point26Bold: UIFont = {
         return UIFont.systemFont(ofSize: 26, weight: .bold)
     }()
-    
-    /// <#Description#>
+
     static let body: UIFont = {
         return UIFont.preferredFont(forTextStyle: .body)
     }()

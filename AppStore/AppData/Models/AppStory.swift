@@ -7,37 +7,45 @@
 
 import UIKit
 
+/// 앱 스토리 콘텐츠를 구성하는 모델입니다.
+/// 제목, 서브타이틀, 텍스트 스타일, 연관 앱 정보 등을 포함합니다.
 struct AppStory {
-    ///
+
+    /// 상단에 표시될 첫 번째 서브타이틀입니다.
     let primarySubtitle: String?
-    ///
+
+    /// 첫 번째 서브타이틀에 적용할 텍스트 색상입니다.
     let primarySubtitleColor: UIColor
 
-    ///
+    /// 메인 타이틀 텍스트입니다.
     let title: String
-    ///
+
+    /// 메인 타이틀의 글꼴 크기입니다.
     let titleFontSize: CGFloat
-    ///
+
+    /// 메인 타이틀에 적용할 텍스트 색상입니다.
     let titleColor: UIColor
-    ///
+
+    /// 메인 타이틀의 줄 간격(line spacing)입니다.
     let titleLineSpacing: CGFloat
 
-    ///
-    let secondaySubtitle: String?
-    ///
+    /// 하단에 표시될 두 번째 서브타이틀입니다.
+    let secondarySubtitle: String?
+
+    /// 두 번째 서브타이틀에 적용할 텍스트 색상입니다.
     let secondarySubtitleColor: UIColor
 
-    ///
+    /// 스토리와 연결된 앱 정보입니다.
     let appInfo: AppDisplayInfo
 
     init(
         subTitle1: String?,
-        subTitle1Color: UIColor = .whiteWithAlph50,
+        subTitle1Color: UIColor = .whiteWithAlpha50,
         title: String,
         titleSize: CGFloat = 30,
         titleColor: UIColor = .white,
         subTitle2: String?,
-        subTitle2Color: UIColor = .whiteWithAlph50,
+        subTitle2Color: UIColor = .whiteWithAlpha50,
         titleSpacing: CGFloat = 2,
         appDisplayInfo: AppDisplayInfo
     ) {
@@ -46,7 +54,7 @@ struct AppStory {
         self.title = title
         self.titleFontSize = titleSize
         self.titleColor = titleColor
-        self.secondaySubtitle = subTitle2
+        self.secondarySubtitle = subTitle2
         self.secondarySubtitleColor = subTitle2Color
         self.titleLineSpacing = titleSpacing
         self.appInfo = appDisplayInfo

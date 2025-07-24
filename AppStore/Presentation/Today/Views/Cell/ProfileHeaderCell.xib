@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cgk-qq-lgQ" customClass="ProfileHeaderCell" customModule="AppStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="410" height="69"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Aip-um-fQk">
+                <rect key="frame" x="0.0" y="0.0" width="410" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9yg-A3-Xz9">
+                        <rect key="frame" x="0.0" y="0.0" width="410" height="69"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Geq-Dn-Vhq">
+                                <rect key="frame" x="0.0" y="0.0" width="410" height="69"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="투데이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9g-6U-1tl">
+                                        <rect key="frame" x="0.0" y="26" width="93.666666666666671" height="43"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7월 13일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vX-o5-zug">
+                                        <rect key="frame" x="101.66666666666666" y="37.333333333333336" width="265.33333333333337" height="28.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="ZEc-RT-U7y">
+                                        <rect key="frame" x="375" y="26" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="jNp-ji-0Jk"/>
+                                            <constraint firstAttribute="height" constant="35" id="viM-tv-FFd"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="9yg-A3-Xz9" secondAttribute="trailing" id="Eay-Wz-Mzf"/>
+                    <constraint firstItem="9yg-A3-Xz9" firstAttribute="leading" secondItem="Aip-um-fQk" secondAttribute="leading" id="LHM-jp-LGN"/>
+                    <constraint firstAttribute="bottom" secondItem="9yg-A3-Xz9" secondAttribute="bottom" id="osL-0R-310"/>
+                    <constraint firstItem="9yg-A3-Xz9" firstAttribute="top" secondItem="Aip-um-fQk" secondAttribute="top" id="w1c-cQ-BPb"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="410" height="95"/>
+            <connections>
+                <outlet property="dateLabel" destination="8vX-o5-zug" id="d72-WP-kFb"/>
+                <outlet property="profileImageView" destination="ZEc-RT-U7y" id="idQ-pZ-zZc"/>
+            </connections>
+            <point key="canvasLocation" x="18.320610687022899" y="-291.90140845070425"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="whitey" width="1512" height="1705.5"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

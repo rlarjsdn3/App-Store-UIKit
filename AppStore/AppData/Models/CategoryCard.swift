@@ -7,17 +7,23 @@
 
 import UIKit
 
+/// 카테고리 카드에 표시될 정보를 담는 모델입니다.
+/// 제목, 서브타이틀, 색상 정보 등을 포함합니다.
 struct CategoryCard {
-    ///
-    let prumarySubtitle: String?
-    ///
+
+    /// 카드 상단에 표시될 첫 번째 서브타이틀입니다.
+    let primarySubtitle: String?
+
+    /// 카드의 메인 타이틀입니다.
     let title: String
-    ///
+
+    /// 카드 하단에 표시될 두 번째 서브타이틀입니다.
     let secondarySubtitle: String?
-    ///
+
+    /// 타이틀에 적용할 텍스트 색상입니다.
     let titleColor: UIColor
 
-    ///
+    /// 카드 전체에 적용할 배경 색상 또는 강조 색상입니다.
     let cardTintColor: UIColor
 
     init(
@@ -28,7 +34,7 @@ struct CategoryCard {
         titleColor: UIColor = .white
     ) {
         self.cardTintColor = cardTintColor
-        self.prumarySubtitle = subTitle1
+        self.primarySubtitle = subTitle1
         self.title = title
         self.secondarySubtitle = subTitle2
         self.titleColor = titleColor

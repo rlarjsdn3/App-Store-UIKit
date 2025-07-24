@@ -10,16 +10,23 @@ import UIKit
 let appStorePopularListVerticalList  : Int = 1
 let appStorePopularListCardHorizontalList: Int = 2
 
+/// 인기 앱 목록 섹션 정보를 나타내는 모델입니다.
+/// 섹션의 제목, 서브타이틀, 스타일 및 포함된 앱 정보를 포함합니다.
 struct PopularTopList {
-    ///
+
+    /// 목록의 유형을 나타내는 값입니다. (예: 추천, 트렌딩 등)
     let type: Int
-    ///
+
+    /// 섹션 상단에 표시될 서브타이틀입니다.
     let subtitle: String?
-    ///
+
+    /// 섹션의 메인 타이틀입니다.
     let title: String
-    ///
+
+    /// 섹션에 포함될 앱 정보 리스트입니다.
     let appInfos: [AppDisplayInfo]
-    ///
+
+    /// 섹션의 배경색입니다.
     var backgroundColor: UIColor
 
     init(
@@ -76,7 +83,7 @@ extension PopularTopList {
 
     static let mastermindsForVoca: Self = .init(
         listTintColor: .systemBlue,
-        appInfos: [.quizlet, .cake, .vadaDictionary, .lookUp, .speak],
+        appInfos: [.quizlet, .cake, .vocaDictionary, .lookUp, .speak],
         subTitle: "배워봅시다",
         title: "영어 단어 마스터하기",
         type: appStorePopularListVerticalList

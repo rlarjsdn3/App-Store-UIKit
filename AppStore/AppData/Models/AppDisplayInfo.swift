@@ -7,39 +7,46 @@
 
 import UIKit
 
-#warning("각 버튼 색상 집어넣기")
-
+/// 앱 정보를 나타내는 모델입니다.
+/// 앱 아이콘, 이름, 서브타이틀, 버튼 스타일 등 앱의 기본 표시 정보를 포함합니다.
 struct AppDisplayInfo {
-    ///
+
+    /// 앱 아이콘에 적용할 틴트 색상입니다.
     let iconTintColor: UIColor
-    ///
+
+    /// 앱 아이콘에 사용할 이미지 리소스입니다.
     let iconImageResource: ImageResource
-    ///
+
+    /// 앱 아이콘 이미지입니다. `iconImageResource`를 통해 생성됩니다.
     var iconImage: UIImage? {
         UIImage(resource: iconImageResource)
     }
 
-    ///
+    /// 앱의 타입(예: 일반 앱, Apple Arcade 등)입니다.
     let type: AppType?
 
-    ///
+    /// 앱 이름입니다.
     let name: String
-    ///
+
+    /// 앱 이름에 적용할 텍스트 색상입니다.
     let nameColor: UIColor
 
-    ///
+    /// 앱 서브타이틀(설명 또는 부가 정보)입니다.
     let subtitle: String
-    ///
+
+    /// 서브타이틀에 적용할 텍스트 색상입니다.
     let subtitleColor: UIColor
 
-    ///
+    /// 다운로드 버튼의 타이틀(텍스트)에 적용할 색상입니다.
     let buttonTitleColor: UIColor
-    ///
+
+    /// 다운로드 버튼의 배경색입니다.
     let buttonBackgroundColor: UIColor
-    ///
+
+    /// 다운로드 버튼이 강조(highlighted) 상태일 때의 배경색입니다.
     let buttonHighlightedBackgroundColor: UIColor
 
-    ///
+    /// 인앱 결제 항목이 포함되어 있는지 여부입니다.
     let hasInAppPurchase: Bool
 
     init(
@@ -49,10 +56,10 @@ struct AppDisplayInfo {
         appName: String,
         appNameColor: UIColor = .white,
         appSubtitle: String,
-        appSubtitleColor: UIColor = .whiteWithAlph50,
+        appSubtitleColor: UIColor = .whiteWithAlpha50,
         inAppPurchase: Bool,
         downloadButtonTitleColor: UIColor = .white,
-        downloadButtonTintColor: UIColor = .whiteWithAlph50,
+        downloadButtonTintColor: UIColor = .whiteWithAlpha50,
         downloadButtonDownloadedTintColor: UIColor = .blackWithAlpha10
     ) {
         self.iconTintColor = appIconTintColor
@@ -69,16 +76,14 @@ struct AppDisplayInfo {
     }
 }
 
-extension AppDisplayInfo: Hashable {
-}
-
 extension AppDisplayInfo {
 
-    ///
     enum AppType: String {
-        ///
         case appleArcade = "Apple Arcade"
     }
+}
+
+extension AppDisplayInfo: Hashable {
 }
 
 extension AppDisplayInfo {
@@ -357,7 +362,7 @@ extension AppDisplayInfo {
         inAppPurchase: true
     )
 
-    static let vadaDictionary: Self = .init(
+    static let vocaDictionary: Self = .init(
         appIconTintColor: .systemPurple,
         appIconImageResource: .rocket,
         appType: nil,
@@ -460,8 +465,12 @@ extension AppDisplayInfo {
         appIconImageResource: .rocket,
         appType: nil,
         appName: "Fever: 이벤트 · 티켓",
+        appNameColor: .black,
         appSubtitle: "내 주변 즐길거리 · 재미",
-        inAppPurchase: false
+        appSubtitleColor: .blackWithAlpha50,
+        inAppPurchase: false,
+        downloadButtonTitleColor: .white,
+        downloadButtonTintColor: .blackWithAlpha50
     )
 
     static let appleInvitation: Self = .init(

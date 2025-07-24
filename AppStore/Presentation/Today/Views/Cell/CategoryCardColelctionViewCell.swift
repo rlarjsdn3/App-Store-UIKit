@@ -1,5 +1,5 @@
 //
-//  CardCollectionViewCell.swift
+//  CategoryCardColelctionViewCell.swift
 //  AppStore
 //
 //  Created by 김건우 on 7/21/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CardCollectionViewCell: CoreCollectionViewCell {
+final class CategoryCardColelctionViewCell: CoreCollectionViewCell {
 
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -19,10 +19,11 @@ final class CardCollectionViewCell: CoreCollectionViewCell {
     }
 }
 
-extension CardCollectionViewCell {
+extension CategoryCardColelctionViewCell {
     
-    /// <#Description#>
-    /// - Parameter model: <#model description#>
+    /// 셀의 제목 레이블을 주어진 모델 정보로 구성합니다.
+    ///
+    /// - Parameter model: 카드 제목 및 텍스트 색상을 포함한 카테고리 카드 모델입니다.
     func configure(with model: CategoryCard) {
         titleLabel.text = model.title
         titleLabel.textColor = model.titleColor

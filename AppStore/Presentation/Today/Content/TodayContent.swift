@@ -17,8 +17,6 @@ enum TodayContent {
         ///
         case card(SectionDescriptor)
         ///
-        case advertisement
-        ///
         case mostBottom
 
         /// <#Description#>
@@ -27,15 +25,15 @@ enum TodayContent {
             case .mostTop, .mostBottom: return false
             case .main(let descriptor): return descriptor.title != nil
             case .card(let descriptor): return descriptor.title != nil
-            case .advertisement: return false
             }
         }
     }
 
     enum Item: Hashable {
+        ///
         case topBar
         ///
-        case advertisement(Advertisement)
+        case advertisement(AppAdBanner)
         ///
         case story(AppStory)
         ///
@@ -46,6 +44,8 @@ enum TodayContent {
         case card(CategoryCard)
         ///
         case bigCard(CategoryCard)
+        ///
+        case termsOfUse
     }
 }
 
@@ -54,57 +54,64 @@ extension TodayContent.Item {
 
     func dequeueReusableCollectionViewCell(
         collectionView: UICollectionView,
-        topBarCellRegistration: UICollectionView.CellRegistration<TopBarCell, Void>,
-        advertisementCellRegistration: UICollectionView.CellRegistration<AdvertisementCollectionViewCell, Advertisement>,
-        storyCellRegistration: UICollectionView.CellRegistration<StoryCollectionViewCell, AppStory>,
-        topListCellRegistration: UICollectionView.CellRegistration<TopListCollectionViewCell, PopularTopList>,
-        promotionCellRegistration: UICollectionView.CellRegistration<PromotionCollectionViewCell, PopularTopList>,
-        cardCellRegistration: UICollectionView.CellRegistration<CardCollectionViewCell, CategoryCard>,
-        bigCardCellRegistration: UICollectionView.CellRegistration<BigCardCollectionViewCell, CategoryCard>,
+        profileHeaderCellRegistration: UICollectionView.CellRegistration<ProfileHeaderCell, Void>,
+        appAdBannerCellRegistration: UICollectionView.CellRegistration<AppAdBannerCollectionViewCell, AppAdBanner>,
+        appStoryCellRegistration: UICollectionView.CellRegistration<AppStoryCollectionViewCell, AppStory>,
+        popularTopListCellRegistration: UICollectionView.CellRegistration<PopularTopListCollectionViewCell, PopularTopList>,
+        appGroupPromotionCellRegistration: UICollectionView.CellRegistration<AppGroupPromotionCollectionViewCell, PopularTopList>,
+        categoryCardCellRegistration: UICollectionView.CellRegistration<CategoryCardColelctionViewCell, CategoryCard>,
+        messageCardCellRegistration: UICollectionView.CellRegistration<MessageCardCollectionViewCell, CategoryCard>,
+        termsOfUseCellRegistration: UICollectionView.CellRegistration<TermsOfUseCollectionViewCell, Void>,
         indexPath: IndexPath
     ) -> UICollectionViewCell {
         switch self {
         case .topBar:
             return collectionView.dequeueConfiguredReusableCell(
-                using: topBarCellRegistration,
+                using: profileHeaderCellRegistration,
                 for: indexPath,
                 item: ()
             )
         case .advertisement(let content):
             return collectionView.dequeueConfiguredReusableCell(
-                using: advertisementCellRegistration,
+                using: appAdBannerCellRegistration,
                 for: indexPath,
                 item: content
             )
         case .story(let content):
             return collectionView.dequeueConfiguredReusableCell(
-                using: storyCellRegistration,
+                using: appStoryCellRegistration,
                 for: indexPath,
                 item: content
             )
         case .topList(let content):
             return collectionView.dequeueConfiguredReusableCell(
-                using: topListCellRegistration,
+                using: popularTopListCellRegistration,
                 for: indexPath,
                 item: content
             )
         case .promotion(let content):
             return collectionView.dequeueConfiguredReusableCell(
-                using: promotionCellRegistration,
+                using: appGroupPromotionCellRegistration,
                 for: indexPath,
                 item: content
             )
         case .card(let content):
             return collectionView.dequeueConfiguredReusableCell(
-                using: cardCellRegistration,
+                using: categoryCardCellRegistration,
                 for: indexPath,
                 item: content
             )
         case .bigCard(let content):
             return collectionView.dequeueConfiguredReusableCell(
-                using: bigCardCellRegistration,
+                using: messageCardCellRegistration,
                 for: indexPath,
                 item: content
+            )
+        case .termsOfUse:
+            return collectionView.dequeueConfiguredReusableCell(
+                using: termsOfUseCellRegistration,
+                for: indexPath,
+                item: ()
             )
         }
     }
@@ -148,14 +155,13 @@ extension TodayContent.Section {
         case .mostTop, .mostBottom: return buildTopBottomLayout(environment)
         case .main: return buildMainLayout(environment)
         case .card: return buildCardLayout(environment)
-        case .advertisement: return buildAdvertisementLayout(environment)
         }
     }
     
     private func buildTopBottomLayout(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(1)
+            heightDimension: .estimated(44)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
@@ -173,7 +179,7 @@ extension TodayContent.Section {
     private func buildMainLayout(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(1)
+            heightDimension: .estimated(450)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
@@ -215,13 +221,13 @@ extension TodayContent.Section {
     private func buildAdvertisementLayout(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(1)
+            heightDimension: .estimated(375)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(175)
+            heightDimension: .estimated(375)
         )
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
 

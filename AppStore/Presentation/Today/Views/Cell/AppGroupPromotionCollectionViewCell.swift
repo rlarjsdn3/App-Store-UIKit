@@ -1,5 +1,5 @@
 //
-//  PromotionCollectionViewCell.swift
+//  AppGroupPromotionCollectionViewCell.swift
 //  AppStore
 //
 //  Created by 김건우 on 7/22/25.
@@ -7,24 +7,12 @@
 
 import UIKit
 
-final class PromotionCollectionViewCell: CoreCollectionViewCell {
+final class AppGroupPromotionCollectionViewCell: CoreCollectionViewCell {
 
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet var iconImageViews: [UIImageView]!
-    
-    var iconImages: [UIImage?] {
-        get { iconImageViews.map({ $0.image }) }
-        set { setIconImages(newValue) }
-    }
-    
-    private func setIconImages(_ images: [UIImage?]) {
-        for (index, imageView) in iconImageViews.enumerated() {
-            imageView.image = images[index]
-        }
-    }
 
     override func setupAttribute() {
         contentView.layer.cornerRadius = 18
@@ -40,10 +28,11 @@ final class PromotionCollectionViewCell: CoreCollectionViewCell {
     }
 }
 
-extension PromotionCollectionViewCell {
+extension AppGroupPromotionCollectionViewCell {
     
-    /// <#Description#>
-    /// - Parameter model: <#model description#>
+    /// 셀의 제목 및 부제목 레이블을 주어진 인기 항목 정보로 설정합니다.
+    ///
+    /// - Parameter model: 제목과 부제목을 포함하는 인기 항목(PopularTopList) 모델입니다.
     func configure(with model: PopularTopList) {
         subtitleLabel.text = model.subtitle
         titleLabel.text = model.title

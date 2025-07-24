@@ -20,15 +20,11 @@ struct ApplicationData {
         todays = [
             Today(
                 section: .main(.emptySection(id: 123)),
-                items: [.story(.angryBirdsBounceStory)]
-            ),
-            Today(
-                section: .advertisement,
-                items:[.advertisement(.temuAdvertisement)]
-            ),
-            Today(
-                section: .main(.emptySection(id: 456)),
-                items: [.topList(.mostLovedAppsList)]
+                items: [
+                    .story(.angryBirdsBounceStory),
+                    .advertisement(.temuAdvertisement),
+                    .topList(.mostLovedAppsList)
+                ]
             ),
             Today(
                 section: .main(.workSmartWithAI),

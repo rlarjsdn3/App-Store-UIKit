@@ -7,15 +7,30 @@
 
 import Foundation
 
+/// 섹션의 메타데이터를 나타내는 모델입니다.
+/// 식별자, 제목, 서브타이틀, 유형 등의 정보를 포함합니다.
 struct SectionDescriptor: Identifiable {
-    ///
+
+    /// 섹션을 구분하기 위한 고유 식별자입니다.
     let id: Int
-    ///
+
+    /// 섹션의 제목입니다.
     let title: String?
-    ///
+
+    /// 섹션의 서브타이틀입니다.
     let subtitle: String?
-    ///
+
+    /// 섹션의 분류를 나타내는 타입입니다.
     let type: `Type`
+}
+
+extension SectionDescriptor {
+
+    enum `Type`: Int {
+        case singleHeadline
+        case dualHeadline
+        case dualHeadlineReversed
+    }
 }
 
 extension SectionDescriptor: Hashable {
@@ -25,18 +40,6 @@ extension SectionDescriptor: Hashable {
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
-    }
-}
-
-extension SectionDescriptor {
-
-    enum `Type`: Int {
-        ///
-        case singleHeadline
-        ///
-        case dualHeadline
-        ///
-        case dualHeadlineReversed
     }
 }
 

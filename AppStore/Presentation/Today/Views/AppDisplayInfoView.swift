@@ -15,29 +15,42 @@ final class AppDisplayInfoView: CoreView {
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
     let downloadButton = DownloadButton()
-    
-    /// <#Description#>
-    var appTypeLabelColor: UIColor = .whiteWithAlph50 {
-        didSet { appTypeLabel.textColor = appTypeLabelColor }
+    private let inAppPurchaseLabel = UILabel()
+
+    /// 앱이 Apple Arcade 앱인지 일반 앱인지에 따라 표시되는 라벨의 색상입니다.
+    /// - Warning: `configure(with:)` 메서드 호출 시 이 값이 덮어씌워질 수 있습니다.
+    var appTypeColor: UIColor = .whiteWithAlpha50 {
+        didSet { appTypeLabel.textColor = appTypeColor }
     }
 
-    /// <#Description#>
-    var titleLabelColor: UIColor = .white {
-        didSet { titleLabel.textColor = titleLabelColor }
+    /// 타이틀 라벨에 적용되는 색상입니다.
+    /// - Warning: `configure(with:)` 메서드 호출 시 이 값이 덮어씌워질 수 있습니다.
+    var titleColor: UIColor = .white {
+        didSet { titleLabel.textColor = titleColor }
     }
-    
-    /// <#Description#>
-    var subtitleLabelColor: UIColor = .whiteWithAlph50 {
-        didSet { subtitleLabel.textColor = subtitleLabelColor }
+
+    /// 서브타이틀 라벨에 적용되는 색상입니다.
+    /// - Warning: `configure(with:)` 메서드 호출 시 이 값이 덮어씌워질 수 있습니다.
+    var subtitleColor: UIColor = .whiteWithAlpha50 {
+        didSet { subtitleLabel.textColor = subtitleColor }
     }
-    
-    /// <#Description#>
+
+    /// 서브타이틀 라벨에 적용되는 글꼴 크기입니다.
+    /// - Warning: `configure(with:)` 메서드 호출 시 이 값이 덮어씌워질 수 있습니다.
     var subtitleFontSize: CGFloat = 16 {
         didSet { subtitleLabel.font = .systemFont(ofSize: subtitleFontSize) }
     }
 
-    var titleToSubtitleSpacing: CGFloat = 0 {
-        didSet { labelStackView.spacing = titleToSubtitleSpacing }
+    /// 인앱 구매 라벨에 적용되는 색상입니다.
+    /// - Warning: `configure(with:)` 메서드 호출 시 이 값이 덮어씌워질 수 있습니다.
+    var inAppPurchaseColor: UIColor = .blackWithAlpha50 {
+        didSet { inAppPurchaseLabel.textColor = inAppPurchaseColor }
+    }
+
+    /// 타이틀과 서브타이틀 라벨 사이의 간격입니다.
+    /// - Warning: `configure(with:)` 메서드 호출 시 이 값이 덮어씌워질 수 있습니다.
+    var spacingBetweenLabels: CGFloat = 0 {
+        didSet { labelStackView.spacing = spacingBetweenLabels }
     }
 
     override func setupHierarchy() {
@@ -46,6 +59,7 @@ final class AppDisplayInfoView: CoreView {
         labelStackView.addArrangedSubview(titleLabel)
         labelStackView.addArrangedSubview(subtitleLabel)
         addSubview(downloadButton)
+        addSubview(inAppPurchaseLabel)
     }
 
     override func setupAutoLayout() {
@@ -72,6 +86,12 @@ final class AppDisplayInfoView: CoreView {
             downloadButton.heightAnchor.constraint(equalToConstant: 38),
             downloadButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             downloadButton.leadingAnchor.constraint(equalTo: labelStackView.trailingAnchor, constant: 12)
+        ])
+
+        inAppPurchaseLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            inAppPurchaseLabel.topAnchor.constraint(equalTo: downloadButton.bottomAnchor, constant: 4),
+            inAppPurchaseLabel.centerXAnchor.constraint(equalTo: downloadButton.centerXAnchor)
         ])
 
         appTypeLabel.setContentHuggingPriority(.required, for: .vertical)
@@ -104,11 +124,20 @@ final class AppDisplayInfoView: CoreView {
         subtitleLabel.font = .systemFont(ofSize: 16, weight: .regular)
         subtitleLabel.textColor = .systemGray3.withAlphaComponent(0.9)
         subtitleLabel.numberOfLines = 0
+
+        inAppPurchaseLabel.text = "앱 내 구입"
+        inAppPurchaseLabel.isHidden = true
+        inAppPurchaseLabel.font = .systemFont(ofSize: 10, weight: .regular)
     }
 }
 
 extension AppDisplayInfoView {
-
+    
+    /// 주어진 모델을 기반으로 앱 정보를 뷰에 구성합니다.
+    ///
+    /// - Parameter model: 화면에 표시할 앱 정보 모델입니다.
+    /// - Warning: 일반 프로퍼티들의 값을 미리 설정해두었더라도, 이 메서드를 호출하면 해당 값들이 덮어씌워질 수 있습니다.
+    ///            특정 스타일 값을 예외적으로 적용하고 싶다면, 먼저 `configure(with:)` 메서드를 호출한 이후에 개별 프로퍼티 값을 수정하세요.
     func configre(with model: AppDisplayInfo) {
         if let type = model.type?.rawValue {
             appTypeLabel.text = type
@@ -121,17 +150,21 @@ extension AppDisplayInfoView {
         titleLabel.textColor = model.nameColor
         subtitleLabel.text = model.subtitle
         subtitleLabel.textColor = model.subtitleColor
+
+        inAppPurchaseLabel.isHidden = !model.hasInAppPurchase
+        inAppPurchaseLabel.textColor = model.buttonBackgroundColor
     }
 
     func prepareForResue() {
         appTypeLabel.text = nil
         labelStackView.spacing = 0
         labelStackView.removeArrangedSubview(appTypeLabel)
+        inAppPurchaseLabel.isHidden = true
     }
 }
 
 #Preview(traits: .fixedLayout(width: 400, height: 100)) {
     let view = AppDisplayInfoView()
-    view.titleLabelColor = .black
+    view.titleColor = .black
     return view
 }

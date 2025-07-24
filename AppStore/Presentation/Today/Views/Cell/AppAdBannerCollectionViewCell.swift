@@ -1,5 +1,5 @@
 //
-//  AdvertisementCollectionViewCell.swift
+//  AppAdBannerCollectionViewCell.swift
 //  AppStore
 //
 //  Created by 김건우 on 7/21/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AdvertisementCollectionViewCell: CoreCollectionViewCell {
+final class AppAdBannerCollectionViewCell: CoreCollectionViewCell {
     
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var iconImageView: UIImageView!
@@ -42,17 +42,17 @@ final class AdvertisementCollectionViewCell: CoreCollectionViewCell {
             endPoint: CGPoint(x: 0, y: 0)
         )
 
-        subtitleLabel.textColor = .whiteWithAlph50
+        subtitleLabel.textColor = .whiteWithAlpha50
 
         downloadButton.baseForegroundColor = .white
-        downloadButton.baseBackgroundColor = .whiteWithAlph50
-        downloadButton.highlightedBaseBackgroundColor = .blackWithAlpha10
+        downloadButton.baseBackgroundColor = .whiteWithAlpha50
+        downloadButton.highlightedBackgroundColor = .blackWithAlpha10
     }
 }
 
-extension AdvertisementCollectionViewCell {
+extension AppAdBannerCollectionViewCell {
 
-    func configure(with model: Advertisement) {
+    func configure(with model: AppAdBanner) {
         titleLabel.text = model.appInfo.name
         subtitleLabel.text = model.description
     }

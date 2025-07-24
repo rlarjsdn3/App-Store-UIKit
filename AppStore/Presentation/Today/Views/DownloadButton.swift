@@ -8,16 +8,19 @@
 import UIKit
 
 final class DownloadButton: UIButton {
-
+    
+    /// 버튼의 기본 전경색입니다. 주로 텍스트나 아이콘에 적용됩니다.
     var baseForegroundColor: UIColor? {
         didSet { setupConfiguration() }
     }
 
+    /// 버튼의 기본 배경색입니다.
     var baseBackgroundColor: UIColor? {
         didSet { setupConfiguration() }
     }
 
-    var highlightedBaseBackgroundColor: UIColor? {
+    /// 버튼이 강조(highlighted) 상태일 때 적용할 배경색입니다.
+    var highlightedBackgroundColor: UIColor? {
         didSet { setupConfiguration() }
     }
 
@@ -50,7 +53,7 @@ final class DownloadButton: UIButton {
             var updatedConfig = button.configuration
             switch button.state {
             case .highlighted:
-                updatedConfig?.background.backgroundColor = self?.highlightedBaseBackgroundColor
+                updatedConfig?.background.backgroundColor = self?.highlightedBackgroundColor
             default:
                 updatedConfig?.background.backgroundColor = self?.baseBackgroundColor
             }
@@ -62,7 +65,7 @@ final class DownloadButton: UIButton {
 #Preview(traits: .fixedLayout(width: 100, height: 40)) {
     let button = DownloadButton()
     button.baseBackgroundColor = .blackWithAlpha10
-    button.highlightedBaseBackgroundColor = .systemMint
+    button.highlightedBackgroundColor = .systemMint
     button.baseForegroundColor = .systemYellow
     return button
 }

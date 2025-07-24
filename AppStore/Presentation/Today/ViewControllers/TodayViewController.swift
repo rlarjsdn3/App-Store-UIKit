@@ -21,7 +21,7 @@ final class TodayViewController: CoreViewController {
         applySnapshot()
     }
     
-    override func setupAttribues() {
+    override func setupAttribute() {
         collectionView.delegate = self
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
         collectionView.collectionViewLayout = createCollectionViewLayout()
@@ -41,26 +41,28 @@ final class TodayViewController: CoreViewController {
     }
     
     private func setupDataSource() {
-        let topBarCellRegistration = createTopBarCellRegistration()
-        let advertisementCellRegistration = createAdvertisementCellRegistration()
-        let storyCellRegistration = createStoryCellRegistration()
-        let topListCellRegistration = createAppListCellRegistration()
-        let promotionCellRegistration = createPromotionCellRegistration()
-        let cardCellRegistration = createCardCellRegistration()
-        let bigCardCellRegistration = createBigCardCellRegistration()
+        let topBarCellRegistration = createProfileHeaderCellRegistration()
+        let advertisementCellRegistration = createAppAdBannerCellRegistration()
+        let storyCellRegistration = createAppStoryCellRegistration()
+        let topListCellRegistration = createPopularTopListCellRegistration()
+        let promotionCellRegistration = createAppGroupPromotionCellRegistration()
+        let cardCellRegistration = createCategoryCardCellRegistration()
+        let bigCardCellRegistration = createMessageCardCellRegistration()
+        let termsOfUseCellRegistration = createTermsOfUseCellRegistration()
         let headerViewRegistration = createDefaultHeaderViewRegistration()
         
         dataSource = TodayDataSource(collectionView: collectionView) {
             collectionView, indexPath, item in
             item.dequeueReusableCollectionViewCell(
                 collectionView: collectionView,
-                topBarCellRegistration: topBarCellRegistration,
-                advertisementCellRegistration: advertisementCellRegistration,
-                storyCellRegistration: storyCellRegistration,
-                topListCellRegistration: topListCellRegistration,
-                promotionCellRegistration: promotionCellRegistration,
-                cardCellRegistration: cardCellRegistration,
-                bigCardCellRegistration: bigCardCellRegistration,
+                profileHeaderCellRegistration: topBarCellRegistration,
+                appAdBannerCellRegistration: advertisementCellRegistration,
+                appStoryCellRegistration: storyCellRegistration,
+                popularTopListCellRegistration: topListCellRegistration,
+                appGroupPromotionCellRegistration: promotionCellRegistration,
+                categoryCardCellRegistration: cardCellRegistration,
+                messageCardCellRegistration: bigCardCellRegistration,
+                termsOfUseCellRegistration: termsOfUseCellRegistration,
                 indexPath: indexPath
             )
         }
@@ -77,44 +79,49 @@ final class TodayViewController: CoreViewController {
         }
     }
     
-    private func createTopBarCellRegistration() -> UICollectionView.CellRegistration<TopBarCell, Void> {
-        UICollectionView.CellRegistration(cellNib: TopBarCell.nib) { cell, indexPath, _ in
+    private func createProfileHeaderCellRegistration() -> UICollectionView.CellRegistration<ProfileHeaderCell, Void> {
+        UICollectionView.CellRegistration(cellNib: ProfileHeaderCell.nib) { cell, indexPath, _ in
         }
     }
     
-    private func createAdvertisementCellRegistration() -> UICollectionView.CellRegistration<AdvertisementCollectionViewCell, Advertisement> {
-        UICollectionView.CellRegistration<AdvertisementCollectionViewCell, Advertisement>(cellNib: AdvertisementCollectionViewCell.nib) { cell, indexPath, content in
+    private func createAppAdBannerCellRegistration() -> UICollectionView.CellRegistration<AppAdBannerCollectionViewCell, AppAdBanner> {
+        UICollectionView.CellRegistration<AppAdBannerCollectionViewCell, AppAdBanner>(cellNib: AppAdBannerCollectionViewCell.nib) { cell, indexPath, content in
             cell.configure(with: content)
         }
     }
     
-    private func createStoryCellRegistration() -> UICollectionView.CellRegistration<StoryCollectionViewCell, AppStory> {
-        UICollectionView.CellRegistration<StoryCollectionViewCell, AppStory>(cellNib: StoryCollectionViewCell.nib) { cell, indexPath, content in
+    private func createAppStoryCellRegistration() -> UICollectionView.CellRegistration<AppStoryCollectionViewCell, AppStory> {
+        UICollectionView.CellRegistration<AppStoryCollectionViewCell, AppStory>(cellNib: AppStoryCollectionViewCell.nib) { cell, indexPath, content in
             cell.configure(with: content)
         }
     }
     
-    private func createAppListCellRegistration() -> UICollectionView.CellRegistration<TopListCollectionViewCell, PopularTopList> {
-        UICollectionView.CellRegistration<TopListCollectionViewCell, PopularTopList>(cellNib: TopListCollectionViewCell.nib) { cell, indexPath, content in
+    private func createPopularTopListCellRegistration() -> UICollectionView.CellRegistration<PopularTopListCollectionViewCell, PopularTopList> {
+        UICollectionView.CellRegistration<PopularTopListCollectionViewCell, PopularTopList>(cellNib: PopularTopListCollectionViewCell.nib) { cell, indexPath, content in
             cell.configure(with: content)
         }
     }
     
-    private func createPromotionCellRegistration() -> UICollectionView.CellRegistration<PromotionCollectionViewCell, PopularTopList> {
-        UICollectionView.CellRegistration<PromotionCollectionViewCell, PopularTopList>(cellNib: PromotionCollectionViewCell.nib) { cell, indexPath, content in
+    private func createAppGroupPromotionCellRegistration() -> UICollectionView.CellRegistration<AppGroupPromotionCollectionViewCell, PopularTopList> {
+        UICollectionView.CellRegistration<AppGroupPromotionCollectionViewCell, PopularTopList>(cellNib: AppGroupPromotionCollectionViewCell.nib) { cell, indexPath, content in
             cell.configure(with: content)
         }
     }
     
-    private func createCardCellRegistration() -> UICollectionView.CellRegistration<CardCollectionViewCell, CategoryCard> {
-        UICollectionView.CellRegistration<CardCollectionViewCell, CategoryCard>(cellNib: CardCollectionViewCell.nib) { cell, indexPath, content in
+    private func createCategoryCardCellRegistration() -> UICollectionView.CellRegistration<CategoryCardColelctionViewCell, CategoryCard> {
+        UICollectionView.CellRegistration<CategoryCardColelctionViewCell, CategoryCard>(cellNib: CategoryCardColelctionViewCell.nib) { cell, indexPath, content in
             cell.configure(with: content)
         }
     }
     
-    private func createBigCardCellRegistration() -> UICollectionView.CellRegistration<BigCardCollectionViewCell, CategoryCard> {
-        UICollectionView.CellRegistration<BigCardCollectionViewCell, CategoryCard>(cellNib: BigCardCollectionViewCell.nib) { cell, indexPath, content in
+    private func createMessageCardCellRegistration() -> UICollectionView.CellRegistration<MessageCardCollectionViewCell, CategoryCard> {
+        UICollectionView.CellRegistration<MessageCardCollectionViewCell, CategoryCard>(cellNib: MessageCardCollectionViewCell.nib) { cell, indexPath, content in
             cell.configure(with: content)
+        }
+    }
+    
+    private func createTermsOfUseCellRegistration() -> UICollectionView.CellRegistration<TermsOfUseCollectionViewCell, Void> {
+        UICollectionView.CellRegistration<TermsOfUseCollectionViewCell, Void>(cellNib: TermsOfUseCollectionViewCell.nib) { cell, indexPath, _ in
         }
     }
     

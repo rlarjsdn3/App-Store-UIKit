@@ -1,5 +1,5 @@
 //
-//  TopBarCell.swift
+//  ProfileHeaderCell.swift
 //  AppStore
 //
 //  Created by 김건우 on 7/22/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TopBarCell: CoreCollectionViewCell {
+final class ProfileHeaderCell: CoreCollectionViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
