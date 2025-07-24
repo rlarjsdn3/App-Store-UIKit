@@ -23,7 +23,7 @@ final class TodayViewController: CoreViewController {
     
     override func setupAttribute() {
         collectionView.delegate = self
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         collectionView.collectionViewLayout = createCollectionViewLayout()
     }
     
@@ -149,7 +149,8 @@ final class TodayViewController: CoreViewController {
             snapshot.appendSections([today.section])
             snapshot.appendItems(today.items, toSection: today.section)
         }
-        // TODO: - add 'exchange redeem code' button cell at most below..
+        snapshot.appendSections([.mostBottom])
+        snapshot.appendItems([.termsOfUse], toSection: .mostBottom)
         dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
