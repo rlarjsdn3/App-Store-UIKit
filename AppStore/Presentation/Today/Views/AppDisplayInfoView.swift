@@ -14,7 +14,7 @@ final class AppDisplayInfoView: CoreView {
     private let appTypeLabel = UILabel()
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
-    private let downloadButton = UIButton(type: .system)
+    let downloadButton = DownloadButton()
     
     /// <#Description#>
     var appTypeLabelColor: UIColor = .whiteWithAlph50 {
@@ -68,8 +68,8 @@ final class AppDisplayInfoView: CoreView {
         downloadButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             downloadButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            downloadButton.widthAnchor.constraint(equalToConstant: 70),
-            downloadButton.heightAnchor.constraint(equalToConstant: 30),
+            downloadButton.widthAnchor.constraint(equalToConstant: 80),
+            downloadButton.heightAnchor.constraint(equalToConstant: 38),
             downloadButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             downloadButton.leadingAnchor.constraint(equalTo: labelStackView.trailingAnchor, constant: 12)
         ])

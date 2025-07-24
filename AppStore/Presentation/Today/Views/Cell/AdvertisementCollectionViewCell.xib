@@ -37,19 +37,19 @@
                         <rect key="frame" x="0.0" y="45" width="363" height="130"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="E3r-cB-Ua8">
-                                <rect key="frame" x="20" y="67.666666666666671" width="323" height="42.333333333333329"/>
+                                <rect key="frame" x="20" y="72" width="323" height="38"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="tGl-5l-aYv">
-                                        <rect key="frame" x="0.0" y="0.0" width="235" height="42.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="38"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temu: 억만장자처럼 쇼핑하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1v-ON-ZZK">
-                                                <rect key="frame" x="0.0" y="0.0" width="235" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="235" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="r5s-ii-3c2">
-                                                <rect key="frame" x="0.0" y="22.333333333333329" width="235" height="20"/>
+                                                <rect key="frame" x="0.0" y="18" width="235" height="20"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4E-jw-f4O">
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="20"/>
@@ -79,9 +79,11 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nb5-kq-jHR">
-                                        <rect key="frame" x="243" y="0.0" width="80" height="42.333333333333336"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nb5-kq-jHR" customClass="DownloadButton" customModule="AppStore" customModuleProvider="target">
+                                        <rect key="frame" x="243" y="0.0" width="80" height="38"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="5sD-vB-WCR"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="hcJ-If-dDr"/>
                                             <constraint firstAttribute="width" constant="80" id="jY3-1G-fVR"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
@@ -115,6 +117,7 @@
             <connections>
                 <outlet property="coverImageView" destination="qRa-l9-XEi" id="Q5J-ZT-Spg"/>
                 <outlet property="descContainerView" destination="P4E-jw-f4O" id="dTH-Ni-4KF"/>
+                <outlet property="downloadButton" destination="Nb5-kq-jHR" id="QFn-3W-zr7"/>
                 <outlet property="gradientView" destination="3hO-1o-Nth" id="ytU-80-GaX"/>
                 <outlet property="iconImageView" destination="wix-1q-CRf" id="EwZ-9j-QZg"/>
                 <outlet property="subtitleLabel" destination="Mt7-D1-6cl" id="fOQ-tA-nzj"/>

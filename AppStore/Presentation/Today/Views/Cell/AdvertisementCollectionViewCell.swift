@@ -15,6 +15,7 @@ final class AdvertisementCollectionViewCell: CoreCollectionViewCell {
     @IBOutlet weak var descContainerView: UIView!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var gradientView: UIView!
+    @IBOutlet weak var downloadButton: DownloadButton!
 
     override func setupAttribute() {
         contentView.layer.cornerRadius = 18
@@ -42,6 +43,10 @@ final class AdvertisementCollectionViewCell: CoreCollectionViewCell {
         )
 
         subtitleLabel.textColor = .whiteWithAlph50
+
+        downloadButton.baseForegroundColor = .white
+        downloadButton.baseBackgroundColor = .whiteWithAlph50
+        downloadButton.highlightedBaseBackgroundColor = .blackWithAlpha10
     }
 }
 

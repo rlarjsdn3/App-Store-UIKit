@@ -7,6 +7,8 @@
 
 import UIKit
 
+#warning("각 버튼 색상 집어넣기")
+
 struct AppDisplayInfo {
     ///
     let iconTintColor: UIColor
@@ -33,7 +35,9 @@ struct AppDisplayInfo {
     ///
     let buttonTitleColor: UIColor
     ///
-    let buttonTintColor: UIColor
+    let buttonBackgroundColor: UIColor
+    ///
+    let buttonHighlightedBackgroundColor: UIColor
 
     ///
     let hasInAppPurchase: Bool
@@ -48,7 +52,8 @@ struct AppDisplayInfo {
         appSubtitleColor: UIColor = .whiteWithAlph50,
         inAppPurchase: Bool,
         downloadButtonTitleColor: UIColor = .white,
-        downloadButtonTintColor: UIColor = .whiteWithAlph50
+        downloadButtonTintColor: UIColor = .whiteWithAlph50,
+        downloadButtonDownloadedTintColor: UIColor = .blackWithAlpha10
     ) {
         self.iconTintColor = appIconTintColor
         self.iconImageResource = appIconImageResource
@@ -59,7 +64,8 @@ struct AppDisplayInfo {
         self.subtitleColor = appSubtitleColor
         self.hasInAppPurchase = inAppPurchase
         self.buttonTitleColor = downloadButtonTitleColor
-        self.buttonTintColor = downloadButtonTintColor
+        self.buttonBackgroundColor = downloadButtonTintColor
+        self.buttonHighlightedBackgroundColor = downloadButtonDownloadedTintColor
     }
 }
 

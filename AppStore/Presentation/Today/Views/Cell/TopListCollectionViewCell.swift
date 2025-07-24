@@ -38,6 +38,9 @@ extension TopListCollectionViewCell {
             appInfoViews[safe: index]?.configre(with: info)
             appInfoViews[safe: index]?.titleLabelColor = .label
             appInfoViews[safe: index]?.subtitleLabelColor = .secondaryLabel
+            appInfoViews[safe: index]?.downloadButton.baseForegroundColor = .systemBlue
+            appInfoViews[safe: index]?.downloadButton.baseBackgroundColor = .systemGray5
+            appInfoViews[safe: index]?.downloadButton.highlightedBaseBackgroundColor = .systemGray5.withAlphaComponent(0.5)
         }
 
     }

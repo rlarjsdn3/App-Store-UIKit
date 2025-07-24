@@ -28,7 +28,7 @@ struct AppStory {
     let secondarySubtitleColor: UIColor
 
     ///
-    let appDisplayInfo: AppDisplayInfo
+    let appInfo: AppDisplayInfo
 
     init(
         subTitle1: String?,
@@ -49,7 +49,7 @@ struct AppStory {
         self.secondaySubtitle = subTitle2
         self.secondarySubtitleColor = subTitle2Color
         self.titleLineSpacing = titleSpacing
-        self.appDisplayInfo = appDisplayInfo
+        self.appInfo = appDisplayInfo
     }
 }
 

@@ -67,7 +67,10 @@ extension StoryCollectionViewCell {
         titleLabel.textColor = model.titleColor
         titleLabel.font = UIFont.systemFont(ofSize: model.titleFontSize, weight: .bold)
         appInfoView.titleToSubtitleSpacing = 2
-        appInfoView.configre(with: model.appDisplayInfo)
+        appInfoView.configre(with: model.appInfo)
+        appInfoView.downloadButton.baseForegroundColor = model.appInfo.buttonTitleColor
+        appInfoView.downloadButton.baseBackgroundColor = model.appInfo.buttonBackgroundColor
+        appInfoView.downloadButton.highlightedBaseBackgroundColor = model.appInfo.buttonHighlightedBackgroundColor
         labelStackView.spacing = model.titleLineSpacing
     }
 }
