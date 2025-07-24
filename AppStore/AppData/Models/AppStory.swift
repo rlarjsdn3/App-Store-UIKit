@@ -65,7 +65,7 @@ extension AppStory {
 
     static let chatGPTStory: Self = .init(
         subTitle1: "이렇게 하세요",
-        title: "강력한 관리자의 등자",
+        title: "강력한 관리자의 등장",
         subTitle2: "시간을 잡아먹는 일상 업무를 〈ChatGPT〉에게 맡겨보세요.",
         titleSpacing: 4,
         appDisplayInfo: .chatGPT
@@ -106,7 +106,7 @@ extension AppStory {
         title: "오늘의\n게임",
         titleSize: 46,
         subTitle2: "동화책처럼 아름다운 숨은 그림 찾기",
-        titleSpacing: 4,
+        titleSpacing: 6,
         appDisplayInfo: .supsup
     )
 
@@ -117,7 +117,7 @@ extension AppStory {
         titleColor: .black,
         subTitle2: "나와 꼭 맞는 인연을 찾아보세요.",
         subTitle2Color: .blackWithAlpha50,
-        titleSpacing: 4,
+        titleSpacing: 6,
         appDisplayInfo: .pairs
     )
 

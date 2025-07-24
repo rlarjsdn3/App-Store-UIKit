@@ -17,8 +17,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="410" height="498"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="N5e-Yw-w0b">
-                        <rect key="frame" x="20" y="19.999999999999996" width="230" height="56.666666666666657"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="N5e-Yw-w0b">
+                        <rect key="frame" x="20" y="21.999999999999996" width="230" height="54.666666666666657"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="추천" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6X-kS-YtA">
                                 <rect key="frame" x="0.0" y="0.0" width="230" height="17"/>
@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모두에게 사랑받는 앱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdN-1n-RP2">
-                                <rect key="frame" x="0.0" y="22.999999999999996" width="230" height="33.666666666666657"/>
+                                <rect key="frame" x="0.0" y="20.999999999999996" width="230" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                 </subviews>
                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 <constraints>
-                    <constraint firstItem="N5e-Yw-w0b" firstAttribute="top" secondItem="Aip-um-fQk" secondAttribute="top" constant="20" id="Jec-aq-EJu"/>
+                    <constraint firstItem="N5e-Yw-w0b" firstAttribute="top" secondItem="Aip-um-fQk" secondAttribute="top" constant="22" id="Jec-aq-EJu"/>
                     <constraint firstAttribute="bottom" secondItem="WSv-O4-pBW" secondAttribute="bottom" constant="24" id="OnT-bc-SAt"/>
                     <constraint firstItem="WSv-O4-pBW" firstAttribute="leading" secondItem="Aip-um-fQk" secondAttribute="leading" constant="20" id="PMf-PK-7lE"/>
                     <constraint firstItem="N5e-Yw-w0b" firstAttribute="leading" secondItem="Aip-um-fQk" secondAttribute="leading" constant="20" id="PPH-pt-Q50"/>
@@ -72,6 +72,8 @@
             </collectionViewCellContentView>
             <size key="customSize" width="410" height="498"/>
             <connections>
+                <outlet property="subtitleLabel" destination="p6X-kS-YtA" id="F9l-x1-cES"/>
+                <outlet property="titleLabel" destination="hdN-1n-RP2" id="GSc-4x-iTd"/>
                 <outletCollection property="appDispayInfoView" destination="jVe-FQ-1HF" collectionClass="NSMutableArray" id="sm8-de-V7Y"/>
                 <outletCollection property="appDispayInfoView" destination="l9M-ye-a2J" collectionClass="NSMutableArray" id="paA-Z2-USf"/>
                 <outletCollection property="appDispayInfoView" destination="aas-O5-xvK" collectionClass="NSMutableArray" id="KAT-x9-5sb"/>

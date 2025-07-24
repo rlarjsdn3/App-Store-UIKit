@@ -293,7 +293,7 @@ extension AppDisplayInfo {
         appIconImageResource: .rocket,
         appType: nil,
         appName: "숩숩",
-        appSubtitle: "숨은그립찾기 일러스트 매거진",
+        appSubtitle: "숨은그림찾기 일러스트 매거진",
         inAppPurchase: true
     )
 

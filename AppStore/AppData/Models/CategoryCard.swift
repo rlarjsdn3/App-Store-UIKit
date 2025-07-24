@@ -85,7 +85,7 @@ extension CategoryCard {
     static let microsoftCard: Self = .init(
         cardTintColor: .systemGray5,
         subTitle1: "시작하기",
-        title: "Microsofot의 앱들로\n생산성을 높이세요",
+        title: "Microsoft의 앱들로\n생산성을 높이세요",
         subTitle2: nil
     )
 

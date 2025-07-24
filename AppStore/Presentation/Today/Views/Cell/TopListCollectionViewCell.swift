@@ -9,6 +9,8 @@ import UIKit
 
 final class TopListCollectionViewCell: CoreCollectionViewCell {
 
+    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet var appDispayInfoView: [AppDisplayInfoView]!
 
     override func setupAttribute() {
@@ -29,6 +31,9 @@ final class TopListCollectionViewCell: CoreCollectionViewCell {
 extension TopListCollectionViewCell {
 
     func configure(with model: PopularTopList) {
+        subtitleLabel.text = model.subTitle
+        titleLabel.text = model.title
+
         model.appInfos.enumerated().forEach { index, info in
             appDispayInfoView[safe: index]?.configre(with: info)
             appDispayInfoView[safe: index]?.titleLabelColor = .label

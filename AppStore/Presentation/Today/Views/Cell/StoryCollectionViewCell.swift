@@ -32,9 +32,9 @@ final class StoryCollectionViewCell: CoreCollectionViewCell {
         contentView.layer.cornerCurve = .continuous
         contentView.layer.masksToBounds = true
 
-        subtitle1Label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        subtitle1Label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         subtitle1Label.textColor = .whiteWithAlph50
-        subtitle2Label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        subtitle2Label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         subtitle2Label.textColor = .whiteWithAlph50
 
         appDisplayInfoView.appTypeLabelColor = .whiteWithAlph50

@@ -63,7 +63,7 @@ extension PopularTopList {
     static let mastermindsForVoca: Self = .init(
         listTintColor: .systemBlue,
         appInfos: [.quizlet, .cake, .vadaDictionary, .lookUp, .speak],
-        subTitle: "베워봅시다",
+        subTitle: "배워봅시다",
         title: "영어 단어 마스터하기",
         type: appStorePopularListVerticalList
     )

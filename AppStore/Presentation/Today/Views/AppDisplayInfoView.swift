@@ -60,7 +60,7 @@ final class AppDisplayInfoView: CoreView {
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             labelStackView.leadingAnchor.constraint(equalTo: appIconImageView.trailingAnchor, constant: 12),
-            labelStackView.heightAnchor.constraint(lessThanOrEqualTo: appIconImageView.heightAnchor, multiplier: 1.1),
+            labelStackView.heightAnchor.constraint(lessThanOrEqualTo: appIconImageView.heightAnchor, multiplier: 1.05),
             labelStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             labelStackView.trailingAnchor.constraint(equalTo: downloadButton.leadingAnchor, constant: -12)
         ])
