@@ -20,6 +20,6 @@ extension UIView {
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
         visualEffectView.frame = self.bounds
         visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.addSubview(visualEffectView)
+        self.insertSubview(visualEffectView, at: 0)
     }
 }
