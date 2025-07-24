@@ -21,16 +21,41 @@ struct AppDisplayInfo {
     ///
     let appName: String
     ///
-    // let appNameColor: UIColor
+    let appNameColor: UIColor
     ///
     let appSubtitle: String
-    // let appSubtitleColor: UIColor
+    ///
+    let appSubtitleColor: UIColor
     ///
     let inAppPurchase: Bool
     ///
-    // let downloadButtonTitleColor: UIColor
+    let downloadButtonTitleColor: UIColor
     ///
-    // let downloadButtonTintColor: UIColor
+    let downloadButtonTintColor: UIColor
+
+    init(
+        appIconTintColor: UIColor = .systemGray5,
+        appIconImageResource: ImageResource,
+        appType: AppType? = nil,
+        appName: String,
+        appNameColor: UIColor = .white,
+        appSubtitle: String,
+        appSubtitleColor: UIColor = .whiteWithAlph50,
+        inAppPurchase: Bool,
+        downloadButtonTitleColor: UIColor = .white,
+        downloadButtonTintColor: UIColor = .whiteWithAlph50
+    ) {
+        self.appIconTintColor = appIconTintColor
+        self.appIconImageResource = appIconImageResource
+        self.appType = appType
+        self.appName = appName
+        self.appNameColor = appNameColor
+        self.appSubtitle = appSubtitle
+        self.appSubtitleColor = appSubtitleColor
+        self.inAppPurchase = inAppPurchase
+        self.downloadButtonTitleColor = downloadButtonTitleColor
+        self.downloadButtonTintColor = downloadButtonTintColor
+    }
 }
 
 extension AppDisplayInfo: Hashable {
@@ -277,8 +302,12 @@ extension AppDisplayInfo {
         appIconImageResource: .rocket,
         appType: nil,
         appName: "페어즈 - AI 가치관 매칭이 이어주는 특별한 소개팅앱",
+        appNameColor: .black,
         appSubtitle: #"페어즈 "속마음 매칭"으로 마음으로 서로를 이어보세요!"#,
-        inAppPurchase: true
+        appSubtitleColor: .blackWithAlpha50,
+        inAppPurchase: true,
+        downloadButtonTitleColor: .white,
+        downloadButtonTintColor: .blackWithAlpha50,
     )
 
     static let canva: Self = .init(
@@ -340,8 +369,12 @@ extension AppDisplayInfo {
         appIconImageResource: .rocket,
         appType: nil,
         appName: "NoteCircle: 투두, 루틴, 캘린더, 일정관리",
+        appNameColor: .black,
         appSubtitle: "주간 일정 루틴 관리, 리마인더, 노트, 일정관리",
-        inAppPurchase: true
+        appSubtitleColor: .blackWithAlpha50,
+        inAppPurchase: true,
+        downloadButtonTitleColor: .white,
+        downloadButtonTintColor: .blackWithAlpha50
     )
 
     static let health1: Self = .init(
@@ -403,8 +436,12 @@ extension AppDisplayInfo {
         appIconImageResource: .rocket,
         appType: nil,
         appName: "Gentler Streak - 운동 및 건강활동 트래커",
+        appNameColor: .black,
         appSubtitle: "심박수 & 스포츠 및 피트니스 워킹을 도와주는 앱",
-        inAppPurchase: true
+        appSubtitleColor: .blackWithAlpha50,
+        inAppPurchase: true,
+        downloadButtonTitleColor: .white,
+        downloadButtonTintColor: .blackWithAlpha50
     )
 
     static let fever: Self = .init(
@@ -421,8 +458,12 @@ extension AppDisplayInfo {
         appIconImageResource: .rocket,
         appType: nil,
         appName: "Apple 초대",
+        appNameColor: .black,
         appSubtitle: "초대, 소중한 순간을 함께 계획하고 간직하기",
-        inAppPurchase: false
+        appSubtitleColor: .blackWithAlpha50,
+        inAppPurchase: false,
+        downloadButtonTitleColor: .white,
+        downloadButtonTintColor: .blackWithAlpha50
     )
 }
 

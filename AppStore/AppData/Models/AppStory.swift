@@ -11,17 +11,20 @@ struct AppStory {
     ///
     let subTitle1: String?
     ///
-     let subTitle1Color: UIColor // 에디터의 선택: 색상 검정색
+    let subTitle1Color: UIColor // 에디터의 선택: 색상 검정색
     ///
     let title: String
     ///
-     let titleSize: CGFloat // 오늘의 게임 폰트 크기 달리
+    let titleSize: CGFloat // 오늘의 게임 폰트 크기 달리
     ///
-     let titleColor: UIColor
+    let titleColor: UIColor
     ///
     let subTitle2: String?
     ///
-     let subTitle2Color: UIColor // 오늘의 앱은 색상 검정색
+    let subTitle2Color: UIColor // 오늘의 앱은 색상 검정색
+    ///
+    let titleSpacing: CGFloat
+
     ///
     let appDisplayInfo: AppDisplayInfo
 
@@ -33,6 +36,7 @@ struct AppStory {
         titleColor: UIColor = .white,
         subTitle2: String?,
         subTitle2Color: UIColor = .whiteWithAlph50,
+        titleSpacing: CGFloat = 2,
         appDisplayInfo: AppDisplayInfo
     ) {
         self.subTitle1 = subTitle1
@@ -42,6 +46,7 @@ struct AppStory {
         self.titleColor = titleColor
         self.subTitle2 = subTitle2
         self.subTitle2Color = subTitle2Color
+        self.titleSpacing = titleSpacing
         self.appDisplayInfo = appDisplayInfo
     }
 }
@@ -62,6 +67,7 @@ extension AppStory {
         subTitle1: "이렇게 하세요",
         title: "강력한 관리자의 등자",
         subTitle2: "시간을 잡아먹는 일상 업무를 〈ChatGPT〉에게 맡겨보세요.",
+        titleSpacing: 4,
         appDisplayInfo: .chatGPT
     )
 
@@ -69,6 +75,7 @@ extension AppStory {
         subTitle1: "게임 핵심 정리",
         title: "Roblox",
         subTitle2: "App Store의 강력 추천 게임을 살펴보세요.",
+        titleSpacing: 4,
         appDisplayInfo: .roblox
     )
 
@@ -90,6 +97,7 @@ extension AppStory {
         subTitle1: "모두에게 사랑받는 앱",
         title: "베어",
         subTitle2: "필기하는 방식을 바꿔줄 메모 앱.",
+        titleSpacing: 4,
         appDisplayInfo: .bear
     )
 
@@ -98,6 +106,7 @@ extension AppStory {
         title: "오늘의\n게임",
         titleSize: 46,
         subTitle2: "동화책처럼 아름다운 숨은 그림 찾기",
+        titleSpacing: 4,
         appDisplayInfo: .supsup
     )
 
@@ -108,6 +117,7 @@ extension AppStory {
         titleColor: .black,
         subTitle2: "나와 꼭 맞는 인연을 찾아보세요.",
         subTitle2Color: .blackWithAlpha50,
+        titleSpacing: 4,
         appDisplayInfo: .pairs
     )
 
@@ -115,6 +125,7 @@ extension AppStory {
         subTitle1: "이렇게 하세요",
         title: "Canva Pro로 부업의\n품격을 높이세요",
         subTitle2: "이제 쉽게 디자인하세요",
+        titleSpacing: 4,
         appDisplayInfo: .canva
     )
 
@@ -122,6 +133,7 @@ extension AppStory {
         subTitle1: "모두에게 사랑받는 앱",
         title: "듀오링고",
         subTitle2: "지구촌을 언어로 연결합니다.",
+        titleSpacing: 4,
         appDisplayInfo: .duolingo
     )
 
@@ -132,6 +144,7 @@ extension AppStory {
         titleColor: .black,
         subTitle2: "할 일 관리부터 체크 목록까지 한 번에!",
         subTitle2Color: .blackWithAlpha50,
+        titleSpacing: 4,
         appDisplayInfo: .noteCircle
     )
 
@@ -144,8 +157,11 @@ extension AppStory {
 
     static let gentlerStreakStory: Self = .init(
         subTitle1: "고르고 골랐어요",
+        subTitle1Color: .blackWithAlpha50,
         title: "에디터의 선택:\nGentler Streak",
+        titleColor: .black,
         subTitle2: nil,
+        subTitle2Color: .blackWithAlpha50,
         appDisplayInfo: .gentlerStreak
     )
 
@@ -156,6 +172,7 @@ extension AppStory {
         titleColor: .black,
         subTitle2: "이 도시의 다양한 이벤트를 발견하고 예약하세요.",
         subTitle2Color: .blackWithAlpha50,
+        titleSpacing: 4,
         appDisplayInfo: .fever
     )
 
@@ -163,13 +180,18 @@ extension AppStory {
         subTitle1: "모두에게 사랑받는 앱",
         title: "플랜핏",
         subTitle2: "운동, 혼자서도 문제없어요.",
+        titleSpacing: 4,
         appDisplayInfo: .planfit
     )
 
     static let appleInvitationStory: Self = .init(
         subTitle1: "새로운 앱",
+        subTitle1Color: .blackWithAlpha50,
         title: "모임을 빛내는 초대장",
+        titleColor: .black,
         subTitle2: "Apple 초대로 모임을 생성해보세요.",
+        subTitle2Color: .blackWithAlpha50,
+        titleSpacing: 4,
         appDisplayInfo: .appleInvitation
     )
 }

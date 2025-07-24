@@ -23,21 +23,16 @@ final class TopListCollectionViewCell: CoreCollectionViewCell {
         contentView.layer.cornerRadius = 18
         contentView.layer.cornerCurve = .continuous
         contentView.layer.masksToBounds = true
-
-        appDispayInfoView.forEach {
-            $0.titleLabelColor = .label
-            $0.subtitleLabelColor = .secondaryLabel
-        }
     }
 }
 
 extension TopListCollectionViewCell {
 
     func configure(with model: PopularTopList) {
-        
-
         model.appInfos.enumerated().forEach { index, info in
             appDispayInfoView[safe: index]?.configre(with: info)
+            appDispayInfoView[safe: index]?.titleLabelColor = .label
+            appDispayInfoView[safe: index]?.subtitleLabelColor = .secondaryLabel
         }
 
     }

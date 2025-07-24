@@ -30,6 +30,15 @@ final class AppDisplayInfoView: CoreView {
     var subtitleLabelColor: UIColor = .whiteWithAlph50 {
         didSet { subtitleLabel.textColor = subtitleLabelColor }
     }
+    
+    /// <#Description#>
+    var subtitleFontSize: CGFloat = 16 {
+        didSet { subtitleLabel.font = .systemFont(ofSize: subtitleFontSize) }
+    }
+
+    var titleToSubtitleSpacing: CGFloat = 0 {
+        didSet { labelStackView.spacing = titleToSubtitleSpacing }
+    }
 
     override func setupHierarchy() {
         addSubview(appIconImageView)
@@ -83,7 +92,7 @@ final class AppDisplayInfoView: CoreView {
         labelStackView.distribution = .fill
 
         appTypeLabel.text = "Apple Arcade"
-        appTypeLabel.font = .systemFont(ofSize: 16, weight: .regular)
+        appTypeLabel.font = .systemFont(ofSize: 15, weight: .regular)
         appTypeLabel.textColor = .systemGray3.withAlphaComponent(0.9)
 
         titleLabel.text = "Angry Birds Bounce"
@@ -103,15 +112,20 @@ extension AppDisplayInfoView {
     func configre(with model: AppDisplayInfo) {
         if let type = model.appType?.rawValue {
             appTypeLabel.text = type
+            appTypeLabel.textColor = model.appSubtitleColor
             labelStackView.insertArrangedSubview(appTypeLabel, at: 0)
+            labelStackView.spacing = 0
         }
 
         titleLabel.text = model.appName
+        titleLabel.textColor = model.appNameColor
         subtitleLabel.text = model.appSubtitle
+        subtitleLabel.textColor = model.appSubtitleColor
     }
 
     func prepareForResue() {
         appTypeLabel.text = nil
+        labelStackView.spacing = 0
         labelStackView.removeArrangedSubview(appTypeLabel)
     }
 }

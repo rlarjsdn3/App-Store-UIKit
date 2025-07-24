@@ -40,6 +40,8 @@ final class StoryCollectionViewCell: CoreCollectionViewCell {
         appDisplayInfoView.appTypeLabelColor = .whiteWithAlph50
         appDisplayInfoView.titleLabelColor = .white
         appDisplayInfoView.subtitleLabelColor = .whiteWithAlph50
+        appDisplayInfoView.subtitleFontSize = 14
+        appDisplayInfoView.titleToSubtitleSpacing = 2
 
         bottomContainerView.backgroundColor = .systemBackground.withAlphaComponent(0.1)
     }
@@ -64,6 +66,8 @@ extension StoryCollectionViewCell {
         titleLabel.text = model.title
         titleLabel.textColor = model.titleColor
         titleLabel.font = UIFont.systemFont(ofSize: model.titleSize, weight: .bold)
+        appDisplayInfoView.titleToSubtitleSpacing = 2
         appDisplayInfoView.configre(with: model.appDisplayInfo)
+        labelStackView.spacing = model.titleSpacing
     }
 }
