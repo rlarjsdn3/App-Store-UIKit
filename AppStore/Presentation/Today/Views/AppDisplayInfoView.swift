@@ -65,25 +65,25 @@ final class AppDisplayInfoView: CoreView {
     override func setupAutoLayout() {
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            iconImageView.widthAnchor.constraint(equalToConstant: 58),
-            iconImageView.heightAnchor.constraint(equalToConstant: 58),
+            iconImageView.widthAnchor.constraint(equalToConstant: 50),
+            iconImageView.heightAnchor.constraint(equalToConstant: 50),
             iconImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0)
         ])
 
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelStackView.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 12),
-            labelStackView.heightAnchor.constraint(lessThanOrEqualTo: iconImageView.heightAnchor, multiplier: 1.05),
+            labelStackView.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 10),
+            labelStackView.heightAnchor.constraint(lessThanOrEqualTo: iconImageView.heightAnchor, multiplier: 1.1),
             labelStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            labelStackView.trailingAnchor.constraint(equalTo: downloadButton.leadingAnchor, constant: -12)
+            labelStackView.trailingAnchor.constraint(equalTo: downloadButton.leadingAnchor, constant: -10)
         ])
 
         downloadButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             downloadButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             downloadButton.widthAnchor.constraint(equalToConstant: 80),
-            downloadButton.heightAnchor.constraint(equalToConstant: 38),
+            downloadButton.heightAnchor.constraint(equalToConstant: 32),
             downloadButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             downloadButton.leadingAnchor.constraint(equalTo: labelStackView.trailingAnchor, constant: 12)
         ])
@@ -112,22 +112,22 @@ final class AppDisplayInfoView: CoreView {
         labelStackView.distribution = .fill
 
         appTypeLabel.text = "Apple Arcade"
-        appTypeLabel.font = .systemFont(ofSize: 15, weight: .regular)
+        appTypeLabel.font = .systemFont(ofSize: 13, weight: .regular)
         appTypeLabel.textColor = .systemGray3.withAlphaComponent(0.9)
 
         titleLabel.text = "Angry Birds Bounce"
-        titleLabel.font = .systemFont(ofSize: 17, weight: .medium)
+        titleLabel.font = .systemFont(ofSize: 15, weight: .medium)
         titleLabel.textColor = .white
         titleLabel.numberOfLines = 2
 
         subtitleLabel.text = "소모임, 챌린지, 스터디, 취미 모임"
-        subtitleLabel.font = .systemFont(ofSize: 16, weight: .regular)
+        subtitleLabel.font = .systemFont(ofSize: 11, weight: .regular)
         subtitleLabel.textColor = .systemGray3.withAlphaComponent(0.9)
         subtitleLabel.numberOfLines = 0
 
         inAppPurchaseLabel.text = "앱 내 구입"
         inAppPurchaseLabel.isHidden = true
-        inAppPurchaseLabel.font = .systemFont(ofSize: 10, weight: .regular)
+        inAppPurchaseLabel.font = .systemFont(ofSize: 9, weight: .regular)
     }
 }
 

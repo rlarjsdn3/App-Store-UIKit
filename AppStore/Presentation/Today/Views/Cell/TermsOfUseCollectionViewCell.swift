@@ -24,13 +24,17 @@ final class TermsOfUseCollectionViewCell: CoreCollectionViewCell {
         var config = UIButton.Configuration.gray()
         config.attributedTitle = AttributedString("코드 교환", attributes: attrContainer)
         config.baseForegroundColor = .systemBlue
+        config.background.backgroundColor = .systemGray5
         config.background.cornerRadius = 12
         changeRedeemCodeButton.configuration = config
     }
     
     private func setupTermsOfUseButtonConfiguration() {
+        var attrContainer = AttributeContainer()
+        attrContainer.font = .systemFont(ofSize: 14, weight: .light)
+
         var config = UIButton.Configuration.plain()
-        config.title = "이용 약관"
+        config.attributedTitle = AttributedString("이용 약관", attributes: attrContainer)
         config.baseForegroundColor = .secondaryLabel
         config.image = UIImage(systemName: "chevron.forward")
         config.imagePadding = 5

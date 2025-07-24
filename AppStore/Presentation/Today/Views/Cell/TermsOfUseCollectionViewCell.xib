@@ -17,9 +17,9 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVs-sg-SGx">
-                        <rect key="frame" x="0.0" y="0.0" width="362" height="45"/>
+                        <rect key="frame" x="0.0" y="0.0" width="362" height="42"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="45" id="AZ8-fY-WVc"/>
+                            <constraint firstAttribute="height" constant="42" id="AZ8-fY-WVc"/>
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="gray">
@@ -29,27 +29,27 @@
                         </buttonConfiguration>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4v-mU-YR3">
-                        <rect key="frame" x="15" y="75" width="332" height="0.3333333333333286"/>
+                        <rect key="frame" x="10" y="68" width="342" height="0.3333333333333286"/>
                         <color key="backgroundColor" systemColor="systemGray3Color"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="0.25" id="ZDL-Tn-g4z"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJH-bA-y1P">
-                        <rect key="frame" x="15" y="85.333333333333329" width="83" height="21.666666666666671"/>
+                        <rect key="frame" x="10" y="74.333333333333329" width="83" height="32.666666666666671"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="이용약관"/>
                     </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="B4v-mU-YR3" firstAttribute="top" secondItem="YVs-sg-SGx" secondAttribute="bottom" constant="30" id="Ipn-FA-HMo"/>
-                <constraint firstItem="YVs-sg-SGx" firstAttribute="trailing" secondItem="B4v-mU-YR3" secondAttribute="trailing" constant="15" id="L5r-L5-EQo"/>
+                <constraint firstItem="B4v-mU-YR3" firstAttribute="top" secondItem="YVs-sg-SGx" secondAttribute="bottom" constant="26" id="Ipn-FA-HMo"/>
+                <constraint firstItem="YVs-sg-SGx" firstAttribute="trailing" secondItem="B4v-mU-YR3" secondAttribute="trailing" constant="10" id="L5r-L5-EQo"/>
                 <constraint firstItem="YVs-sg-SGx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WdU-Nz-cnY"/>
                 <constraint firstAttribute="trailing" secondItem="YVs-sg-SGx" secondAttribute="trailing" id="Z4U-go-GBB"/>
-                <constraint firstItem="fJH-bA-y1P" firstAttribute="top" secondItem="B4v-mU-YR3" secondAttribute="bottom" constant="10" id="jXd-ab-k3q"/>
+                <constraint firstItem="fJH-bA-y1P" firstAttribute="top" secondItem="B4v-mU-YR3" secondAttribute="bottom" constant="6" id="jXd-ab-k3q"/>
                 <constraint firstItem="YVs-sg-SGx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kfi-p8-u3S"/>
-                <constraint firstItem="YVs-sg-SGx" firstAttribute="leading" secondItem="B4v-mU-YR3" secondAttribute="leading" constant="-15" id="r5v-Cs-8BQ"/>
+                <constraint firstItem="YVs-sg-SGx" firstAttribute="leading" secondItem="B4v-mU-YR3" secondAttribute="leading" constant="-10" id="r5v-Cs-8BQ"/>
                 <constraint firstAttribute="bottom" secondItem="fJH-bA-y1P" secondAttribute="bottom" constant="20" id="z02-HQ-pdv"/>
                 <constraint firstItem="fJH-bA-y1P" firstAttribute="leading" secondItem="B4v-mU-YR3" secondAttribute="leading" id="zqh-N3-AE6"/>
             </constraints>
@@ -63,7 +63,7 @@
     </objects>
     <resources>
         <systemColor name="systemGray3Color">
-            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -36,7 +36,7 @@ final class TodayViewController: CoreViewController {
         }
 
         let config = UICollectionViewCompositionalLayoutConfiguration()
-        config.interSectionSpacing = 20
+        config.interSectionSpacing = 16
         return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider, configuration: config)
     }
     
@@ -144,7 +144,7 @@ final class TodayViewController: CoreViewController {
     private func applySnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<TodayContent.Section, TodayContent.Item>()
         snapshot.appendSections([.mostTop])
-        snapshot.appendItems([.topBar], toSection: .mostTop)
+        snapshot.appendItems([.profileHeader], toSection: .mostTop)
         appData.todays.forEach { today in
             snapshot.appendSections([today.section])
             snapshot.appendItems(today.items, toSection: today.section)

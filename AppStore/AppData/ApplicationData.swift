@@ -21,107 +21,107 @@ struct ApplicationData {
             Today(
                 section: .main(.emptySection(id: 123)),
                 items: [
-                    .story(.angryBirdsBounceStory),
-                    .advertisement(.temuAdvertisement),
-                    .topList(.mostLovedAppsList)
+                    .appStory(.angryBirdsBounceStory),
+                    .appAdBanner(.temuAdvertisement),
+                    .popularTopList(.mostLovedAppsList)
                 ]
             ),
             Today(
                 section: .main(.workSmartWithAI),
                 items: [
-                    .story(.chatGPTStory),
-                    .topList(.allSetForTheSemesterWithAI)
+                    .appStory(.chatGPTStory),
+                    .popularTopList(.allSetForTheSemesterWithAI)
                 ]
             ),
             Today(
                 section: .main(.funForTheWholeFamily),
-                items: [.story(.robloxStory)]
+                items: [.appStory(.robloxStory)]
             ),
             Today(
                 section: .main(.letTheAdventureBegin),
-                items: [.topList(.mustPlayAdventureGames)]
+                items: [.popularTopList(.mustPlayAdventureGames)]
             ),
             Today(
                 section: .main(.appStoreClassic),
                 items: [
-                    .story(.brawlStarsStory),
-                    .story(.pokemonGOStory)
+                    .appStory(.brawlStarsStory),
+                    .appStory(.pokemonGOStory)
                 ]
             ),
             Today(
                 section: .card(.findBestApp),
                 items: [
-                    .card(.requiredProductiviyApp10),
-                    .card(.requiredHealthApp10),
-                    .card(.requiredMoneyApp10),
-                    .card(.requiredExcerciseApp10)
+                    .categryCard(.requiredProductiviyApp10),
+                    .categryCard(.requiredHealthApp10),
+                    .categryCard(.requiredMoneyApp10),
+                    .categryCard(.requiredExcerciseApp10)
                 ]
             ),
             Today(
                 section: .main(.enhanceProductivity),
-                items: [.promotion(.collegeLifeCheatCode)]
+                items: [.appGroupPromotion(.collegeLifeCheatCode)]
             ),
             Today(
                 section: .main(.rechargeYourProductivity),
-                items: [.story(.bearStory)]
+                items: [.appStory(.bearStory)]
             ),
             Today(
                 section: .main(.editorRecommendation),
-                items: [.story(.supsupStory), .story(.pairsStory)]
+                items: [.appStory(.supsupStory), .appStory(.pairsStory)]
             ),
             Today(
                 section: .main(.howToUseSocialMedia),
-                items: [.story(.canvaStory)]
+                items: [.appStory(.canvaStory)]
             ),
             Today(
                 section: .main(.howToUseMicrosoftApps),
-                items: [.bigCard(.microsoftCard)]
+                items: [.messageCard(.microsoftCard)]
             ),
             Today(
                 section: .main(.expressYourPersonality),
-                items: [.bigCard(.happyArtCard)]
+                items: [.messageCard(.happyArtCard)]
             ),
             Today(
                 section: .main(.tryItOut),
-                items: [.story(.duolingoStory)]
+                items: [.appStory(.duolingoStory)]
             ),
             Today(
                 section: .main(.wordPuzzle),
-                items: [.topList(.mastermindsForVoca)]
+                items: [.popularTopList(.mastermindsForVoca)]
             ),
             Today(
                 section: .main(.aMoreFulfillingDay),
                 items: [
-                    .story(.noteCircleStory),
-                    .promotion(.appsFitnessEnthusiastsUse)
+                    .appStory(.noteCircleStory),
+                    .appGroupPromotion(.appsFitnessEnthusiastsUse)
                 ]
             ),
             Today(
                 section: .main(.healthyAndWellbeing),
-                items: [.story(.flickrStory)]
+                items: [.appStory(.flickrStory)]
             ),
             Today(
                 section: .main(.usefulToolsForHealthyHabits),
-                items: [.story(.gentlerStreakStory)]
+                items: [.appStory(.gentlerStreakStory)]
             ),
             Today(
                 section: .main(.usefulTools),
-                items: [.story(.feverStory)]
+                items: [.appStory(.feverStory)]
             ),
             Today(
                 section: .main(.aHealthierMe),
-                items: [.story(.planfitStory)]
+                items: [.appStory(.planfitStory)]
             ),
             Today(
                 section: .card(.emptySection()),
                 items: [
-                    .card(.yazio),
-                    .card(.timeOfMeditation)
+                    .categryCard(.yazio),
+                    .categryCard(.timeOfMeditation)
                 ]
             ),
             Today(
                 section: .main(.doTogether),
-                items: [.story(.appleInvitationStory)]
+                items: [.appStory(.appleInvitationStory)]
             )
         ]
     }

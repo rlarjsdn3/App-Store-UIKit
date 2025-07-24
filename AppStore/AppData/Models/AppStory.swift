@@ -114,7 +114,7 @@ extension AppStory {
     static let supsupStory: Self = .init(
         subTitle1: nil,
         title: "오늘의\n게임",
-        titleSize: 46,
+        titleSize: 42,
         subTitle2: "동화책처럼 아름다운 숨은 그림 찾기",
         titleSpacing: 6,
         appDisplayInfo: .supsup
@@ -123,7 +123,7 @@ extension AppStory {
     static let pairsStory: Self = .init(
         subTitle1: nil,
         title: "오늘의\n앱",
-        titleSize: 46,
+        titleSize: 42,
         titleColor: .black,
         subTitle2: "나와 꼭 맞는 인연을 찾아보세요.",
         subTitle2Color: .blackWithAlpha50,

@@ -34,16 +34,16 @@ final class AppStoryCollectionViewCell: CoreCollectionViewCell {
         contentView.layer.cornerCurve = .continuous
         contentView.layer.masksToBounds = true
 
-        primarySubtitleLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        primarySubtitleLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         primarySubtitleLabel.textColor = .whiteWithAlpha50
         
-        secondarySubtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        secondarySubtitleLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         secondarySubtitleLabel.textColor = .whiteWithAlpha50
 
         appInfoView.appTypeColor = .whiteWithAlpha50
         appInfoView.titleColor = .white
         appInfoView.subtitleColor = .whiteWithAlpha50
-        appInfoView.subtitleFontSize = 14
+        appInfoView.subtitleFontSize = 12.5
         appInfoView.spacingBetweenLabels = 2
 
         transparentContainerView.backgroundColor = .systemBackground.withAlphaComponent(0.1)

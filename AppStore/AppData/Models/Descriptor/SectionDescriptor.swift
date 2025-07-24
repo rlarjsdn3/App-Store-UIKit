@@ -98,7 +98,7 @@ extension SectionDescriptor {
 
     static let rechargeYourProductivity: Self = .init(
         id: 7,
-        title: "생상성 충전소",
+        title: "생산성 충전소",
         subtitle: nil,
         type: .singleHeadline
     )

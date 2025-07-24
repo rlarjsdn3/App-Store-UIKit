@@ -43,6 +43,7 @@ extension PopularTopListCollectionViewCell {
             appInfoViews[safe: index]?.configre(with: info)
             appInfoViews[safe: index]?.titleColor = .label
             appInfoViews[safe: index]?.subtitleColor = .secondaryLabel
+            appInfoViews[safe: index]?.subtitleFontSize = 14
             appInfoViews[safe: index]?.inAppPurchaseColor = .secondaryLabel
             appInfoViews[safe: index]?.downloadButton.baseForegroundColor = .systemBlue
             appInfoViews[safe: index]?.downloadButton.baseBackgroundColor = .systemGray5

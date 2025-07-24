@@ -24,22 +24,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="410" height="69"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="투데이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9g-6U-1tl">
-                                        <rect key="frame" x="0.0" y="26" width="93.666666666666671" height="43"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                        <rect key="frame" x="0.0" y="30.666666666666668" width="83.333333333333329" height="38.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7월 13일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vX-o5-zug">
-                                        <rect key="frame" x="101.66666666666666" y="37.333333333333336" width="265.33333333333337" height="28.666666666666664"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <rect key="frame" x="91.333333333333343" y="40" width="278.33333333333326" height="26.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="ZEc-RT-U7y">
-                                        <rect key="frame" x="375" y="26" width="35" height="35"/>
+                                        <rect key="frame" x="377.66666666666669" y="30.666666666666668" width="32.333333333333314" height="32.666666666666657"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="jNp-ji-0Jk"/>
-                                            <constraint firstAttribute="height" constant="35" id="viM-tv-FFd"/>
+                                            <constraint firstAttribute="width" constant="32.5" id="jNp-ji-0Jk"/>
+                                            <constraint firstAttribute="height" constant="32.5" id="viM-tv-FFd"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>

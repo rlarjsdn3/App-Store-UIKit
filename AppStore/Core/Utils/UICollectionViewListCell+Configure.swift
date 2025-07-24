@@ -19,10 +19,10 @@ extension UICollectionViewListCell {
         var content = self.defaultContentConfiguration()
         content.textProperties.font = .point26Bold
         content.textProperties.color = .label
-        content.secondaryTextProperties.font = .body
+        content.secondaryTextProperties.font = .point15Regular
         content.secondaryTextProperties.color = .secondaryLabel
         content.textToSecondaryTextVerticalPadding = 0
-        content.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 12, leading: 0, bottom: 16, trailing: 0)
+        content.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 12, leading: 0, bottom: 12, trailing: 0)
 
         switch model.type {
         case .singleHeadline:
@@ -32,7 +32,7 @@ extension UICollectionViewListCell {
             content.secondaryText = model.subtitle
         case .dualHeadlineReversed:
             content.text = model.subtitle
-            content.textProperties.font = UIFont.preferredFont(forTextStyle: .callout)
+            content.textProperties.font = .point15Regular
             content.textProperties.color = .secondaryLabel
             content.secondaryText = model.title
             content.secondaryTextProperties.font = .point26Bold
@@ -46,10 +46,10 @@ extension UICollectionViewListCell {
 fileprivate extension UIFont {
 
     static let point26Bold: UIFont = {
-        return UIFont.systemFont(ofSize: 26, weight: .bold)
+        return UIFont.systemFont(ofSize: 22, weight: .bold)
     }()
 
-    static let body: UIFont = {
-        return UIFont.preferredFont(forTextStyle: .body)
+    static let point15Regular: UIFont = {
+        return UIFont.systemFont(ofSize: 15, weight: .regular)
     }()
 }
