@@ -177,10 +177,28 @@ final class TodayViewController: CoreViewController {
 }
 
 extension TodayViewController: UICollectionViewDelegate {
-    
+
     func collectionView(
         _ collectionView: UICollectionView,
-        didSelectItemAt indexPath: IndexPath
+        didHighlightItemAt indexPath: IndexPath
     ) {
+        guard let cell = collectionView.cellForItem(at: indexPath)
+        else { return }
+
+        UIView.animate(withDuration: 0.1) {
+            cell.transform = CGAffineTransform(scaleX: 0.975, y: 0.975)
+        }
+    }
+
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didUnhighlightItemAt indexPath: IndexPath
+    ) {
+        guard let cell = collectionView.cellForItem(at: indexPath)
+        else { return }
+
+        UIView.animate(withDuration: 0.1) {
+            cell.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
     }
 }

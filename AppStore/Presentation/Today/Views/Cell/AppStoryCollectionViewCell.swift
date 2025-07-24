@@ -46,7 +46,7 @@ final class AppStoryCollectionViewCell: CoreCollectionViewCell {
         appInfoView.subtitleFontSize = 12.5
         appInfoView.spacingBetweenLabels = 2
 
-        transparentContainerView.backgroundColor = .blackWithAlpha10
+        transparentContainerView.backgroundColor = .whiteWithAlpha10
     }
 
 }

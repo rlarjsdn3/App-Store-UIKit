@@ -42,14 +42,3 @@ extension UICollectionViewListCell {
         self.contentConfiguration = content
     }
 }
-
-fileprivate extension UIFont {
-
-    static let point26Bold: UIFont = {
-        return UIFont.systemFont(ofSize: 22, weight: .bold)
-    }()
-
-    static let point15Regular: UIFont = {
-        return UIFont.systemFont(ofSize: 15, weight: .regular)
-    }()
-}
