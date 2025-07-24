@@ -9,7 +9,7 @@ import UIKit
 
 struct Advertisement {
     ///
-    let appDisplayInfo: AppDisplayInfo
+    let appInfo: AppDisplayInfo
     ///
     let description: String
 }
@@ -20,7 +20,7 @@ extension Advertisement: Hashable {
 extension Advertisement {
 
     static let temuAdvertisement: Self = .init(
-        appDisplayInfo: .temu,
+        appInfo: .temu,
         description: "역대급 할인 혜택을 Temu에서 만나보세요!"
     )
 }

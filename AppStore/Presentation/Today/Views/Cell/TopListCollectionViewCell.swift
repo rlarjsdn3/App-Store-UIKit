@@ -11,7 +11,7 @@ final class TopListCollectionViewCell: CoreCollectionViewCell {
 
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet var appDispayInfoView: [AppDisplayInfoView]!
+    @IBOutlet var appInfoViews: [AppDisplayInfoView]!
 
     override func setupAttribute() {
         layer.cornerRadius = 18
@@ -31,13 +31,13 @@ final class TopListCollectionViewCell: CoreCollectionViewCell {
 extension TopListCollectionViewCell {
 
     func configure(with model: PopularTopList) {
-        subtitleLabel.text = model.subTitle
+        subtitleLabel.text = model.subtitle
         titleLabel.text = model.title
 
         model.appInfos.enumerated().forEach { index, info in
-            appDispayInfoView[safe: index]?.configre(with: info)
-            appDispayInfoView[safe: index]?.titleLabelColor = .label
-            appDispayInfoView[safe: index]?.subtitleLabelColor = .secondaryLabel
+            appInfoViews[safe: index]?.configre(with: info)
+            appInfoViews[safe: index]?.titleLabelColor = .label
+            appInfoViews[safe: index]?.subtitleLabelColor = .secondaryLabel
         }
 
     }

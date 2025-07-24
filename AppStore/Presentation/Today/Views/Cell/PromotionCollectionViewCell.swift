@@ -10,18 +10,18 @@ import UIKit
 final class PromotionCollectionViewCell: CoreCollectionViewCell {
 
     @IBOutlet weak var coverImageView: UIImageView!
-    @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet var imageView: [UIImageView]!
+    @IBOutlet var iconImageViews: [UIImageView]!
     
     var iconImages: [UIImage?] {
-        get { imageView.map({ $0.image }) }
+        get { iconImageViews.map({ $0.image }) }
         set { setIconImages(newValue) }
     }
     
     private func setIconImages(_ images: [UIImage?]) {
-        for (index, imageView) in imageView.enumerated() {
+        for (index, imageView) in iconImageViews.enumerated() {
             imageView.image = images[index]
         }
     }
@@ -31,12 +31,12 @@ final class PromotionCollectionViewCell: CoreCollectionViewCell {
         contentView.layer.cornerCurve = .continuous
         contentView.layer.masksToBounds = true
 
-        imageView.forEach {
+        iconImageViews.forEach {
             $0.layer.cornerRadius = 14
             $0.layer.cornerCurve = .continuous
         }
 
-        subTitleLabel.textColor = .whiteWithAlpha90
+        subtitleLabel.textColor = .whiteWithAlpha90
     }
 }
 
@@ -45,13 +45,7 @@ extension PromotionCollectionViewCell {
     /// <#Description#>
     /// - Parameter model: <#model description#>
     func configure(with model: PopularTopList) {
-//        coverImageView.image = model.coverImage
-        subTitleLabel.text = model.subTitle ?? ""
+        subtitleLabel.text = model.subtitle
         titleLabel.text = model.title
-//        iconImages = [model.appInfos[safe: 0]?.appIconImage,
-//                      model.appInfos[safe: 1]?.appIconImage,
-//                      model.appInfos[safe: 2]?.appIconImage,
-//                      model.appInfos[safe: 3]?.appIconImage,
-//                      model.appInfos[safe: 4]?.appIconImage]
     }
 }

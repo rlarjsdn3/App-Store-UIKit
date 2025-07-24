@@ -9,7 +9,7 @@ import UIKit
 
 final class AppDisplayInfoView: CoreView {
 
-    private let appIconImageView = UIImageView()
+    private let iconImageView = UIImageView()
     private let labelStackView = UIStackView()
     private let appTypeLabel = UILabel()
     private let titleLabel = UILabel()
@@ -41,7 +41,7 @@ final class AppDisplayInfoView: CoreView {
     }
 
     override func setupHierarchy() {
-        addSubview(appIconImageView)
+        addSubview(iconImageView)
         addSubview(labelStackView)
         labelStackView.addArrangedSubview(titleLabel)
         labelStackView.addArrangedSubview(subtitleLabel)
@@ -49,18 +49,18 @@ final class AppDisplayInfoView: CoreView {
     }
 
     override func setupAutoLayout() {
-        appIconImageView.translatesAutoresizingMaskIntoConstraints = false
+        iconImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            appIconImageView.widthAnchor.constraint(equalToConstant: 58),
-            appIconImageView.heightAnchor.constraint(equalToConstant: 58),
-            appIconImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            appIconImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0)
+            iconImageView.widthAnchor.constraint(equalToConstant: 58),
+            iconImageView.heightAnchor.constraint(equalToConstant: 58),
+            iconImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0)
         ])
 
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelStackView.leadingAnchor.constraint(equalTo: appIconImageView.trailingAnchor, constant: 12),
-            labelStackView.heightAnchor.constraint(lessThanOrEqualTo: appIconImageView.heightAnchor, multiplier: 1.05),
+            labelStackView.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 12),
+            labelStackView.heightAnchor.constraint(lessThanOrEqualTo: iconImageView.heightAnchor, multiplier: 1.05),
             labelStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             labelStackView.trailingAnchor.constraint(equalTo: downloadButton.leadingAnchor, constant: -12)
         ])
@@ -82,9 +82,9 @@ final class AppDisplayInfoView: CoreView {
     override func setupAttribute() {
         backgroundColor = .clear
 
-        appIconImageView.layer.cornerRadius = 14
-        appIconImageView.layer.cornerCurve = .continuous
-        appIconImageView.backgroundColor = .systemGray5
+        iconImageView.layer.cornerRadius = 14
+        iconImageView.layer.cornerCurve = .continuous
+        iconImageView.backgroundColor = .systemGray5
 
         labelStackView.axis = .vertical
         labelStackView.spacing = 0
@@ -110,17 +110,17 @@ final class AppDisplayInfoView: CoreView {
 extension AppDisplayInfoView {
 
     func configre(with model: AppDisplayInfo) {
-        if let type = model.appType?.rawValue {
+        if let type = model.type?.rawValue {
             appTypeLabel.text = type
-            appTypeLabel.textColor = model.appSubtitleColor
+            appTypeLabel.textColor = model.subtitleColor
             labelStackView.insertArrangedSubview(appTypeLabel, at: 0)
             labelStackView.spacing = 0
         }
 
-        titleLabel.text = model.appName
-        titleLabel.textColor = model.appNameColor
-        subtitleLabel.text = model.appSubtitle
-        subtitleLabel.textColor = model.appSubtitleColor
+        titleLabel.text = model.name
+        titleLabel.textColor = model.nameColor
+        subtitleLabel.text = model.subtitle
+        subtitleLabel.textColor = model.subtitleColor
     }
 
     func prepareForResue() {

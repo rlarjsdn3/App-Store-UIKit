@@ -113,11 +113,11 @@
             </collectionViewCellContentView>
             <size key="customSize" width="363" height="301"/>
             <connections>
-                <outlet property="advertisementContenerView" destination="P4E-jw-f4O" id="dTH-Ni-4KF"/>
-                <outlet property="appIconImageView" destination="wix-1q-CRf" id="EwZ-9j-QZg"/>
                 <outlet property="coverImageView" destination="qRa-l9-XEi" id="Q5J-ZT-Spg"/>
+                <outlet property="descContainerView" destination="P4E-jw-f4O" id="dTH-Ni-4KF"/>
                 <outlet property="gradientView" destination="3hO-1o-Nth" id="ytU-80-GaX"/>
-                <outlet property="subTitleLabel" destination="Mt7-D1-6cl" id="fOQ-tA-nzj"/>
+                <outlet property="iconImageView" destination="wix-1q-CRf" id="EwZ-9j-QZg"/>
+                <outlet property="subtitleLabel" destination="Mt7-D1-6cl" id="fOQ-tA-nzj"/>
                 <outlet property="titleLabel" destination="G1v-ON-ZZK" id="F6y-pl-yxM"/>
             </connections>
             <point key="canvasLocation" x="-19.083969465648853" y="-211.61971830985917"/>
@@ -125,7 +125,7 @@
     </objects>
     <resources>
         <namedColor name="lightBlue">
-            <color red="0.58039215686274503" green="0.74901960784313726" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.57999998331069946" green="0.74900001287460327" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

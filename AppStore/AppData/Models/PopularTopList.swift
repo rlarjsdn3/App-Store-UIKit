@@ -12,15 +12,29 @@ let appStorePopularListCardHorizontalList: Int = 2
 
 struct PopularTopList {
     ///
-    var listTintColor: UIColor
+    let type: Int
     ///
-    let appInfos: [AppDisplayInfo]
-    ///
-    let subTitle: String?
+    let subtitle: String?
     ///
     let title: String
     ///
-    let type: Int
+    let appInfos: [AppDisplayInfo]
+    ///
+    var backgroundColor: UIColor
+
+    init(
+        listTintColor: UIColor,
+        appInfos: [AppDisplayInfo],
+        subTitle: String?,
+        title: String,
+        type: Int
+    ) {
+        self.backgroundColor = listTintColor
+        self.appInfos = appInfos
+        self.subtitle = subTitle
+        self.title = title
+        self.type = type
+    }
 }
 
 extension PopularTopList: Hashable {

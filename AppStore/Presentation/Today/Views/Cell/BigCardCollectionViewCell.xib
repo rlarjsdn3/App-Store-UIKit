@@ -57,9 +57,9 @@
             </collectionViewCellContentView>
             <size key="customSize" width="410" height="462"/>
             <connections>
-                <outlet property="imageView" destination="QOL-oP-fLa" id="Tix-mK-NpU"/>
-                <outlet property="subTitle1Label" destination="NSw-io-Cq5" id="QhX-mD-Igu"/>
-                <outlet property="subTitle2Label" destination="hlj-NW-Rrx" id="C8k-xR-Kza"/>
+                <outlet property="coverImageView" destination="QOL-oP-fLa" id="Tix-mK-NpU"/>
+                <outlet property="primarySubtitleLabel" destination="NSw-io-Cq5" id="QhX-mD-Igu"/>
+                <outlet property="secondarySubtitleLabel" destination="hlj-NW-Rrx" id="C8k-xR-Kza"/>
                 <outlet property="titleLabel" destination="3SH-c2-J48" id="O3b-wA-1YR"/>
             </connections>
             <point key="canvasLocation" x="18.320610687022899" y="-161.97183098591549"/>

@@ -10,10 +10,10 @@ import UIKit
 final class AdvertisementCollectionViewCell: CoreCollectionViewCell {
     
     @IBOutlet weak var coverImageView: UIImageView!
-    @IBOutlet weak var appIconImageView: UIImageView!
+    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var advertisementContenerView: UIView!
-    @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var descContainerView: UIView!
+    @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var gradientView: UIView!
 
     override func setupAttribute() {
@@ -21,16 +21,16 @@ final class AdvertisementCollectionViewCell: CoreCollectionViewCell {
         contentView.layer.cornerCurve = .continuous
         contentView.layer.masksToBounds = true
 
-        appIconImageView.layer.cornerRadius = 16
-        appIconImageView.layer.cornerCurve = .continuous
-        appIconImageView.layer.shadowColor = UIColor.black.cgColor
-        appIconImageView.layer.shadowOpacity = 0.5
-        appIconImageView.layer.shadowRadius = 2
-        appIconImageView.layer.shadowOffset = CGSize(width: 2, height: 2)
-        appIconImageView.layer.zPosition = 999
+        iconImageView.layer.cornerRadius = 16
+        iconImageView.layer.cornerCurve = .continuous
+        iconImageView.layer.shadowColor = UIColor.black.cgColor
+        iconImageView.layer.shadowOpacity = 0.5
+        iconImageView.layer.shadowRadius = 2
+        iconImageView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        iconImageView.layer.zPosition = 999
 
-        advertisementContenerView.layer.cornerRadius = 6
-        advertisementContenerView.layer.cornerCurve = .continuous
+        descContainerView.layer.cornerRadius = 6
+        descContainerView.layer.cornerCurve = .continuous
 
         gradientView.backgroundColor = .clear
         gradientView.apply(
@@ -41,12 +41,14 @@ final class AdvertisementCollectionViewCell: CoreCollectionViewCell {
             endPoint: CGPoint(x: 0, y: 0)
         )
 
-        subTitleLabel.textColor = .whiteWithAlph50
+        subtitleLabel.textColor = .whiteWithAlph50
     }
 }
 
 extension AdvertisementCollectionViewCell {
 
     func configure(with model: Advertisement) {
+        titleLabel.text = model.appInfo.name
+        subtitleLabel.text = model.description
     }
 }

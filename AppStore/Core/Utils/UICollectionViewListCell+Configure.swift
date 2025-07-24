@@ -25,9 +25,9 @@ extension UICollectionViewListCell {
             content.text = model.title
         case .dualHeadline:
             content.text = model.title
-            content.secondaryText = model.subTitle
+            content.secondaryText = model.subtitle
         case .dualHeadlineReversed:
-            content.text = model.subTitle
+            content.text = model.subtitle
             content.textProperties.font = UIFont.preferredFont(forTextStyle: .callout)
             content.textProperties.color = .secondaryLabel
             content.secondaryText = model.title

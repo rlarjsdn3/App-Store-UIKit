@@ -74,11 +74,11 @@
             <connections>
                 <outlet property="subtitleLabel" destination="p6X-kS-YtA" id="F9l-x1-cES"/>
                 <outlet property="titleLabel" destination="hdN-1n-RP2" id="GSc-4x-iTd"/>
-                <outletCollection property="appDispayInfoView" destination="jVe-FQ-1HF" collectionClass="NSMutableArray" id="sm8-de-V7Y"/>
-                <outletCollection property="appDispayInfoView" destination="l9M-ye-a2J" collectionClass="NSMutableArray" id="paA-Z2-USf"/>
-                <outletCollection property="appDispayInfoView" destination="aas-O5-xvK" collectionClass="NSMutableArray" id="KAT-x9-5sb"/>
-                <outletCollection property="appDispayInfoView" destination="acO-FO-qo8" collectionClass="NSMutableArray" id="zk6-at-EmM"/>
-                <outletCollection property="appDispayInfoView" destination="tnJ-k0-wiY" collectionClass="NSMutableArray" id="46M-7Y-7vI"/>
+                <outletCollection property="appInfoViews" destination="jVe-FQ-1HF" collectionClass="NSMutableArray" id="sm8-de-V7Y"/>
+                <outletCollection property="appInfoViews" destination="l9M-ye-a2J" collectionClass="NSMutableArray" id="paA-Z2-USf"/>
+                <outletCollection property="appInfoViews" destination="aas-O5-xvK" collectionClass="NSMutableArray" id="KAT-x9-5sb"/>
+                <outletCollection property="appInfoViews" destination="acO-FO-qo8" collectionClass="NSMutableArray" id="zk6-at-EmM"/>
+                <outletCollection property="appInfoViews" destination="tnJ-k0-wiY" collectionClass="NSMutableArray" id="46M-7Y-7vI"/>
             </connections>
             <point key="canvasLocation" x="18.320610687022899" y="-149.29577464788733"/>
         </collectionViewCell>

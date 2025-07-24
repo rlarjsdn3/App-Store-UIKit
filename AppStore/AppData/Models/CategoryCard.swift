@@ -9,15 +9,16 @@ import UIKit
 
 struct CategoryCard {
     ///
-    let cardTintColor: UIColor
-    ///
-    let subTitle1: String?
+    let prumarySubtitle: String?
     ///
     let title: String
     ///
-    let subTitle2: String?
+    let secondarySubtitle: String?
     ///
-    let titleColor: UIColor // 일부 카드 색상 서로 다름
+    let titleColor: UIColor
+
+    ///
+    let cardTintColor: UIColor
 
     init(
         cardTintColor: UIColor,
@@ -27,9 +28,9 @@ struct CategoryCard {
         titleColor: UIColor = .white
     ) {
         self.cardTintColor = cardTintColor
-        self.subTitle1 = subTitle1
+        self.prumarySubtitle = subTitle1
         self.title = title
-        self.subTitle2 = subTitle2
+        self.secondarySubtitle = subTitle2
         self.titleColor = titleColor
     }
 }

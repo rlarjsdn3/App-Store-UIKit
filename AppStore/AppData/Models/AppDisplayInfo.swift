@@ -9,29 +9,34 @@ import UIKit
 
 struct AppDisplayInfo {
     ///
-    let appIconTintColor: UIColor
+    let iconTintColor: UIColor
     ///
-    let appIconImageResource: ImageResource
+    let iconImageResource: ImageResource
     ///
-    var appIconImage: UIImage? {
-        UIImage(resource: appIconImageResource)
+    var iconImage: UIImage? {
+        UIImage(resource: iconImageResource)
     }
 
-    let appType: AppType?
     ///
-    let appName: String
+    let type: AppType?
+
     ///
-    let appNameColor: UIColor
+    let name: String
     ///
-    let appSubtitle: String
+    let nameColor: UIColor
+
     ///
-    let appSubtitleColor: UIColor
+    let subtitle: String
     ///
-    let inAppPurchase: Bool
+    let subtitleColor: UIColor
+
     ///
-    let downloadButtonTitleColor: UIColor
+    let buttonTitleColor: UIColor
     ///
-    let downloadButtonTintColor: UIColor
+    let buttonTintColor: UIColor
+
+    ///
+    let hasInAppPurchase: Bool
 
     init(
         appIconTintColor: UIColor = .systemGray5,
@@ -45,16 +50,16 @@ struct AppDisplayInfo {
         downloadButtonTitleColor: UIColor = .white,
         downloadButtonTintColor: UIColor = .whiteWithAlph50
     ) {
-        self.appIconTintColor = appIconTintColor
-        self.appIconImageResource = appIconImageResource
-        self.appType = appType
-        self.appName = appName
-        self.appNameColor = appNameColor
-        self.appSubtitle = appSubtitle
-        self.appSubtitleColor = appSubtitleColor
-        self.inAppPurchase = inAppPurchase
-        self.downloadButtonTitleColor = downloadButtonTitleColor
-        self.downloadButtonTintColor = downloadButtonTintColor
+        self.iconTintColor = appIconTintColor
+        self.iconImageResource = appIconImageResource
+        self.type = appType
+        self.name = appName
+        self.nameColor = appNameColor
+        self.subtitle = appSubtitle
+        self.subtitleColor = appSubtitleColor
+        self.hasInAppPurchase = inAppPurchase
+        self.buttonTitleColor = downloadButtonTitleColor
+        self.buttonTintColor = downloadButtonTintColor
     }
 }
 

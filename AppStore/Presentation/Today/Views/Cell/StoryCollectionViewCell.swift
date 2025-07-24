@@ -10,21 +10,21 @@ import UIKit
 final class StoryCollectionViewCell: CoreCollectionViewCell {
 
     @IBOutlet weak var labelStackView: UIStackView!
-    private let subtitle1Label = UILabel()
+    private let primarySubtitleLabel = UILabel()
     @IBOutlet weak var titleLabel: UILabel!
-    private let subtitle2Label = UILabel()
+    private let secondarySubtitleLabel = UILabel()
 
-    @IBOutlet weak var bottomContainerView: UIView!
-    @IBOutlet weak var appDisplayInfoView: AppDisplayInfoView!
+    @IBOutlet weak var transparentContainerView: UIView!
+    @IBOutlet weak var appInfoView: AppDisplayInfoView!
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        subtitle1Label.text = nil
+        primarySubtitleLabel.text = nil
         titleLabel.text = nil
-        subtitle2Label.text = nil
-        labelStackView.removeArrangedSubview(subtitle1Label)
-        labelStackView.removeArrangedSubview(subtitle2Label)
-        appDisplayInfoView.prepareForResue()
+        secondarySubtitleLabel.text = nil
+        labelStackView.removeArrangedSubview(primarySubtitleLabel)
+        labelStackView.removeArrangedSubview(secondarySubtitleLabel)
+        appInfoView.prepareForResue()
     }
 
     override func setupAttribute() {
@@ -32,18 +32,18 @@ final class StoryCollectionViewCell: CoreCollectionViewCell {
         contentView.layer.cornerCurve = .continuous
         contentView.layer.masksToBounds = true
 
-        subtitle1Label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        subtitle1Label.textColor = .whiteWithAlph50
-        subtitle2Label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        subtitle2Label.textColor = .whiteWithAlph50
+        primarySubtitleLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        primarySubtitleLabel.textColor = .whiteWithAlph50
+        secondarySubtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        secondarySubtitleLabel.textColor = .whiteWithAlph50
 
-        appDisplayInfoView.appTypeLabelColor = .whiteWithAlph50
-        appDisplayInfoView.titleLabelColor = .white
-        appDisplayInfoView.subtitleLabelColor = .whiteWithAlph50
-        appDisplayInfoView.subtitleFontSize = 14
-        appDisplayInfoView.titleToSubtitleSpacing = 2
+        appInfoView.appTypeLabelColor = .whiteWithAlph50
+        appInfoView.titleLabelColor = .white
+        appInfoView.subtitleLabelColor = .whiteWithAlph50
+        appInfoView.subtitleFontSize = 14
+        appInfoView.titleToSubtitleSpacing = 2
 
-        bottomContainerView.backgroundColor = .systemBackground.withAlphaComponent(0.1)
+        transparentContainerView.backgroundColor = .systemBackground.withAlphaComponent(0.1)
     }
 
 }
@@ -51,23 +51,23 @@ final class StoryCollectionViewCell: CoreCollectionViewCell {
 extension StoryCollectionViewCell {
 
     func configure(with model: AppStory) {
-        if let subtitle1 = model.subTitle1 {
-            subtitle1Label.text = subtitle1
-            subtitle1Label.textColor = model.subTitle1Color
-            labelStackView.insertArrangedSubview(subtitle1Label, at: 0)
+        if let subtitle1 = model.primarySubtitle {
+            primarySubtitleLabel.text = subtitle1
+            primarySubtitleLabel.textColor = model.primarySubtitleColor
+            labelStackView.insertArrangedSubview(primarySubtitleLabel, at: 0)
         }
 
-        if let subtitle2 = model.subTitle2 {
-            subtitle2Label.text = subtitle2
-            subtitle2Label.textColor = model.subTitle2Color
-            labelStackView.addArrangedSubview(subtitle2Label)
+        if let subtitle2 = model.secondaySubtitle {
+            secondarySubtitleLabel.text = subtitle2
+            secondarySubtitleLabel.textColor = model.secondarySubtitleColor
+            labelStackView.addArrangedSubview(secondarySubtitleLabel)
         }
 
         titleLabel.text = model.title
         titleLabel.textColor = model.titleColor
-        titleLabel.font = UIFont.systemFont(ofSize: model.titleSize, weight: .bold)
-        appDisplayInfoView.titleToSubtitleSpacing = 2
-        appDisplayInfoView.configre(with: model.appDisplayInfo)
-        labelStackView.spacing = model.titleSpacing
+        titleLabel.font = UIFont.systemFont(ofSize: model.titleFontSize, weight: .bold)
+        appInfoView.titleToSubtitleSpacing = 2
+        appInfoView.configre(with: model.appDisplayInfo)
+        labelStackView.spacing = model.titleLineSpacing
     }
 }

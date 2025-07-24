@@ -9,21 +9,23 @@ import UIKit
 
 struct AppStory {
     ///
-    let subTitle1: String?
+    let primarySubtitle: String?
     ///
-    let subTitle1Color: UIColor // 에디터의 선택: 색상 검정색
+    let primarySubtitleColor: UIColor
+
     ///
     let title: String
     ///
-    let titleSize: CGFloat // 오늘의 게임 폰트 크기 달리
+    let titleFontSize: CGFloat
     ///
     let titleColor: UIColor
     ///
-    let subTitle2: String?
+    let titleLineSpacing: CGFloat
+
     ///
-    let subTitle2Color: UIColor // 오늘의 앱은 색상 검정색
+    let secondaySubtitle: String?
     ///
-    let titleSpacing: CGFloat
+    let secondarySubtitleColor: UIColor
 
     ///
     let appDisplayInfo: AppDisplayInfo
@@ -39,14 +41,14 @@ struct AppStory {
         titleSpacing: CGFloat = 2,
         appDisplayInfo: AppDisplayInfo
     ) {
-        self.subTitle1 = subTitle1
-        self.subTitle1Color = subTitle1Color
+        self.primarySubtitle = subTitle1
+        self.primarySubtitleColor = subTitle1Color
         self.title = title
-        self.titleSize = titleSize
+        self.titleFontSize = titleSize
         self.titleColor = titleColor
-        self.subTitle2 = subTitle2
-        self.subTitle2Color = subTitle2Color
-        self.titleSpacing = titleSpacing
+        self.secondaySubtitle = subTitle2
+        self.secondarySubtitleColor = subTitle2Color
+        self.titleLineSpacing = titleSpacing
         self.appDisplayInfo = appDisplayInfo
     }
 }

@@ -8,19 +8,20 @@
 import UIKit
 
 final class BigCardCollectionViewCell: CoreCollectionViewCell {
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var subTitle1Label: UILabel!
+
+    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var primarySubtitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subTitle2Label: UILabel!
+    @IBOutlet weak var secondarySubtitleLabel: UILabel!
 
     override func setupAttribute() {
         contentView.layer.cornerRadius = 18
         contentView.layer.cornerCurve = .continuous
         contentView.layer.masksToBounds = true
 
-        subTitle1Label.textColor = .whiteWithAlph50
+        primarySubtitleLabel.textColor = .whiteWithAlph50
         titleLabel.textColor = .white
-        subTitle2Label.textColor = .whiteWithAlph50
+        secondarySubtitleLabel.textColor = .whiteWithAlph50
     }
 }
 
@@ -29,9 +30,8 @@ extension BigCardCollectionViewCell {
     /// <#Description#>
     /// - Parameter model: <#model description#>
     func configure(with model: CategoryCard) {
-//        imageView.image = model.coverImage
-        subTitle1Label.text = model.subTitle1 ?? ""
+        primarySubtitleLabel.text = model.prumarySubtitle
         titleLabel.text = model.title
-        subTitle2Label.text = model.subTitle2 ?? ""
+        secondarySubtitleLabel.text = model.secondarySubtitle
     }
 }
