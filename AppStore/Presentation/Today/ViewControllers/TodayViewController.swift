@@ -133,7 +133,7 @@ final class TodayViewController: CoreViewController {
             else { return }
 
            switch section {
-           case .main(let descriptor), .card(let descriptor):
+           case let .main(descriptor, _), let .card(descriptor):
                 supplementaryView.configure(with: descriptor)
            default:
                return
@@ -142,10 +142,31 @@ final class TodayViewController: CoreViewController {
     }
 
     private func applySnapshot() {
+        if traitCollection.userInterfaceIdiom == .phone {
+            applySnapshotForPhone()
+        } else { // equal with `pad`
+            applySnapshotForPad()
+        }
+    }
+
+    private func applySnapshotForPhone() {
         var snapshot = NSDiffableDataSourceSnapshot<TodayContent.Section, TodayContent.Item>()
         snapshot.appendSections([.mostTop])
         snapshot.appendItems([.profileHeader], toSection: .mostTop)
         appData.todays.forEach { today in
+            snapshot.appendSections([today.section])
+            snapshot.appendItems(today.items, toSection: today.section)
+        }
+        snapshot.appendSections([.mostBottom])
+        snapshot.appendItems([.termsOfUse], toSection: .mostBottom)
+        dataSource.apply(snapshot, animatingDifferences: false)
+    }
+
+    private func applySnapshotForPad() {
+        var snapshot = NSDiffableDataSourceSnapshot<TodayContent.Section, TodayContent.Item>()
+        snapshot.appendSections([.mostTop])
+        snapshot.appendItems([.profileHeader], toSection: .mostTop)
+        appData.todaysForPad.forEach { today in
             snapshot.appendSections([today.section])
             snapshot.appendItems(today.items, toSection: today.section)
         }
@@ -163,10 +184,3 @@ extension TodayViewController: UICollectionViewDelegate {
     ) {
     }
 }
-
-//     - [ ] TopBarCell✅, AppDisplayInfo UI 코드 구현
-//     - [ ] AdvertisementCell, BigCardCell✅, CardCell✅ UI 코드 구현
-//     - [ ] PromotionCollectionViewCell✅ UI 코드 구현
-//     - [ ] TopBarCell을 상단에 올리기 (넣기)✅
-//     - [ ] 전체적인 레이아웃 조정하기 (수치값 등)
-//     - [ ] (시간이 되면) 하단 버튼 셀 UI도 구현

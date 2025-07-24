@@ -73,10 +73,10 @@ final class AppDisplayInfoView: CoreView {
 
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelStackView.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 10),
+            labelStackView.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 12),
             labelStackView.heightAnchor.constraint(lessThanOrEqualTo: iconImageView.heightAnchor, multiplier: 1.1),
             labelStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            labelStackView.trailingAnchor.constraint(equalTo: downloadButton.leadingAnchor, constant: -10)
+            labelStackView.trailingAnchor.constraint(equalTo: downloadButton.leadingAnchor, constant: -12)
         ])
 
         downloadButton.translatesAutoresizingMaskIntoConstraints = false
@@ -121,7 +121,7 @@ final class AppDisplayInfoView: CoreView {
         titleLabel.numberOfLines = 2
 
         subtitleLabel.text = "소모임, 챌린지, 스터디, 취미 모임"
-        subtitleLabel.font = .systemFont(ofSize: 11, weight: .regular)
+        subtitleLabel.font = .systemFont(ofSize: 12, weight: .regular)
         subtitleLabel.textColor = .systemGray3.withAlphaComponent(0.9)
         subtitleLabel.numberOfLines = 0
 

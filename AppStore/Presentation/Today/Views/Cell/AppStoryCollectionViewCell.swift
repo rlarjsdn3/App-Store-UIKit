@@ -43,7 +43,7 @@ final class AppStoryCollectionViewCell: CoreCollectionViewCell {
         appInfoView.appTypeColor = .whiteWithAlpha50
         appInfoView.titleColor = .white
         appInfoView.subtitleColor = .whiteWithAlpha50
-        appInfoView.subtitleFontSize = 12.5
+        appInfoView.subtitleFontSize = 14
         appInfoView.spacingBetweenLabels = 2
 
         transparentContainerView.backgroundColor = .systemBackground.withAlphaComponent(0.1)

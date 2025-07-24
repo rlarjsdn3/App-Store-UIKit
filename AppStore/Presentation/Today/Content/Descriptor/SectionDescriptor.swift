@@ -20,13 +20,13 @@ struct SectionDescriptor: Identifiable {
     /// 섹션의 서브타이틀입니다.
     let subtitle: String?
 
-    /// 섹션의 분류를 나타내는 타입입니다.
-    let type: `Type`
+    /// 헤더의 분류를 나타내는 타입입니다.
+    let type: HeaderType
 }
 
 extension SectionDescriptor {
 
-    enum `Type`: Int {
+    enum  HeaderType: Int {
         case singleHeadline
         case dualHeadline
         case dualHeadlineReversed

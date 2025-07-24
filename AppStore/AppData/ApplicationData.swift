@@ -15,7 +15,9 @@ struct ApplicationData {
     }
 
     let todays: [Today]
-    
+
+    let todaysForPad: [Today]
+
     init() {
         todays = [
             Today(
@@ -123,6 +125,37 @@ struct ApplicationData {
                 section: .main(.doTogether),
                 items: [.appStory(.appleInvitationStory)]
             )
+        ]
+
+        todaysForPad = [
+            Today(
+                section: .main(.emptySection(id: 123), ratio: .fourToSix),
+                items: [
+                    .appStory(.angryBirdsBounceStory),
+                    .popularTopList(.mostLovedAppsList)
+                ]
+            ),
+            Today(
+                section: .main(.workSmartWithAI, ratio: .sixToFour),
+                items: [
+                    .appStory(.chatGPTStory),
+                    .appGroupPromotion(.appsFitnessEnthusiastsUse)
+                ]
+            ),
+            Today(
+                section: .main(.appStoreClassic, ratio: .fourToSix),
+                items: [
+                    .appStory(.brawlStarsStory),
+                    .appStory(.pokemonGOStory)
+                ]
+            ),
+            Today(
+                section: .main(.aMoreFulfillingDay, ratio: .sixToFour),
+                items: [
+                    .appStory(.noteCircleStory),
+                    .messageCard(.microsoftCard)
+                ]
+            ),
         ]
     }
 }

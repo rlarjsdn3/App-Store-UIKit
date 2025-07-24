@@ -12,10 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cgk-qq-lgQ" customClass="AppAdBannerCollectionViewCell" customModule="AppStore" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="363" height="158"/>
+            <rect key="frame" x="0.0" y="0.0" width="363" height="163"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="Aip-um-fQk">
-                <rect key="frame" x="0.0" y="0.0" width="363" height="158"/>
+                <rect key="frame" x="0.0" y="0.0" width="363" height="163"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qRa-l9-XEi">
@@ -37,7 +37,7 @@
                         <rect key="frame" x="0.0" y="55" width="368" height="120"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="E3r-cB-Ua8">
-                                <rect key="frame" x="20" y="52" width="328" height="37.333333333333343"/>
+                                <rect key="frame" x="20" y="50" width="328" height="37.333333333333343"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="tGl-5l-aYv">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="37.333333333333336"/>
@@ -49,13 +49,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="r5s-ii-3c2">
-                                                <rect key="frame" x="0.0" y="21.333333333333343" width="240" height="16"/>
+                                                <rect key="frame" x="0.0" y="21.333333333333329" width="240" height="16"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4E-jw-f4O">
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="16"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="광고" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsx-g7-nDc">
-                                                                <rect key="frame" x="6.3333333333333321" y="2" width="17.333333333333332" height="12"/>
+                                                                <rect key="frame" x="6.3333333333333321" y="2.0000000000000142" width="17.333333333333332" height="12"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -100,20 +100,21 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="wix-1q-CRf" secondAttribute="bottom" constant="70" id="3F8-vL-8XI"/>
+                    <constraint firstItem="3hO-1o-Nth" firstAttribute="top" secondItem="qRa-l9-XEi" secondAttribute="bottom" constant="-120" id="1gG-UP-oES"/>
+                    <constraint firstAttribute="bottom" secondItem="wix-1q-CRf" secondAttribute="bottom" constant="68" id="43T-s0-reX"/>
                     <constraint firstAttribute="bottom" secondItem="qRa-l9-XEi" secondAttribute="bottom" id="6E2-VY-v8a"/>
                     <constraint firstItem="3hO-1o-Nth" firstAttribute="leading" secondItem="Aip-um-fQk" secondAttribute="leading" id="8sq-Q4-4qF"/>
-                    <constraint firstItem="3hO-1o-Nth" firstAttribute="bottom" secondItem="qRa-l9-XEi" secondAttribute="bottom" id="BSe-zD-N37"/>
                     <constraint firstAttribute="trailing" secondItem="qRa-l9-XEi" secondAttribute="trailing" id="Vzh-iX-9VV"/>
                     <constraint firstItem="qRa-l9-XEi" firstAttribute="top" secondItem="Aip-um-fQk" secondAttribute="top" id="aTv-1r-vpw"/>
                     <constraint firstItem="wix-1q-CRf" firstAttribute="centerX" secondItem="Aip-um-fQk" secondAttribute="centerX" id="cpK-T9-DFx"/>
                     <constraint firstItem="qRa-l9-XEi" firstAttribute="leading" secondItem="Aip-um-fQk" secondAttribute="leading" id="gLy-WD-DEK"/>
                     <constraint firstItem="wix-1q-CRf" firstAttribute="top" secondItem="Aip-um-fQk" secondAttribute="top" constant="15" id="hfI-3y-Xne"/>
+                    <constraint firstItem="E3r-cB-Ua8" firstAttribute="top" secondItem="wix-1q-CRf" secondAttribute="bottom" constant="10" id="iLX-o8-chk"/>
                     <constraint firstAttribute="trailing" secondItem="3hO-1o-Nth" secondAttribute="trailing" constant="-5" id="nrg-aM-nTV"/>
-                    <constraint firstItem="E3r-cB-Ua8" firstAttribute="top" secondItem="wix-1q-CRf" secondAttribute="bottom" constant="12" id="qDN-vs-HZB"/>
+                    <constraint firstItem="3hO-1o-Nth" firstAttribute="bottom" secondItem="qRa-l9-XEi" secondAttribute="bottom" id="wWU-9h-BLc"/>
                 </constraints>
             </collectionViewCellContentView>
-            <size key="customSize" width="363" height="284"/>
+            <size key="customSize" width="363" height="289"/>
             <connections>
                 <outlet property="coverImageView" destination="qRa-l9-XEi" id="Q5J-ZT-Spg"/>
                 <outlet property="descContainerView" destination="P4E-jw-f4O" id="dTH-Ni-4KF"/>
@@ -123,7 +124,7 @@
                 <outlet property="subtitleLabel" destination="Mt7-D1-6cl" id="fOQ-tA-nzj"/>
                 <outlet property="titleLabel" destination="G1v-ON-ZZK" id="F6y-pl-yxM"/>
             </connections>
-            <point key="canvasLocation" x="-19.083969465648853" y="-217.60563380281693"/>
+            <point key="canvasLocation" x="-19.083969465648853" y="-215.84507042253523"/>
         </collectionViewCell>
     </objects>
     <resources>
@@ -131,16 +132,16 @@
             <color red="0.57999998331069946" green="0.74900001287460327" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

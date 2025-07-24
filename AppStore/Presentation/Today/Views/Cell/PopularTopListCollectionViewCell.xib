@@ -18,16 +18,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="N5e-Yw-w0b">
-                        <rect key="frame" x="20" y="21.999999999999996" width="213.66666666666669" height="49.666666666666657"/>
+                        <rect key="frame" x="20" y="22" width="213.66666666666666" height="51"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="추천" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6X-kS-YtA">
-                                <rect key="frame" x="0.0" y="0.0" width="213.66666666666666" height="14.333333333333334"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <rect key="frame" x="0.0" y="0.0" width="213.66666666666666" height="15.666666666666666"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모두에게 사랑받는 앱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdN-1n-RP2">
-                                <rect key="frame" x="0.0" y="18.333333333333336" width="213.66666666666666" height="31.333333333333336"/>
+                                <rect key="frame" x="0.0" y="19.666666666666664" width="213.66666666666666" height="31.333333333333336"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -35,26 +35,26 @@
                         </subviews>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="WSv-O4-pBW">
-                        <rect key="frame" x="20" y="95.666666666666657" width="370" height="378.33333333333337"/>
+                        <rect key="frame" x="20" y="97" width="370" height="377"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVe-FQ-1HF" customClass="AppDisplayInfoView" customModule="AppStore" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="370" height="56.333333333333336"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9M-ye-a2J" customClass="AppDisplayInfoView" customModule="AppStore" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="80.333333333333329" width="370" height="56.666666666666671"/>
+                                <rect key="frame" x="0.0" y="80.333333333333343" width="370" height="56"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aas-O5-xvK" customClass="AppDisplayInfoView" customModule="AppStore" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="161" width="370" height="56.333333333333343"/>
+                                <rect key="frame" x="0.0" y="160.33333333333331" width="370" height="56.333333333333343"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acO-FO-qo8" customClass="AppDisplayInfoView" customModule="AppStore" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="241.33333333333329" width="370" height="56.666666666666657"/>
+                                <rect key="frame" x="0.0" y="240.66666666666669" width="370" height="56"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tnJ-k0-wiY" customClass="AppDisplayInfoView" customModule="AppStore" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="322" width="370" height="56.333333333333314"/>
+                                <rect key="frame" x="0.0" y="320.66666666666669" width="370" height="56.333333333333314"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -85,7 +85,7 @@
     </objects>
     <resources>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

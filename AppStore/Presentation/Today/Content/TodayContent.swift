@@ -17,7 +17,7 @@ enum TodayContent {
     /// - mostBottom: 가장 하단의 고정된 섹션 (헤더 없음)
     enum Section: Hashable {
         case mostTop
-        case main(SectionDescriptor)
+        case main(SectionDescriptor, ratio: RatioDescriptor = .zero)
         case card(SectionDescriptor)
         case mostBottom
 
@@ -29,7 +29,7 @@ enum TodayContent {
             switch self {
             case .mostTop, .mostBottom:
                 return false
-            case .main(let descriptor), .card(let descriptor):
+            case .main(let descriptor, _), .card(let descriptor):
                 return descriptor.title != nil
             }
         }
@@ -174,7 +174,7 @@ extension TodayContent.Section {
         indexPath: IndexPath
     ) -> UICollectionReusableView? {
         switch self {
-        case .main(_), .card(_):
+        case .main(_, _), .card(_):
             // SectionDescriptor에 유효한 내용(title)이 없을 경우 헤더는 표시되지 않음
             return collectionView.dequeueConfiguredReusableSupplementary(
                 using: defaultHeaderRegistration,
@@ -198,13 +198,36 @@ extension TodayContent.Section {
     /// - Returns: 현재 섹션에 해당하는 `NSCollectionLayoutSection` 인스턴스입니다.
     func buildLayout(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         switch self {
-        case .mostTop, .mostBottom: return buildTopBottomLayout(environment)
-        case .main: return buildMainLayout(environment)
-        case .card: return buildCardLayout(environment)
+        case .mostTop:
+            return buildMostTopLayout(environment)
+
+        case let .main(_, ratio):
+            switch environment.traitCollection.userInterfaceIdiom {
+            case .phone:
+                return buildMainLayout(environment)
+            case .pad:
+                // 아이패드 환경에서는 반드시 왼쪽과 오른쪽 셀의 너비 비율(`leftRatio`, `rightRatio`)이 지정되어야 합니다.
+                return buildMainLayoutForPad(environment, leftRatio: ratio.leftRatio, rightRatio: ratio.rightRatio)
+            default:
+                return buildMainLayout(environment)
+            }
+
+        case .card:
+            return buildCardLayout(environment)
+
+        case .mostBottom:
+            switch environment.traitCollection.userInterfaceIdiom {
+            case .phone:
+                return buildMostBottomLayout(environment)
+            case .pad:
+                return buildMostBottomLayoutForPad(environment)
+            default:
+                return buildMostBottomLayout(environment)
+            }
         }
     }
     
-    private func buildTopBottomLayout(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+    private func buildMostTopLayout(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
             heightDimension: .estimated(44)
@@ -225,7 +248,7 @@ extension TodayContent.Section {
     private func buildMainLayout(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(440)
+            heightDimension: .estimated(450)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
@@ -241,7 +264,40 @@ extension TodayContent.Section {
         injectSupplementaryViewIfNeeded(to: section)
         return section
     }
-    
+
+    /// - Important: 아이패드에서는 한 섹션에 최대 2개의 셀만 표시되며,
+    ///              각 셀의 너비는 지정된 비율에 따라 섹션 너비를 기준으로 계산됩니다.
+    private func buildMainLayoutForPad(
+        _ environment: NSCollectionLayoutEnvironment,
+        leftRatio: CGFloat,
+        rightRatio: CGFloat
+    ) -> NSCollectionLayoutSection {
+        let leftItemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(leftRatio),
+            heightDimension: .estimated(450)
+        )
+        let leftItem = NSCollectionLayoutItem(layoutSize: leftItemSize)
+
+        let rightItemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(rightRatio),
+            heightDimension: .estimated(450)
+        )
+        let rightItem = NSCollectionLayoutItem(layoutSize: rightItemSize)
+
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(450)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [leftItem, rightItem])
+        group.interItemSpacing = .fixed(16)
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 16
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 18, bottom: 0, trailing: 18)
+        injectSupplementaryViewIfNeeded(to: section)
+        return section
+    }
+
     private func buildCardLayout(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.5),
@@ -262,9 +318,51 @@ extension TodayContent.Section {
         injectSupplementaryViewIfNeeded(to: section)
         return section
     }
+
+    private func buildMostBottomLayout(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(44)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(44)
+        )
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 18, bottom: 0, trailing: 18)
+        return section
+    }
+
+    private func buildMostBottomLayoutForPad(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(44)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(44)
+        )
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+
+        let section = NSCollectionLayoutSection(group: group)
+        let horizontalInset = environment.container.contentSize.width / 4
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: horizontalInset, bottom: 0, trailing: horizontalInset)
+        return section
+    }
+}
+
+@MainActor
+extension TodayContent.Section {
+
     private func injectSupplementaryViewIfNeeded(to section: NSCollectionLayoutSection) {
         switch self {
-        case .main(_), .card(_):
+        case .main(_, _), .card(_):
             // SectionDescriptor에 유효한 내용(title)이 없을 경우 헤더는 표시되지 않음
             if hasHeader {
                 let headerSize = NSCollectionLayoutSize(
