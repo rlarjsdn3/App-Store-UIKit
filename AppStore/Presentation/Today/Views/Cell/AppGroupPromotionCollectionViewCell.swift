@@ -13,6 +13,7 @@ final class AppGroupPromotionCollectionViewCell: CoreCollectionViewCell {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet var iconImageViews: [UIImageView]!
+    @IBOutlet weak var transparentContainerView: UIView!
 
     override func setupAttribute() {
         contentView.layer.cornerRadius = 18
@@ -25,6 +26,7 @@ final class AppGroupPromotionCollectionViewCell: CoreCollectionViewCell {
         }
 
         subtitleLabel.textColor = .whiteWithAlpha90
+        transparentContainerView.backgroundColor = .blackWithAlpha10
     }
 }
 
@@ -36,5 +38,8 @@ extension AppGroupPromotionCollectionViewCell {
     func configure(with model: PopularTopList) {
         subtitleLabel.text = model.subtitle
         titleLabel.text = model.title
+        model.appInfos.enumerated().forEach { index, info in
+            iconImageViews[safe: index]?.image = model.appInfos[safe: index]?.iconImage
+        }
     }
 }

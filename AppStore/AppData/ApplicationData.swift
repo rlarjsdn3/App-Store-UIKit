@@ -152,8 +152,22 @@ struct ApplicationData {
             Today(
                 section: .main(.aMoreFulfillingDay, ratio: .sixToFour),
                 items: [
-                    .appStory(.noteCircleStory),
+                    .appStory(.feverStory),
                     .messageCard(.microsoftCard)
+                ]
+            ),
+            Today(
+                section: .main(.healthyAndWellbeing, ratio: .fourToSix),
+                items: [
+                    .appStory(.flickrStory),
+                    .appStory(.gentlerStreakStory)
+                ]
+            ),
+            Today(
+                section: .main(.findBestApp, ratio: .sixToFour),
+                items: [
+                    .messageCard(.happyArtCard),
+                    .appStory(.noteCircleStory)
                 ]
             ),
         ]

@@ -90,7 +90,7 @@ extension AppDisplayInfo {
 
     static let angryBirds: Self = .init(
         appIconTintColor: .systemBlue,
-        appIconImageResource: .rocket,
+        appIconImageResource: .angrybird,
         appType: .appleArcade,
         appName: "Angry Birds Bounce",
         appSubtitle: "무리를 모으고 튕기세요!",
@@ -99,7 +99,7 @@ extension AppDisplayInfo {
 
     static let temu: Self = .init(
         appIconTintColor: .systemOrange,
-        appIconImageResource: .rocket,
+        appIconImageResource: .temu,
         appType: nil,
         appName: "Temu: 억만장자처럼 쇼핑하기",
         appSubtitle: "",
@@ -108,7 +108,7 @@ extension AppDisplayInfo {
 
     static let zigzag: Self = .init(
         appIconTintColor: .systemPink,
-        appIconImageResource: .rocket,
+        appIconImageResource: .zigzag,
         appType: nil,
         appName: "지그재그 - ZIGZAG",
         appSubtitle: "제가 알아서 살게요",
@@ -117,7 +117,7 @@ extension AppDisplayInfo {
 
     static let band: Self = .init(
         appIconTintColor: .systemGreen,
-        appIconImageResource: .rocket,
+        appIconImageResource: .band,
         appType: nil,
         appName: "밴드-모임이 쉬워진다!",
         appSubtitle: "소모임, 챌린지, 스터디, 취미 모임",
@@ -126,7 +126,7 @@ extension AppDisplayInfo {
 
     static let youtubeMusic: Self = .init(
         appIconTintColor: .systemRed,
-        appIconImageResource: .rocket,
+        appIconImageResource: .youtubeMusic,
         appType: nil,
         appName: "Youtube Music",
         appSubtitle: "오직 나만을 위한 음악의 세계",
@@ -135,7 +135,7 @@ extension AppDisplayInfo {
 
     static let youtube: Self = .init(
         appIconTintColor: .systemRed,
-        appIconImageResource: .rocket,
+        appIconImageResource: .youtube,
         appType: nil,
         appName: "Youtube",
         appSubtitle: "동영상과 음악을 즐기고 공유하세요",
@@ -144,7 +144,7 @@ extension AppDisplayInfo {
 
     static let kakaotalk: Self = .init(
         appIconTintColor: .systemYellow,
-        appIconImageResource: .rocket,
+        appIconImageResource: .kakaotalk,
         appType: nil,
         appName: "카카오톡",
         appSubtitle: "모든 연결의 시작",
@@ -153,7 +153,7 @@ extension AppDisplayInfo {
 
     static let chatGPT: Self = .init(
         appIconTintColor: .white,
-        appIconImageResource: .rocket,
+        appIconImageResource: .chatgpt,
         appType: nil,
         appName: "ChatGPT",
         appSubtitle: "OpenAI의 공식 앱",
@@ -162,7 +162,7 @@ extension AppDisplayInfo {
 
     static let trace: Self = .init(
         appIconTintColor: .white,
-        appIconImageResource: .rocket,
+        appIconImageResource: .trace,
         appType: nil,
         appName: "Trace: 할일·일정·루틴 관리 - AI 리마인더",
         appSubtitle: "AI로 오늘 할일부터 일정까지 수립하세요!",
@@ -171,7 +171,7 @@ extension AppDisplayInfo {
 
     static let voca: Self = .init(
         appIconTintColor: .systemPurple,
-        appIconImageResource: .rocket,
+        appIconImageResource: .voca,
         appType: nil,
         appName: "말해보가: 영단어, 문법, 리스닝, 스피킹, 영어 공부",
         appSubtitle: "쉽게 할 수 있어야 쉽게 느니까",
@@ -180,7 +180,7 @@ extension AppDisplayInfo {
 
     static let speak: Self = .init(
         appIconTintColor: .systemBlue,
-        appIconImageResource: .rocket,
+        appIconImageResource: .speak,
         appType: nil,
         appName: "스픽 (Speak) - 영어회화, 스피킹, 발음",
         appSubtitle: "영어학원이 싫어하는 영어어플",
@@ -189,7 +189,7 @@ extension AppDisplayInfo {
 
     static let moodee: Self = .init(
         appIconTintColor: .systemGreen,
-        appIconImageResource: .rocket,
+        appIconImageResource: .moodee,
         appType: nil,
         appName: "무디 Moodee : 지금의 감정에 필요한 것은?",
         appSubtitle: "지금 내 감정에 꼭 필요한 퀘스트를 알아보세요!",
@@ -198,7 +198,7 @@ extension AppDisplayInfo {
 
     static let planfit: Self = .init(
         appIconTintColor: .black,
-        appIconImageResource: .rocket,
+        appIconImageResource: .planfit,
         appType: nil,
         appName: "플랜핏 - 운동 루틴 추천과 헬스 홈트 다이어트 기록",
         appSubtitle: "헬스 홈트 운동 추천 피트니스 다이어트 기록",
@@ -207,7 +207,7 @@ extension AppDisplayInfo {
 
     static let roblox: Self = .init(
         appIconTintColor: .systemBlue,
-        appIconImageResource: .rocket,
+        appIconImageResource: .roblox,
         appType: nil,
         appName: "Roblox",
         appSubtitle: "수천만 가지 가상 체험 공간",
@@ -216,7 +216,7 @@ extension AppDisplayInfo {
 
     static let callapse: Self = .init(
         appIconTintColor: .systemPink,
-        appIconImageResource: .rocket,
+        appIconImageResource:.health1,
         appType: nil,
         appName: "붕괴: 스타레일",
         appSubtitle: "은하 판타기 RPG",
@@ -225,7 +225,7 @@ extension AppDisplayInfo {
 
     static let blackClover: Self = .init(
         appIconTintColor: .black,
-        appIconImageResource: .rocket,
+        appIconImageResource: .blackclover,
         appType: nil,
         appName: "블랙클로버 모바일",
         appSubtitle: "블랙클로버 모바일 the opening of fate",
@@ -234,7 +234,7 @@ extension AppDisplayInfo {
 
     static let pokemonGO: Self = .init(
         appIconTintColor: .systemRed,
-        appIconImageResource: .rocket,
+        appIconImageResource: .pokemon,
         appType: nil,
         appName: "Pokémon GO",
         appSubtitle: "전 세계에서 포켓몬을 발견하자",
@@ -243,7 +243,7 @@ extension AppDisplayInfo {
 
     static let brawlStars: Self = .init(
         appIconTintColor: .systemOrange,
-        appIconImageResource: .rocket,
+        appIconImageResource: .brawl,
         appType: nil,
         appName: "브롤스타즈",
         appSubtitle: "멀티플레이 PvP 배틀 로얄 MOBA",
@@ -252,7 +252,7 @@ extension AppDisplayInfo {
 
     static let student1: Self = .init(
         appIconTintColor: .systemYellow,
-        appIconImageResource: .rocket,
+        appIconImageResource: .student1,
         appType: nil,
         appName: "string",
         appSubtitle: "string",
@@ -261,7 +261,7 @@ extension AppDisplayInfo {
 
     static let student2: Self = .init(
         appIconTintColor: .systemBlue,
-        appIconImageResource: .rocket,
+        appIconImageResource: .student2,
         appType: nil,
         appName: "string",
         appSubtitle: "string",
@@ -270,7 +270,7 @@ extension AppDisplayInfo {
 
     static let student3: Self = .init(
         appIconTintColor: .systemGreen,
-        appIconImageResource: .rocket,
+        appIconImageResource: .student3,
         appType: nil,
         appName: "string",
         appSubtitle: "string",
@@ -279,7 +279,7 @@ extension AppDisplayInfo {
 
     static let student4: Self = .init(
         appIconTintColor: .systemPink,
-        appIconImageResource: .rocket,
+        appIconImageResource: .student4,
         appType: nil,
         appName: "string",
         appSubtitle: "string",
@@ -288,7 +288,7 @@ extension AppDisplayInfo {
 
     static let student5: Self = .init(
         appIconTintColor: .black,
-        appIconImageResource: .rocket,
+        appIconImageResource: .student5,
         appType: nil,
         appName: "string",
         appSubtitle: "string",
@@ -297,7 +297,7 @@ extension AppDisplayInfo {
 
     static let bear: Self = .init(
         appIconTintColor: .systemRed,
-        appIconImageResource: .rocket,
+        appIconImageResource: .bear,
         appType: nil,
         appName: "베어 - 작문 및 markdown 편집자",
         appSubtitle: "보안 마크다운 텍스트 편집기",
@@ -306,7 +306,7 @@ extension AppDisplayInfo {
 
     static let supsup: Self = .init(
         appIconTintColor: .systemRed,
-        appIconImageResource: .rocket,
+        appIconImageResource: .supsup,
         appType: nil,
         appName: "숩숩",
         appSubtitle: "숨은그림찾기 일러스트 매거진",
@@ -315,7 +315,7 @@ extension AppDisplayInfo {
 
     static let pairs: Self = .init(
         appIconTintColor: .systemMint,
-        appIconImageResource: .rocket,
+        appIconImageResource: .pairs,
         appType: nil,
         appName: "페어즈 - AI 가치관 매칭이 이어주는 특별한 소개팅앱",
         appNameColor: .black,
@@ -328,7 +328,7 @@ extension AppDisplayInfo {
 
     static let canva: Self = .init(
         appIconTintColor: .systemBlue,
-        appIconImageResource: .rocket,
+        appIconImageResource: .canva,
         appType: nil,
         appName: "Canva(캔바): 디자인, 사진편집, 동영상 편집",
         appSubtitle: "그래픽 디자인 + 로고 메이커",
@@ -337,7 +337,7 @@ extension AppDisplayInfo {
 
     static let duolingo: Self = .init(
         appIconTintColor: .systemGreen,
-        appIconImageResource: .rocket,
+        appIconImageResource: .duolingo,
         appType: nil,
         appName: "듀오링고(Duolingo): 언어 학습",
         appSubtitle: "영어, 스페인어, 프랑스어를 배워보세요!",
@@ -346,7 +346,7 @@ extension AppDisplayInfo {
 
     static let quizlet: Self = .init(
         appIconTintColor: .systemBlue,
-        appIconImageResource: .rocket,
+        appIconImageResource: .quizlet,
         appType: nil,
         appName: "Quizlet: 낱말카드로 학습하기",
         appSubtitle: "학습 가이드 및 숙제 도움",
@@ -355,7 +355,7 @@ extension AppDisplayInfo {
 
     static let cake: Self = .init(
         appIconTintColor: .systemPink,
-        appIconImageResource: .rocket,
+        appIconImageResource: .cake,
         appType: nil,
         appName: "Cake: 전 세계 1억 다운로드 영어 학습 앱",
         appSubtitle: "1분에 영어 표현 한 개씩 내려주는 영어 학습 앱",
@@ -364,7 +364,7 @@ extension AppDisplayInfo {
 
     static let vocaDictionary: Self = .init(
         appIconTintColor: .systemPurple,
-        appIconImageResource: .rocket,
+        appIconImageResource: .vocaDictionary,
         appType: nil,
         appName: "말해보카 영어사전",
         appSubtitle: "세상에 없던 AI 영어사전",
@@ -373,7 +373,7 @@ extension AppDisplayInfo {
 
     static let lookUp: Self = .init(
         appIconTintColor: .systemBlue,
-        appIconImageResource: .rocket,
+        appIconImageResource: .lookup,
         appType: nil,
         appName: "LookUp: English Dictionary",
         appSubtitle: "참고",
@@ -382,7 +382,7 @@ extension AppDisplayInfo {
 
     static let noteCircle: Self = .init(
         appIconTintColor: .systemPurple,
-        appIconImageResource: .rocket,
+        appIconImageResource: .noteCircle,
         appType: nil,
         appName: "NoteCircle: 투두, 루틴, 캘린더, 일정관리",
         appNameColor: .black,
@@ -395,7 +395,7 @@ extension AppDisplayInfo {
 
     static let health1: Self = .init(
         appIconTintColor: .white,
-        appIconImageResource: .rocket,
+        appIconImageResource: .health1,
         appType: nil,
         appName: "health1",
         appSubtitle: "health1",
@@ -404,7 +404,7 @@ extension AppDisplayInfo {
 
     static let health2: Self = .init(
         appIconTintColor: .systemBlue,
-        appIconImageResource: .rocket,
+        appIconImageResource: .health2,
         appType: nil,
         appName: "health1",
         appSubtitle: "health1",
@@ -413,7 +413,7 @@ extension AppDisplayInfo {
 
     static let health3: Self = .init(
         appIconTintColor: .systemOrange,
-        appIconImageResource: .rocket,
+        appIconImageResource: .health3,
         appType: nil,
         appName: "health1",
         appSubtitle: "health1",
@@ -422,7 +422,7 @@ extension AppDisplayInfo {
 
     static let health4: Self = .init(
         appIconTintColor: .black,
-        appIconImageResource: .rocket,
+        appIconImageResource: .health4,
         appType: nil,
         appName: "health1",
         appSubtitle: "health1",
@@ -431,7 +431,7 @@ extension AppDisplayInfo {
 
     static let health5: Self = .init(
         appIconTintColor: .systemBlue,
-        appIconImageResource: .rocket,
+        appIconImageResource: .health5,
         appType: nil,
         appName: "health1",
         appSubtitle: "health1",
@@ -440,7 +440,7 @@ extension AppDisplayInfo {
 
     static let flikr: Self = .init(
         appIconTintColor: .systemRed,
-        appIconImageResource: .rocket,
+        appIconImageResource: .flikr,
         appType: nil,
         appName: "플릭 - 운동일지, 운동기록, 운동일기, 운동루틴",
         appSubtitle: "어제보다 나은 오늘을 만드는 쉽게 만들어주는 앱",
@@ -449,7 +449,7 @@ extension AppDisplayInfo {
 
     static let gentlerStreak: Self = .init(
         appIconTintColor: .systemOrange,
-        appIconImageResource: .rocket,
+        appIconImageResource: .gentle,
         appType: nil,
         appName: "Gentler Streak - 운동 및 건강활동 트래커",
         appNameColor: .black,
@@ -462,7 +462,7 @@ extension AppDisplayInfo {
 
     static let fever: Self = .init(
         appIconTintColor: .black,
-        appIconImageResource: .rocket,
+        appIconImageResource: .fever,
         appType: nil,
         appName: "Fever: 이벤트 · 티켓",
         appNameColor: .black,
@@ -475,7 +475,7 @@ extension AppDisplayInfo {
 
     static let appleInvitation: Self = .init(
         appIconTintColor: .systemYellow,
-        appIconImageResource: .rocket,
+        appIconImageResource: .invitation,
         appType: nil,
         appName: "Apple 초대",
         appNameColor: .black,

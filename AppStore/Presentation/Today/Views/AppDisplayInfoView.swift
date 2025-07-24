@@ -9,7 +9,7 @@ import UIKit
 
 final class AppDisplayInfoView: CoreView {
 
-    private let iconImageView = UIImageView()
+    let iconImageView = UIImageView()
     private let labelStackView = UIStackView()
     private let appTypeLabel = UILabel()
     private let titleLabel = UILabel()
@@ -37,7 +37,7 @@ final class AppDisplayInfoView: CoreView {
 
     /// 서브타이틀 라벨에 적용되는 글꼴 크기입니다.
     /// - Warning: `configure(with:)` 메서드 호출 시 이 값이 덮어씌워질 수 있습니다.
-    var subtitleFontSize: CGFloat = 16 {
+    var subtitleFontSize: CGFloat = 12.5 {
         didSet { subtitleLabel.font = .systemFont(ofSize: subtitleFontSize) }
     }
 
@@ -73,10 +73,10 @@ final class AppDisplayInfoView: CoreView {
 
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelStackView.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 12),
+            labelStackView.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 10),
             labelStackView.heightAnchor.constraint(lessThanOrEqualTo: iconImageView.heightAnchor, multiplier: 1.1),
             labelStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            labelStackView.trailingAnchor.constraint(equalTo: downloadButton.leadingAnchor, constant: -12)
+            labelStackView.trailingAnchor.constraint(equalTo: downloadButton.leadingAnchor, constant: -10)
         ])
 
         downloadButton.translatesAutoresizingMaskIntoConstraints = false
@@ -104,6 +104,7 @@ final class AppDisplayInfoView: CoreView {
 
         iconImageView.layer.cornerRadius = 14
         iconImageView.layer.cornerCurve = .continuous
+        iconImageView.layer.masksToBounds = true
         iconImageView.backgroundColor = .systemGray5
 
         labelStackView.axis = .vertical
@@ -121,7 +122,7 @@ final class AppDisplayInfoView: CoreView {
         titleLabel.numberOfLines = 2
 
         subtitleLabel.text = "소모임, 챌린지, 스터디, 취미 모임"
-        subtitleLabel.font = .systemFont(ofSize: 12, weight: .regular)
+        subtitleLabel.font = .systemFont(ofSize: 12.5, weight: .regular)
         subtitleLabel.textColor = .systemGray3.withAlphaComponent(0.9)
         subtitleLabel.numberOfLines = 0
 

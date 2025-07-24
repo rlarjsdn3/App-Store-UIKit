@@ -43,10 +43,10 @@ final class AppStoryCollectionViewCell: CoreCollectionViewCell {
         appInfoView.appTypeColor = .whiteWithAlpha50
         appInfoView.titleColor = .white
         appInfoView.subtitleColor = .whiteWithAlpha50
-        appInfoView.subtitleFontSize = 14
+        appInfoView.subtitleFontSize = 12.5
         appInfoView.spacingBetweenLabels = 2
 
-        transparentContainerView.backgroundColor = .systemBackground.withAlphaComponent(0.1)
+        transparentContainerView.backgroundColor = .blackWithAlpha10
     }
 
 }
@@ -61,6 +61,8 @@ extension AppStoryCollectionViewCell {
     ///   - `appInfo`: 앱 이름, 서브타이틀, 버튼 색상 등 앱 정보를 담은 데이터
     ///   - `titleLineSpacing`: 텍스트 레이블 간의 간격
     func configure(with model: AppStory) {
+        appInfoView.iconImageView.image = model.appInfo.iconImage
+
         if let subtitle1 = model.primarySubtitle {
             primarySubtitleLabel.text = subtitle1
             primarySubtitleLabel.textColor = model.primarySubtitleColor

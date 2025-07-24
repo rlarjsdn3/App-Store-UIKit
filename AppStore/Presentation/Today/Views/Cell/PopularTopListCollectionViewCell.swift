@@ -40,10 +40,11 @@ extension PopularTopListCollectionViewCell {
         titleLabel.text = model.title
 
         model.appInfos.enumerated().forEach { index, info in
+            appInfoViews[safe: index]?.iconImageView.image = model.appInfos[safe: index]?.iconImage
             appInfoViews[safe: index]?.configre(with: info)
             appInfoViews[safe: index]?.titleColor = .label
             appInfoViews[safe: index]?.subtitleColor = .secondaryLabel
-            appInfoViews[safe: index]?.subtitleFontSize = 14.5
+            appInfoViews[safe: index]?.subtitleFontSize = 14
             appInfoViews[safe: index]?.inAppPurchaseColor = .secondaryLabel
             appInfoViews[safe: index]?.downloadButton.baseForegroundColor = .systemBlue
             appInfoViews[safe: index]?.downloadButton.baseBackgroundColor = .systemGray5

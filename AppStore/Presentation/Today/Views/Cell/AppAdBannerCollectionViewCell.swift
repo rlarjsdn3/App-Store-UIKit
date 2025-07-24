@@ -53,6 +53,7 @@ final class AppAdBannerCollectionViewCell: CoreCollectionViewCell {
 extension AppAdBannerCollectionViewCell {
 
     func configure(with model: AppAdBanner) {
+        iconImageView.image = model.appInfo.iconImage
         titleLabel.text = model.appInfo.name
         subtitleLabel.text = model.description
     }

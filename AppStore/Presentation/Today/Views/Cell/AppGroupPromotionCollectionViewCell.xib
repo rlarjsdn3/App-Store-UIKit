@@ -122,6 +122,7 @@
                 <outlet property="coverImageView" destination="co8-vb-in9" id="mEL-oi-dlJ"/>
                 <outlet property="subtitleLabel" destination="Vpz-W6-zNj" id="h1H-9C-3fa"/>
                 <outlet property="titleLabel" destination="FlV-2W-kEj" id="dlm-mc-vAs"/>
+                <outlet property="transparentContainerView" destination="zMF-dt-uBK" id="r4E-IS-uEA"/>
                 <outletCollection property="iconImageViews" destination="c7L-Nu-e1V" collectionClass="NSMutableArray" id="Ajv-hi-K3o"/>
                 <outletCollection property="iconImageViews" destination="GdX-gM-a71" collectionClass="NSMutableArray" id="e5a-1I-bdZ"/>
                 <outletCollection property="iconImageViews" destination="TtN-Fu-NEY" collectionClass="NSMutableArray" id="egX-C5-SbT"/>
@@ -136,10 +137,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
