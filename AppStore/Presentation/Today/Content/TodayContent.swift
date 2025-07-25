@@ -17,7 +17,7 @@ enum TodayContent {
     /// - mostBottom: 가장 하단의 고정된 섹션 (헤더 없음)
     enum Section: Hashable {
         case mostTop
-        case main(SectionDescriptor, ratio: RatioDescriptor = .zero)
+        case main(SectionDescriptor, ratio: SplitRatio = .zero)
         case card(SectionDescriptor)
         case mostBottom
 
@@ -207,7 +207,7 @@ extension TodayContent.Section {
                 return buildMainLayout(environment)
             case .pad:
                 // 아이패드 환경에서는 반드시 왼쪽과 오른쪽 셀의 너비 비율(`leftRatio`, `rightRatio`)이 지정되어야 합니다.
-                return buildMainLayoutForPad(environment, leftRatio: ratio.leftRatio, rightRatio: ratio.rightRatio)
+                return buildMainLayoutForPad(environment, leftRatio: ratio.left, rightRatio: ratio.right)
             default:
                 return buildMainLayout(environment)
             }
