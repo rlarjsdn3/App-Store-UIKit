@@ -32,10 +32,8 @@ final class AppAdBannerCollectionViewCell: CoreCollectionViewCell {
 
         descContainerView.layer.cornerRadius = 6
         descContainerView.layer.cornerCurve = .continuous
-
-        gradientView.backgroundColor = .clear
-        gradientView.apply(
-            [UIColor.systemOrange.withAlphaComponent(0.7).cgColor,
+        gradientView.applyGradientBackground(
+            colors: [UIColor.systemOrange.withAlphaComponent(0.7).cgColor,
              UIColor.systemOrange.withAlphaComponent(0.0).cgColor],
             locations: [0.45],
             startPoint: CGPoint(x: 0, y: 1),
